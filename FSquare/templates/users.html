@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+</head>
+<body>
+<table id="users" style="width:100%">
+    {% if result %}
+    <tr>
+        <th>id</th>
+        <th>pwd</th>
+    </tr>
+    {% for row in result %}
+    <tr>
+        <td> {{ row.id }}</td>
+        <td> {{ row.pwd }}</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+</table>
+<img src="https://i.ibb.co/Js2ZZHX/2020-08-31-12-21-28.png" alt="2020-08-31-12-21-28" border="0">
+</body>
+</html>
