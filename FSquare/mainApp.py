@@ -5,14 +5,28 @@ from dbConnection import Database
 
 app = Flask(__name__)
 
+# @app.route('/')
+# def home():
+#     return app.send_static_file('templates/Covax/about.html')
+
+#about-us page
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+#blog page
+@app.route('/blog')
+def blog():
+    return render_template('blog.html')
+
+#home page
 @app.route('/')
 def home():
-    return current_app.send_static_file('templates/Covax/about.html')
+    return render_template('index.html')
 
-#test bootstrap
-@app.route('/bs')
-def bs():
-    return render_template('bstesting.html', content_type='application/json')
+@app.route('/home')
+def home1():
+    return render_template('index.html')
 
 
 #test db connection
@@ -27,5 +41,5 @@ def connection():
 
     res = db_query()
 
-    return render_template('users.html', result=res, content_type='application/json')
+    return render_template('static/templates/users.html', result=res, content_type='application/json')
 
