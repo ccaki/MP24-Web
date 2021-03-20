@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,current_app
+
 import pymysql
 from dbConnection import Database
 
@@ -6,9 +7,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('Covax/about.html', content_type='application/json')
+    return current_app.send_static_file('templates/Covax/about.html')
 
-
+#test bootstrap
+@app.route('/bs')
+def bs():
+    return render_template('bstesting.html', content_type='application/json')
 
 
 #test db connection
