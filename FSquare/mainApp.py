@@ -9,6 +9,12 @@ app = Flask(__name__)
 # def home():
 #     return app.send_static_file('templates/Covax/about.html')
 
+def db_query(tablename):
+    db = Database()
+    rs = db.get_table(tablename)
+    return rs
+
+
 #about-us page
 @app.route('/about')
 def about():
@@ -18,6 +24,12 @@ def about():
 @app.route('/blog')
 def blog():
     return render_template('blog.html')
+
+#blog detail page
+@app.route('/blogdetail')
+def blogdetail():
+    return render_template('blog-details.html')
+
 
 #home page
 @app.route('/')
@@ -29,17 +41,22 @@ def home1():
     return render_template('index.html')
 
 
-#test db connection
-@app.route('/connection')
-def connection():
+# #test db connection
+# @app.route('/connection')
+# def connection():
+#
+# #     def db_query():
+# #         db = Database()
+# #         users = db.connection()
+# #
+# #         return users
+#
+#     res = db_query('maskarticles')
+#
+#     return render_template('testing.html', result=res, content_type='application/json')
 
-    def db_query():
-        db = Database()
-        users = db.connection()
-
-        return users
-
-    res = db_query()
-
-    return render_template('static/templates/users.html', result=res, content_type='application/json')
-
+#mask page
+@app.route('/mask')
+def mask():
+    res = db_query('maskarticles')
+    return render_template('mask.html',result=res, content_type='application/json')

@@ -14,8 +14,15 @@ class Database:
         self.cur = self.con.cursor()
 
     #testing connection
-    def connection(self):
-        self.cur.execute("SELECT * FROM users LIMIT 50")
-        result = self.cur.fetchall()
+#     def connection(self):
+#         self.cur.execute("SELECT * FROM users LIMIT 50")
+#         result = self.cur.fetchall()
+#
+#         return result
 
+    #get table
+    def get_table(self,tablename):
+        sql = "SELECT * FROM "+tablename
+        self.cur.execute(sql)
+        result = self.cur.fetchall()
         return result

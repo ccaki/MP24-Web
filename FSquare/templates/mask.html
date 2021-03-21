@@ -253,47 +253,47 @@
                                     </a>
                                 </li>
 
-                                <li class="flag-area">
-                                    <span class="flag-item-top">
-                                        <a href="#" class="flag-bar">
-                                            <span>Language</span>		
-                                            <i class="bx bx-chevron-down"></i>
-                                        </a>
-        
-                                        <ul class="flag-item-bottom">
-                                            <li class="flag-item">
-                                                <a href="#" class="flag-link">
-                                                    <img src="../static/assets/img/flag/english.png" alt="Image">
-                                                    English
-                                                </a>
-                                            </li>
-                                            <li class="flag-item">
-                                                <a href="#" class="flag-link">
-                                                    <img src="../static/assets/img/flag/arab.png" alt="Image">
-                                                    العربيّة
-                                                </a>
-                                            </li>
-                                            <li class="flag-item">
-                                                <a href="#" class="flag-link">
-                                                    <img src="../static/assets/img/flag/germany.png" alt="Image">
-                                                    Deutsch
-                                                </a>
-                                            </li>
-                                            <li class="flag-item">
-                                                <a href="#" class="flag-link">
-                                                    <img src="../static/assets/img/flag/portugal.png" alt="Image">
-                                                    󠁥󠁮󠁧󠁿Português
-                                                </a>
-                                            </li>
-                                            <li class="flag-item">
-                                                <a href="#" class="flag-link">
-                                                    <img src="../static/assets/img/flag/china.png" alt="Image">
-                                                    简体中文
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </span>
-                                </li>
+<!--                                <li class="flag-area">-->
+<!--                                    <span class="flag-item-top">-->
+<!--                                        <a href="#" class="flag-bar">-->
+<!--                                            <span>Language</span>		-->
+<!--                                            <i class="bx bx-chevron-down"></i>-->
+<!--                                        </a>-->
+<!--        -->
+<!--                                        <ul class="flag-item-bottom">-->
+<!--                                            <li class="flag-item">-->
+<!--                                                <a href="#" class="flag-link">-->
+<!--                                                    <img src="../static/assets/img/flag/english.png" alt="Image">-->
+<!--                                                    English-->
+<!--                                                </a>-->
+<!--                                            </li>-->
+<!--                                            <li class="flag-item">-->
+<!--                                                <a href="#" class="flag-link">-->
+<!--                                                    <img src="../static/assets/img/flag/arab.png" alt="Image">-->
+<!--                                                    العربيّة-->
+<!--                                                </a>-->
+<!--                                            </li>-->
+<!--                                            <li class="flag-item">-->
+<!--                                                <a href="#" class="flag-link">-->
+<!--                                                    <img src="../static/assets/img/flag/germany.png" alt="Image">-->
+<!--                                                    Deutsch-->
+<!--                                                </a>-->
+<!--                                            </li>-->
+<!--                                            <li class="flag-item">-->
+<!--                                                <a href="#" class="flag-link">-->
+<!--                                                    <img src="../static/assets/img/flag/portugal.png" alt="Image">-->
+<!--                                                    󠁥󠁮󠁧󠁿Português-->
+<!--                                                </a>-->
+<!--                                            </li>-->
+<!--                                            <li class="flag-item">-->
+<!--                                                <a href="#" class="flag-link">-->
+<!--                                                    <img src="../static/assets/img/flag/china.png" alt="Image">-->
+<!--                                                    简体中文-->
+<!--                                                </a>-->
+<!--                                            </li>-->
+<!--                                        </ul>-->
+<!--                                    </span>-->
+<!--                                </li>-->
 
                                 <li class="nav-btn">
                                     <a href="#" class="default-btn">
@@ -327,19 +327,21 @@
         </div>
         <!-- End Page Banner Area -->
 
+
         <!-- Blog Area -->
         <div class="blog-area blog-area-two ptb-100">
             <div class="container">
                 <div class="row">
+                    {% for item in result %}
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-card">
                             <a href="blog-details.html">
-                                <img src="../static/assets/img/blog/blog-1.jpg" alt="Shape">
+                                <img src={{item.profileimg}} alt="Shape">
                             </a>
                             <div class="b-card-text">
-                                <span>September 25, 2020 <a href="#"></a></span>
+                                <span>{{item.publishdate}} <a href="#"></a></span>
                                 <span class="t-right"><i class='bx bx-user'></i> 200K</span>
-                                <h3><a href="blog-details.html">You can easily connect to doctor and make a treatment</a></h3>
+                                <h3><a href="blog-details.html">{{item.title}}</a></h3>
 
                                 <div class="view-more">
                                     <a href="/blogdetail" class="view-more-btn">
@@ -350,166 +352,8 @@
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-card">
-                            <a href="blog-details.html">
-                                <img src="../static/assets/img/blog/blog-2.jpg" alt="Shape">
-                            </a>
-                            <div class="b-card-text">
-                                <span>September 26, 2020 <a href="#"></a></span>
-                                <span class="t-right"><i class='bx bx-user'></i> 190K</span>
-                                <h3><a href="blog-details.html">Lockdowns lead to fewer people seeking medical care</a></h3>
-
-                                <div class="view-more">
-                                    <a href="#" class="view-more-btn">
-                                        Read more
-                                        <span></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-card">
-                            <a href="blog-details.html">
-                                <img src="../static/assets/img/blog/blog-3.jpg" alt="Shape">
-                            </a>
-                            <div class="b-card-text">
-                                <span>September 27, 2020 <a href="#"></a></span>
-                                <span class="t-right"><i class='bx bx-user'></i> 195K</span>
-                                <h3><a href="blog-details.html">Emergency medicine research course for the doctors</a></h3>
-
-                                <div class="view-more">
-                                    <a href="#" class="view-more-btn">
-                                        Read more
-                                        <span></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-card">
-                            <a href="blog-details.html">
-                                <img src="../static/assets/img/blog/blog-4.jpg" alt="Shape">
-                            </a>
-                            <div class="b-card-text">
-                                <span>September 28, 2020 <a href="#"></a></span>
-                                <span class="t-right"><i class='bx bx-user'></i> 160K</span>
-                                <h3><a href="blog-details.html">Advance care planning information session - 2020</a></h3>
-
-                                <div class="view-more">
-                                    <a href="#" class="view-more-btn">
-                                        Read more
-                                        <span></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-card">
-                            <a href="blog-details.html">
-                                <img src="../static/assets/img/blog/blog-5.jpg" alt="Shape">
-                            </a>
-                            <div class="b-card-text">
-                                <span>September 29, 2020</span>
-                                <span class="t-right"><i class='bx bx-user'></i> 200K</span>
-                                <h3><a href="blog-details.html">Advance care planning information session is ongoing</a></h3>
-
-                                <div class="view-more">
-                                    <a href="#" class="view-more-btn">
-                                        Read more
-                                        <span></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-card">
-                            <a href="blog-details.html">
-                                <img src="../static/assets/img/blog/blog-6.jpg" alt="Shape">
-                            </a>
-                            <div class="b-card-text">
-                                <span>September 30, 2020/span>
-                                <span class="t-right"><i class='bx bx-user'></i> 210K</span>
-                                <h3><a href="blog-details.html">How to choose the specia list in massage</a></h3>
-
-                                <div class="view-more">
-                                    <a href="#" class="view-more-btn">
-                                        Read more
-                                        <span></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-card">
-                            <a href="blog-details.html">
-                                <img src="../static/assets/img/blog/blog-7.jpg" alt="Shape">
-                            </a>
-                            <div class="b-card-text">
-                                <span>September 17, 2020</span>
-                                <span class="t-right"><i class='bx bx-user'></i> 110K</span>
-                                <h3><a href="blog-details.html">The ten worst hospital design features</a></h3>
-
-                                <div class="view-more">
-                                    <a href="#" class="view-more-btn">
-                                        Read more
-                                        <span></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-card">
-                            <a href="blog-details.html">
-                                <img src="../static/assets/img/blog/blog-8.jpg" alt="Shape">
-                            </a>
-                            <div class="b-card-text">
-                                <span>September 18, 2020</span>
-                                <span class="t-right"><i class='bx bx-user'></i> 120K</span>
-                                <h3><a href="blog-details.html">7 Health myths your doctor wishes you didn’t believe</a></h3>
-
-                                <div class="view-more">
-                                    <a href="#" class="view-more-btn">
-                                        Read more
-                                        <span></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
-                        <div class="blog-card">
-                            <a href="blog-details.html">
-                                <img src="../static/assets/img/blog/blog-9.jpg" alt="Shape">
-                            </a>
-                            <div class="b-card-text">
-                                <span>September 19, 2020 </span>
-                                <span class="t-right"><i class='bx bx-user'></i> 140K</span>
-                                <h3><a href="blog-details.html">How to survive in post offer active time in hospital</a></h3>
-
-                                <div class="view-more">
-                                    <a href="#" class="view-more-btn">
-                                        Read more
-                                        <span></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Pagination -->
                     <div class="col-lg-12 col-md-12">
