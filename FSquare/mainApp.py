@@ -60,3 +60,10 @@ def home1():
 def mask():
     res = db_query('articles')
     return render_template('mask.html',result=res, content_type='application/json')
+
+
+#vaccine page
+@app.route('/vaccine')
+def vaccine():
+    res = db_query('articles')
+    return render_template('vaccine.html',result=res, content_type='application/json')
