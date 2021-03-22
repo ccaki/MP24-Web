@@ -58,5 +58,5 @@ def home1():
 #mask page
 @app.route('/mask')
 def mask():
-    res = db_query('maskarticles')
+    res = db_query('articles')
     return render_template('mask.html',result=res, content_type='application/json')
