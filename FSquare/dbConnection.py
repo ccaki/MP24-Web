@@ -13,6 +13,7 @@ class Database:
                                    DictCursor)
         self.cur = self.con.cursor()
 
+
     #testing connection
 #     def connection(self):
 #         self.cur.execute("SELECT * FROM users LIMIT 50")
@@ -21,8 +22,7 @@ class Database:
 #         return result
 
     #get table
-    def get_table(self,tablename):
-        sql = "SELECT * FROM "+tablename
+    def get_from_table(self,sql):
         self.cur.execute(sql)
         result = self.cur.fetchall()
         return result
