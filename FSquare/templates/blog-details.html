@@ -47,7 +47,7 @@
                         <div class="page-content">
                             <h2>Blog Details</h2>
                             <ul>
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="/">Home</a></li>
                                 <li>Blog Details</li>
                             </ul>
                         </div>
@@ -70,25 +70,23 @@
                             <ul>
                                 <li>
                                     <i class='bx bx-calendar'></i>
-                                    7 Oct 2020
+                                    {{result.publishDate}}
                                 </li>
                                 <li>
                                     <a href="#">
                                         <i class='bx bx-user'></i>
-                                        Thomas Albany
+                                        {{result.creator}}
                                     </a>
                                 </li>
-                                <li>
-                                    <i class='bx bx-show-alt'></i>
-                                    45 views
-                                </li>
+<!--                                <li>-->
+<!--                                    <i class='bx bx-show-alt'></i>-->
+<!--                                    45 views-->
+<!--                                </li>-->
                             </ul>
 
                             <div class="details-text">
-                                <h2>Our dedicated service to make your pets healthy</h2>
-                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis.</p>
-    
-                                <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice.</p>
+                                <h2>{{result.title}}</h2>
+                                <p>{{result.body}}</p>
 
                                 <div class="content-img">
                                     <div class="row">
@@ -102,10 +100,7 @@
                                     </div>
                                 </div>
  
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
-
-                                <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.</p> 
-                            </div>
+                                </div>
  
 
                         </div>
@@ -186,51 +181,14 @@
                                 </div>
                             </div>
 
-                            <div class="widget widget_categories">
-                                <h3 class="widget-title">Doctors categories</h3>
 
-                                <ul class="bg-f6f4ff">
-                                    <li>
-                                        <i class='bx bx-chevrons-right'></i>
-                                        <a href="#">Rabbit specilist</a>
-                                    </li>
-                                    <li>
-                                        <i class='bx bx-chevrons-right'></i>
-                                        <a href="#">Cat specilist</a>
-                                    </li>
-                                    
-                                    <li>
-                                        <i class='bx bx-chevrons-right'></i>
-                                        <a href="#">Dog specilist</a>
-                                    </li>
-                                    <li>
-                                        <i class='bx bx-chevrons-right'></i>
-                                        <a href="#">Pediatritian</a>
-                                    </li>
-                                    <li>
-                                        <i class='bx bx-chevrons-right'></i>
-                                        <a href="#">Orthopedics surgeon</a>
-                                    </li>
-                                    <li>
-                                        <i class='bx bx-chevrons-right'></i>
-                                        <a href="#">Surgeon, cardiologist</a>
-                                    </li>
-                                </ul>
-                            </div>
 
                             <div class="side-bar-box tags-box">
 		                        <h3 class="title">Tags</h3>
 		                        <ul>
-		                            <li><a href="#">Medical</a></li>
-		                            <li><a href="#">Hospital</a></li>
-		                            <li><a href="#">Corona</a></li>
-		                            <li><a href="#">Surgery</a></li>
-		                            <li><a href="#">Transplant</a></li>
-		                            <li><a href="#">Gloves</a></li>
-		                            <li><a href="#">Health</a></li>
-		                            <li><a href="#">Mask</a></li>
-		                            <li><a href="#">Cancer</a></li>
-		                            <li><a href="#">Virus</a></li>
+
+		                            <li><a href="mask">{{result.category}}</a></li>
+
 		                        </ul>
 		                    </div>
                         </div>

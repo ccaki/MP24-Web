@@ -29,7 +29,11 @@ def blog():
 #blog detail page
 @app.route('/blogdetail')
 def blogdetail():
-    return render_template('blog-details.html')
+    sql = "SELECT * FROM mp24.articles WHERE category = 'mask'"
+    res = db_query(sql)
+    res = res[0]
+    return render_template('blog-details.html',result=res, content_type='application/json')
+
 
 
 #home page
