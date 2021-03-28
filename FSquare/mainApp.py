@@ -60,6 +60,22 @@ def home1():
 #
 #     return render_template('testing.html', result=res, content_type='application/json')
 
+#return transmission page
+@app.route('/transmission')
+def transmission():
+    #return transmission.html
+    sql = "SELECT * FROM mp24.articles WHERE category = 'transmission'"
+    res = db_query(sql)
+    #shorten the body preview
+    #iterate the res list
+    for dic in res:
+    #iterate the dict in the res list
+        for key in dic:
+            if key == "body":
+                dic[key] = dic[key][0:150]
+    return render_template('transmission.html',result=res, content_type='application/json')
+
+
 #returns mask page
 @app.route('/mask')
 def mask():
@@ -79,6 +95,7 @@ def mask():
 def read_more(articlenum):
     results1 = request.args.get('results1', '0-100')
     return articlenum
+
 
 # #vaccine page
 # @app.route('/vaccine')
