@@ -74,6 +74,38 @@ def transmission():
             if key == "body":
                 dic[key] = dic[key][0:150]
     return render_template('transmission.html',result=res, content_type='application/json')
+#read more should be renamed since other page still got rename
+
+
+#return hygiene page
+@app.route('/hygiene')
+def hygiene():
+    #return hygiene.html
+    sql = "SELECT * FROM mp24.articles WHERE category = 'good hygiene'"
+    res = db_query(sql)
+    #shorten the body preview
+    #iterate the res list
+    for dic in res:
+    #iterate the dict in the res list
+        for key in dic:
+            if key == "body":
+                dic[key] = dic[key][0:150]
+    return render_template('hygiene.html',result=res, content_type='application/json')
+
+#return symptom page
+@app.route('/symptom')
+def symptom():
+    #return hygiene.html
+    sql = "SELECT * FROM mp24.articles WHERE category = 'symptom'"
+    res = db_query(sql)
+    #shorten the body preview
+    #iterate the res list
+    for dic in res:
+    #iterate the dict in the res list
+        for key in dic:
+            if key == "body":
+                dic[key] = dic[key][0:150]
+    return render_template('symptom.html',result=res, content_type='application/json')
 
 
 #returns mask page
