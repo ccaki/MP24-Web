@@ -481,7 +481,7 @@ Navbar Area CSS
 
 .main-navbar .navbar .navbar-nav .nav-item a {
   color: #292323;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 500;
   text-transform: capitalize;
   padding-left: 0;
@@ -491,7 +491,7 @@ Navbar Area CSS
 }
 
 .main-navbar .navbar .navbar-nav .nav-item a i {
-  font-size: 23px;
+  font-size: 28px;
   position: relative;
   top: 2px;
   display: inline-block;
@@ -1290,7 +1290,7 @@ Appointment Area CSS
 
 .appointment-area .appointment-img .img-one {
   position: relative;
-  left: 55px;
+  left: 155px;
 }
 
 .appointment-area .appointment-img .img-one img {

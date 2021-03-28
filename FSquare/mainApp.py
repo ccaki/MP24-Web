@@ -31,7 +31,7 @@ def blog():
 def blogdetail():
     sql = "SELECT * FROM mp24.articles WHERE category = 'mask'"
     res = db_query(sql)
-    res = res[0]
+    res = res[1]
     return render_template('blog-details.html',result=res, content_type='application/json')
 
 
