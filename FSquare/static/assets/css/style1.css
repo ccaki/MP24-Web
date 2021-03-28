@@ -481,7 +481,7 @@ Navbar Area CSS
 
 .main-navbar .navbar .navbar-nav .nav-item a {
   color: #292323;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 500;
   text-transform: capitalize;
   padding-left: 0;
@@ -491,7 +491,7 @@ Navbar Area CSS
 }
 
 .main-navbar .navbar .navbar-nav .nav-item a i {
-  font-size: 18px;
+  font-size: 23px;
   position: relative;
   top: 2px;
   display: inline-block;
@@ -545,14 +545,14 @@ Navbar Area CSS
   display: block;
   color: #292323;
   text-transform: capitalize;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .main-navbar .navbar .navbar-nav .nav-item .dropdown-menu li a i {
   margin: 0;
   position: absolute;
   top: 50%;
-  font-size: 20px;
+  font-size: 22px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   right: 15px;
@@ -1294,7 +1294,10 @@ Appointment Area CSS
 }
 
 .appointment-area .appointment-img .img-one img {
+  border: 5px solid #ffffff;
   border-radius: 40px;
+  -webkit-animation: moveBounce 5s linear infinite;
+  animation: moveBounce 5s linear infinite;
 }
 
 .appointment-area .appointment-img .img-two {
@@ -4297,7 +4300,8 @@ Page Banner Area CSS
 }
 
 .page-banner-area.bg-1 {
-  background-image: url("../img/page-bg/page-bg-1.jpg");
+  background-image: url("../img/page-bg/page-bg-5.jpg");
+
 }
 
 .page-banner-area.bg-2 {
@@ -4790,7 +4794,7 @@ Service Details Area
 }
 
 .services-dateils-area .services-details .details-text p {
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 15px;
 }
 

@@ -19,7 +19,7 @@ def db_query(sql):
 #about-us page
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    return render_template('about1.html')
 
 #blog page
 @app.route('/blog')
