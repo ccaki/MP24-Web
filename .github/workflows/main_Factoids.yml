@@ -11,7 +11,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -21,19 +21,15 @@ jobs:
       with:
         python-version: '3.6'
 
-    - name: Install Python dependencies
-      run: |
-        python -m venv env
-        .\env\Scripts\activate
-        pip install -r requirements.txt
-
-    - name: Zip the application files
-      run: Compress-Archive .\* app.zip
+    - name: Build using AppService-Build
+      uses: azure/appservice-build@v2
+      with:
+        platform: python
+        platform-version: '3.6'
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'Factoids'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_b44e8cab7f7d461ea1d3839d8c0d2d9a }}
-        package: '.\app.zip'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_bbfeae7d88c644ffbd7a55cde1c84e42 }}
