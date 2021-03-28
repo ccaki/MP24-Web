@@ -47,8 +47,8 @@
                         <div class="page-content">
                             <h2>Blog Details</h2>
                             <ul>
-                                <li><a href="/">Home</a></li>
-                                <li>Blog Details</li>
+                                <li style="font-size:22px" ><a href="/">Home</a></li>
+                                <li style="font-size:22px">Blog Details</li>
                             </ul>
                         </div>
                     </div>
@@ -69,14 +69,12 @@
 
                             <ul>
                                 <li>
-                                    <i class='bx bx-calendar'></i>
-                                    {{result.publishDate}}
+                                    <i class='bx bx-calendar' style="font-size:16px">{{result.publishDate}}</i>
+
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class='bx bx-user'></i>
-                                        {{result.creator}}
-                                    </a>
+
+                                        <i class='bx bx-user' style="font-size:16px">{{result.creator}}</i>
                                 </li>
 <!--                                <li>-->
 <!--                                    <i class='bx bx-show-alt'></i>-->
@@ -88,7 +86,7 @@
                                 <h2>{{result.title}}</h2>
                                 <p>  </p>
                                 <div class = 'line-breaker'>
-                                    <pre style="font-size:22px;height: auto;max-height: 2000px;overflow: auto;word-break: normal;word-wrap: normal;white-space: pre-wrap;font-family: Arial, Helvetica, sans-serif;">{{result.body}}</pre>
+                                    <pre style="font-size:20px;height: auto;max-height: 2000px;overflow: auto;word-break: normal;word-wrap: normal;white-space: pre-wrap;font-family: Arial, Helvetica, sans-serif;">{{result.body}}</pre>
 
                                 </div>
 
