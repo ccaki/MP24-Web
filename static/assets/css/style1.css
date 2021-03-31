@@ -5108,23 +5108,23 @@ Service Details Area
 }
 
 .services-dateils-area .widget-area .widget_posts_thumb .item .thumb .fullimage.bg1 {
-  background-image: url(../../assets/img/services/service-details-2.jpg);
+  background-image: url(../img/services/service-details-2.jpg);
 }
 
 .services-dateils-area .widget-area .widget_posts_thumb .item .thumb .fullimage.bg2 {
-  background-image: url(../../assets/img/services/service-details-3.jpg);
+  background-image: url(../img/services/service-details-3.jpg);
 }
 
 .services-dateils-area .widget-area .widget_posts_thumb .item .thumb .fullimage.bg3 {
-  background-image: url(../../assets/img/services/service-details-4.jpg);
+  background-image: url(../img/services/service-details-4.jpg);
 }
 
 .services-dateils-area .widget-area .widget_posts_thumb .item .thumb .fullimage.bg4 {
-  background-image: url(../../assets/img/services/service-details-5.jpg);
+  background-image: url(../img/services/service-details-5.jpg);
 }
 
 .services-dateils-area .widget-area .widget_posts_thumb .item .thumb .fullimage.bg5 {
-  background-image: url(../../assets/img/services/service-details-6.jpg);
+  background-image: url(../img/services/service-details-6.jpg);
 }
 
 .services-dateils-area .widget-area .widget_posts_thumb .item .thumb::before, .services-dateils-area .widget-area .widget_posts_thumb .item .thumb::after {
