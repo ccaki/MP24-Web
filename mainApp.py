@@ -50,39 +50,67 @@ def get_detail(category,id):
 @app.route('/maskdetail/<variable>', methods=['GET'])
 def maskdetail(variable):
     res = get_detail('mask',variable)
-    return render_template('blog-details.html',result=res, content_type='application/json')
+
+    #check if there is video in this blog
+    if (res['videoUrl'])!=None:
+        return render_template('blog-details-with-video.html',result=res, content_type='application/json')
+    else:
+        return render_template('blog-details.html',result=res, content_type='application/json')
 
 #hygiene detail page
 @app.route('/hygienedetail/<variable>', methods=['GET'])
 def hygienedetail(variable):
     res = get_detail('good hygiene',variable)
-    return render_template('blog-details.html',result=res, content_type='application/json')
+
+    #check if there is video in this blog
+    if (res['videoUrl'])!=None:
+        return render_template('blog-details-with-video.html',result=res, content_type='application/json')
+    else:
+        return render_template('blog-details.html',result=res, content_type='application/json')
 
 #travel detail page
 @app.route('/traveldetail/<variable>', methods=['GET'])
 def traveldetail(variable):
     res = get_detail('travel restriction',variable)
-    print(res)
-    return render_template('blog-details.html',result=res, content_type='application/json')
+
+    #check if there is video in this blog
+    if (res['videoUrl'])!=None:
+        return render_template('blog-details-with-video.html',result=res, content_type='application/json')
+    else:
+        return render_template('blog-details.html',result=res, content_type='application/json')
 
 #isolation detail page
 @app.route('/isolationdetail/<variable>', methods=['GET'])
 def isolationdetail(variable):
     res = get_detail('isolation',variable)
-    return render_template('blog-details.html',result=res, content_type='application/json')
+
+    #check if there is video in this blog
+    if (res['videoUrl'])!=None:
+        return render_template('blog-details-with-video.html',result=res, content_type='application/json')
+    else:
+        return render_template('blog-details.html',result=res, content_type='application/json')
 
 #transmission detail page
 @app.route('/transmissiondetail/<variable>', methods=['GET'])
 def transmissiondetail(variable):
     res = get_detail('transmission',variable)
-    return render_template('blog-details.html',result=res, content_type='application/json')
+
+    #check if there is video in this blog
+    if (res['videoUrl'])!=None:
+        return render_template('blog-details-with-video.html',result=res, content_type='application/json')
+    else:
+        return render_template('blog-details.html',result=res, content_type='application/json')
 
 #symptom detail page
 @app.route('/symptomdetail/<variable>', methods=['GET'])
 def symptomdetail(variable):
     res = get_detail('symptom',variable)
-    return render_template('blog-details.html',result=res, content_type='application/json')
 
+    #check if there is video in this blog
+    if (res['videoUrl'])!=None:
+        return render_template('blog-details-with-video.html',result=res, content_type='application/json')
+    else:
+        return render_template('blog-details.html',result=res, content_type='application/json')
 
 # #test db connection
 # @app.route('/connection')
