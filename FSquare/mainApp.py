@@ -101,77 +101,37 @@ def symptomdetail(variable):
 #return transmission page
 @app.route('/transmission')
 def transmission():
-    #return transmission.html
     sql = "SELECT * FROM mp24.articles WHERE category = 'transmission'"
     res = db_query(sql)
-    #shorten the body preview
-    #iterate the res list
-    for dic in res:
-    #iterate the dict in the res list
-        for key in dic:
-            if key == "body":
-                dic[key] = dic[key][0:150]
     return render_template('transmission.html',result=res, content_type='application/json')
 
 #return travel restriction page
 @app.route('/travel_restriction')
 def travel_restriction():
-    #return transmission.html
     sql = "SELECT * FROM mp24.articles WHERE category = 'travel restriction'"
     res = db_query(sql)
-    #shorten the body preview
-    #iterate the res list
-    for dic in res:
-    #iterate the dict in the res list
-        for key in dic:
-            if key == "body":
-                dic[key] = dic[key][0:150]
     return render_template('travel.html',result=res, content_type='application/json')
 
 
 #return hygiene page
 @app.route('/good_hygiene')
 def hygiene():
-    #return hygiene.html
     sql = "SELECT * FROM mp24.articles WHERE category = 'good hygiene'"
     res = db_query(sql)
-    #shorten the body preview
-    #iterate the res list
-    for dic in res:
-    #iterate the dict in the res list
-        for key in dic:
-            if key == "body":
-                dic[key] = dic[key][0:150]
     return render_template('hygiene.html',result=res, content_type='application/json')
 
 #return symptom page
 @app.route('/symptom')
 def symptom():
-    #return hygiene.html
     sql = "SELECT * FROM mp24.articles WHERE category = 'symptom'"
     res = db_query(sql)
-    #shorten the body preview
-    #iterate the res list
-    for dic in res:
-    #iterate the dict in the res list
-        for key in dic:
-            if key == "body":
-                dic[key] = dic[key][0:150]
     return render_template('symptom.html',result=res, content_type='application/json')
 
 #return isolation page
 @app.route('/isolation')
 def isolation():
-    #return hygiene.html
     sql = "SELECT * FROM mp24.articles WHERE category = 'isolation'"
     res = db_query(sql)
-    #shorten the body preview
-    #iterate the res list
-    for dic in res:
-    #iterate the dict in the res list
-        for key in dic:
-            if key == "body":
-                dic[key] = dic[key][0:150]
     return render_template('isolation.html',result=res, content_type='application/json')
 
 
@@ -180,13 +140,6 @@ def isolation():
 def mask():
     sql = "SELECT * FROM mp24.articles WHERE category = 'mask'"
     res = db_query(sql)
-    #shorten the body preview
-    #iterate the res list
-    for dic in res:
-    #iterate the dict in the res list
-        for key in dic:
-            if key == "body":
-                dic[key] = dic[key][0:150]
     return render_template('mask.html',result=res, content_type='application/json')
 
 
