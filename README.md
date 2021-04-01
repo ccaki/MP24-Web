@@ -21,11 +21,11 @@ Python modules: pymysql, flask
 
 ### **To run this project:**
 
-After opening the folder, run these two commands at the compiler terminal one by one: "export FLASK_APP=Fsqaure/mainpp.py"(in this command, use "export" on mac and "set" instead on windows) and "flask run".   
+After opening the folder, run these two commands at the compiler terminal one by one: "export FLASK_APP=app.py"(in this command, use "export" on mac and "set" instead on windows) and "flask run".   
 
 If the warning says there's any module needed, just install the module(on mac, it is a  "pip install the_module_name"  command at terminal). If all the previous steps wordked, the compiler terminal would look like this:  
 
-![alt text](https://i.ibb.co/VDnnJqY/7311616471816-pic.jpg)  
+![alt text](https://ibb.co/R3FyPGy)  
 
 Then, click the url and you would see the website running on your browser!  
 
