@@ -25,7 +25,7 @@ After opening the folder, run these two commands at the compiler terminal one by
 
 If the warning says there's any module needed, just install the module(on mac, it is a  "pip install the_module_name"  command at terminal). If all the previous steps wordked, the compiler terminal would look like this:  
 
-![alt text](https://ibb.co/R3FyPGy)  
+![alt text](https://i.ibb.co/BypNjHN/2021-04-01-4-38-06.png)  
 
 Then, click the url and you would see the website running on your browser!  
 
