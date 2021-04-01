@@ -37,7 +37,7 @@ def blog():
 
 #get detailed blog entry from database
 def get_detail(category,id):
-    sql = "SELECT * FROM mp24.articles WHERE category = '"+category+"' AND id = " + id
+    sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"' AND id = " + id
     print(sql)
     res = db_query(sql)
     #get the only element in the res list
@@ -129,14 +129,14 @@ def symptomdetail(variable):
 #return transmission page
 @app.route('/transmission')
 def transmission():
-    sql = "SELECT * FROM mp24.articles WHERE category = 'transmission'"
+    sql = "SELECT * FROM fsquare.articles WHERE category = 'transmission'"
     res = db_query(sql)
     return render_template('transmission.html',result=res, content_type='application/json')
 
 #return travel restriction page
 @app.route('/travel_restriction')
 def travel_restriction():
-    sql = "SELECT * FROM mp24.articles WHERE category = 'travel restriction'"
+    sql = "SELECT * FROM fsquare.articles WHERE category = 'travel restriction'"
     res = db_query(sql)
     return render_template('travel.html',result=res, content_type='application/json')
 
@@ -144,21 +144,21 @@ def travel_restriction():
 #return hygiene page
 @app.route('/good_hygiene')
 def hygiene():
-    sql = "SELECT * FROM mp24.articles WHERE category = 'good hygiene'"
+    sql = "SELECT * FROM fsquare.articles WHERE category = 'good hygiene'"
     res = db_query(sql)
     return render_template('hygiene.html',result=res, content_type='application/json')
 
 #return symptom page
 @app.route('/symptom')
 def symptom():
-    sql = "SELECT * FROM mp24.articles WHERE category = 'symptom'"
+    sql = "SELECT * FROM fsquare.articles WHERE category = 'symptom'"
     res = db_query(sql)
     return render_template('symptom.html',result=res, content_type='application/json')
 
 #return isolation page
 @app.route('/isolation')
 def isolation():
-    sql = "SELECT * FROM mp24.articles WHERE category = 'isolation'"
+    sql = "SELECT * FROM fsquare.articles WHERE category = 'isolation'"
     res = db_query(sql)
     return render_template('isolation.html',result=res, content_type='application/json')
 
@@ -166,7 +166,7 @@ def isolation():
 #returns mask page
 @app.route('/mask')
 def mask():
-    sql = "SELECT * FROM mp24.articles WHERE category = 'mask'"
+    sql = "SELECT * FROM fsquare.articles WHERE category = 'mask'"
     res = db_query(sql)
     return render_template('mask.html',result=res, content_type='application/json')
 
