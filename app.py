@@ -30,10 +30,16 @@ def home1():
 def about():
     return render_template('about1.html')
 
-#blog page
+#precaution page
 @app.route('/precaution')
-def blog():
-    return render_template('blog.html')
+def precaution():
+    return render_template('precaution.html')
+
+#fact page
+@app.route('/fact')
+def fact():
+    return render_template('fact.html')
+
 
 #get detailed blog entry from database
 def get_detail(category,id):
