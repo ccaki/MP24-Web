@@ -59,4 +59,4 @@ jobs:
         with:
           app-name: 'Factoids'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_bf1fe9bd583846e7939f841d2f1e0cca }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_64805dc1843540a6b0c967ab85fa3ba7 }}
