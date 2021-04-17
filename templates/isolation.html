@@ -32,6 +32,16 @@
 
     <title>FSquare: COVID-19 rumours impacts on VIC's elders</title>
 </head>
+<style>
+    .hide {
+        display: none;
+    }
+
+    .b-card-text:hover + .hide {
+        display: block;
+    }
+
+</style>
 
 <body>
 {% include 'nav.html' %}
@@ -70,13 +80,15 @@
                         <!--                                <img src={{item.profileimg}} alt="Shape">-->
                     </a>
                     <div class="b-card-text">
-                        <span>{{item.publishdate}} <a href="/isolationdetail/{{item.id}}"></a></span>
-                        <!--                                <span class="t-right"><i class='bx bx-user'></i> 200K</span>-->
-                        <h3><a href="/isolationdetail/{{item.id}}">{{item.title}}</a></h3>
-                        <pre style="font-size: 16px;overflow: auto;word-break: normal;word-wrap: normal;white-space: pre-wrap;font-family: Arial, Helvetica, sans-serif;">{{item.preview}}</pre>
-                        <script>
 
-                        </script>
+                        <h3 class="articletitle">
+                            <a href="/isolationdetail/{{item.id}}">{{item.title}}</a>
+
+<!--                            <a href="/isolationdetail/{{item.id}}" style="font-style: italic;color: blue; text-decoration: underline;">Read Full</a>-->
+                        </h3>
+<!--                        <pre style="font-size: 16px;overflow: auto;word-break: normal;word-wrap: normal;white-space: pre-wrap;font-family: Arial, Helvetica, sans-serif;">{{item.preview}}</pre>-->
+
+
                         <div class="view-more">
                             <a href="/isolationdetail/{{item.id}}" class="view-more-btn" >
                                 Read more
@@ -84,7 +96,18 @@
                             </a>
                         </div>
                     </div>
+                    <div class="hide" href="/isolationdetail/{{item.id}}" style="margin-right: 20px;margin-left: 20px;">
+                        {{item.description}}
+                    </div>
+
                 </div>
+<!--                <div class="view-more">-->
+<!--                    <a href="/isolationdetail/{{item.id}}" class="view-more-btn" style="margin-left: 20px;margin-top: 20px">-->
+<!--                        Read more-->
+<!--                        <span></span>-->
+<!--                    </a>-->
+<!--                </div>-->
+
             </div>
             {% endfor %}
 
