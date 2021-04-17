@@ -32,7 +32,16 @@
 
     <title>FSquare: COVID-19 rumours impacts on VIC's elders</title>
 </head>
+<style>
+    .hide {
+        display: none;
+    }
 
+    .b-card-text:hover + .hide {
+        display: block;
+    }
+
+</style>
 <body>
 {% include 'nav.html' %}
 
@@ -73,16 +82,19 @@
                         <span>{{item.publishdate}} <a href="/hygienedetail/{{item.id}}"></a></span>
                         <!--                                <span class="t-right"><i class='bx bx-user'></i> 200K</span>-->
                         <h3><a href="/hygienedetail/{{item.id}}">{{item.title}}</a></h3>
-                        <pre style="font-size: 16px;overflow: auto;word-break: normal;word-wrap: normal;white-space: pre-wrap;font-family: Arial, Helvetica, sans-serif;">{{item.preview}}</pre>
+<!--                        <pre style="font-size: 16px;overflow: auto;word-break: normal;word-wrap: normal;white-space: pre-wrap;font-family: Arial, Helvetica, sans-serif;">{{item.preview}}</pre>-->
                         <script>
 
                         </script>
                         <div class="view-more">
                             <a href="/hygienedetail/{{item.id}}" class="view-more-btn" >
-                                Read more
+                                Full details
                                 <span></span>
                             </a>
                         </div>
+                    </div>
+                    <div class="hide"  style="margin-right: 20px;margin-left: 20px;">
+                        {{item.description}}
                     </div>
                 </div>
             </div>
