@@ -56,16 +56,11 @@
                     <ul>
                         <li style="font-size:22px" ><a href="/precaution">Precautions</a></li>
                         <li style="font-size:22px"><a href="/{{result.urlName}}">{{result.category}}</a></li>
-                        <!-- "next-page" Area -->
-                        <div class="np">
-                            <p style="text-align:left;font-size:16px;margin-left: 1%;">
-                                <a  href="/{{result.category}}previous/{{result.id}}" >⇦Previous blog</a>
-                                <span style="float:right;font-size:16px;margin-right: 1%;">
-                                            <a href="/{{result.category}}next/{{result.id}}" >Next blog⇨</a>
-                                        </span>
+                        <div >
+                            <p style="text-align:left;font-size:16px;margin-left: 1%">
+                                <a href="/{{result.category}}previous/{{result.id}}">⇦Previous blog</a>
                             </p>
                         </div>
-                        <!-- End "next-page" Area -->
                     </ul>
                 </div>
             </div>
@@ -73,6 +68,14 @@
     </div>
 </div>
 <!-- End Page Banner Area -->
+
+<!-- "next-page" Area -->
+<div >
+    <p style="text-align:left;font-size:16px;margin-left: 12%">
+        <a href="/{{result.category}}/{{result.id}}">⇦Previous blog</a>
+    </p>
+</div>
+<!-- End "next-page" Area -->
 
 <!-- Services Dateils Area -->
 <div class="services-dateils-area ptb-100">

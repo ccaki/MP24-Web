@@ -40,6 +40,7 @@
         color: #207EF7;
     }
 </style>
+
 <body>
 {% include 'nav.html' %}
 
@@ -57,9 +58,9 @@
                         <li style="font-size:22px" ><a href="/precaution">Precautions</a></li>
                         <li style="font-size:22px"><a href="/{{result.urlName}}">{{result.category}}</a></li>
                         <!-- "next-page" Area -->
-                        <div class="np">
+                        <div >
                             <p style="text-align:left;font-size:16px;margin-left: 1%;">
-                                <a  href="/{{result.category}}previous/{{result.id}}" >⇦Previous blog</a>
+                                <!--                                        <a  href="/{{result.category}}previous/{{result.id}}" >⇦Previous blog</a>-->
                                 <span style="float:right;font-size:16px;margin-right: 1%;">
                                             <a href="/{{result.category}}next/{{result.id}}" >Next blog⇨</a>
                                         </span>
@@ -73,6 +74,12 @@
     </div>
 </div>
 <!-- End Page Banner Area -->
+
+<!-- "next-page" Area -->
+<span style="float:right;font-size:16px;margin-right: 12%">
+            <a href="/{{result.category}}/{{result.id}}">Next blog⇨</a>
+            </span>
+<!-- End "next-page" Area -->
 
 <!-- Services Dateils Area -->
 <div class="services-dateils-area ptb-100">

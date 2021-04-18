@@ -51,72 +51,157 @@ def get_detail(category,id):
     return res
 
 
+#determine if the blog has its previous or next blog of the same kind
+def return_blog_detail(id,category,res):
+    #Check if this is the last blog of this kind
+    sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"' AND id >= "+str(id)
+    #print(sql)
+    bigger = db_query(sql)
+
+    #if this is the only blog of this kind
+    if(len(bigger)==1):
+        sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"'"
+        res = db_query(sql)
+        res = res[0]
+
+        if (res['videoUrl'])!=None:
+            return ('blog-details-with-video-only.html',res)
+        else:
+            return ('blog-details-only.html',res)
+
+    #if this is the last blog of this kind
+    if(len(bigger)<2):
+        sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"'"
+        res = db_query(sql)
+        res = res[0]
+
+        if (res['videoUrl'])!=None:
+            return ('blog-details-with-video-last.html',res)
+        else:
+            return ('blog-details-last.html',res)
+
+    #Check if this is the first blog of this kind
+    sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"' AND id <= "+str(id)
+    smaller = db_query(sql)
+
+    #if this is the first blog of this kind
+    if(len(smaller)<2):
+        sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"'"
+        res = db_query(sql)
+        res = res[0]
+
+        if (res['videoUrl'])!=None:
+            return ('blog-details-with-video-first.html',res)
+        else:
+            return ('blog-details-first.html',res)
+
+    #check if there is video in this blog
+    if (res['videoUrl'])!=None:
+        return ('blog-details-with-video.html',res)
+    else:
+        return ('blog-details.html',res)
 
 #mask detail page
 @app.route('/maskdetail/<variable>', methods=['GET'])
 def maskdetail(variable):
     res = get_detail('mask',variable)
-
-    #check if there is video in this blog
-    if (res['videoUrl'])!=None:
-        return render_template('blog-details-with-video.html',result=res, content_type='application/json')
-    else:
-        return render_template('blog-details.html',result=res, content_type='application/json')
+    id = res['id']
+    category = res['category']
+    output,res = return_blog_detail(id, category,res)
+    return render_template(output,result=res, content_type='application/json')
 
 #hygiene detail page
 @app.route('/hygienedetail/<variable>', methods=['GET'])
 def hygienedetail(variable):
     res = get_detail('good hygiene',variable)
-
-    #check if there is video in this blog
-    if (res['videoUrl'])!=None:
-        return render_template('blog-details-with-video.html',result=res, content_type='application/json')
-    else:
-        return render_template('blog-details.html',result=res, content_type='application/json')
+    id = res['id']
+    category = res['category']
+    output,res = return_blog_detail(id, category,res)
+    return render_template(output,result=res, content_type='application/json')
 
 #travel detail page
 @app.route('/traveldetail/<variable>', methods=['GET'])
 def traveldetail(variable):
-    res = get_detail('travel restriction',variable)
+    res = get_detail('travel',variable)
+    id = res['id']
+    category = res['category']
+    output,res = return_blog_detail(id, category,res)
+    return render_template(output,result=res, content_type='application/json')
 
-    #check if there is video in this blog
-    if (res['videoUrl'])!=None:
-        return render_template('blog-details-with-video.html',result=res, content_type='application/json')
-    else:
-        return render_template('blog-details.html',result=res, content_type='application/json')
 
 #isolation detail page
 @app.route('/isolationdetail/<variable>', methods=['GET'])
 def isolationdetail(variable):
     res = get_detail('isolation',variable)
+    id = res['id']
+    category = res['category']
+    output,res = return_blog_detail(id, category,res)
+    return render_template(output,result=res, content_type='application/json')
 
-    #check if there is video in this blog
-    if (res['videoUrl'])!=None:
-        return render_template('blog-details-with-video.html',result=res, content_type='application/json')
-    else:
-        return render_template('blog-details.html',result=res, content_type='application/json')
+
+
+# #isolation detail page
+# @app.route('/isolationdetail/<variable>', methods=['GET'])
+# def isolationdetail(variable):
+#     res = get_detail('isolation',variable)
+#     id = res['id']
+#     category = res['category']
+#
+#     #Check if this is the last blog of this kind
+#     sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"' AND id >= "+str(variable)
+#     bigger = db_query(sql)
+#
+#     #if this is the last blog of this kind
+#     if(len(bigger)<2):
+#         sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"'"
+#         res = db_query(sql)
+#         res = res[0]
+#
+#         if (res['videoUrl'])!=None:
+#             return render_template('blog-details-with-video-last.html',result=res, content_type='application/json')
+#         else:
+#             return render_template('blog-details-last.html',result=res, content_type='application/json')
+#
+#     #Check if this is the first blog of this kind
+#     sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"' AND id <= "+str(variable)
+#     smaller = db_query(sql)
+#
+#     #if this is the first blog of this kind
+#     if(len(smaller)<2):
+#         sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"'"
+#         res = db_query(sql)
+#         res = res[0]
+#
+#         if (res['videoUrl'])!=None:
+#             return render_template('blog-details-with-video-first.html',result=res, content_type='application/json')
+#         else:
+#             return render_template('blog-details-first.html',result=res, content_type='application/json')
+#
+#
+#     #check if there is video in this blog
+#     if (res['videoUrl'])!=None:
+#         return render_template('blog-details-with-video.html',result=res, content_type='application/json')
+#     else:
+#         return render_template('blog-details.html',result=res, content_type='application/json')
+#
 
 #transmission detail page
 @app.route('/transmissiondetail/<variable>', methods=['GET'])
 def transmissiondetail(variable):
     res = get_detail('transmission',variable)
-
-    #check if there is video in this blog
-    if (res['videoUrl'])!=None:
-        return render_template('blog-details-with-video.html',result=res, content_type='application/json')
-    else:
-        return render_template('blog-details.html',result=res, content_type='application/json')
+    id = res['id']
+    category = res['category']
+    output,res = return_blog_detail(id, category,res)
+    return render_template(output,result=res, content_type='application/json')
 
 #symptom detail page
 @app.route('/symptomdetail/<variable>', methods=['GET'])
 def symptomdetail(variable):
     res = get_detail('symptom',variable)
-
-    #check if there is video in this blog
-    if (res['videoUrl'])!=None:
-        return render_template('blog-details-with-video.html',result=res, content_type='application/json')
-    else:
-        return render_template('blog-details.html',result=res, content_type='application/json')
+    id = res['id']
+    category = res['category']
+    output,res = return_blog_detail(id, category,res)
+    return render_template(output,result=res, content_type='application/json')
 
 # #test db connection
 # @app.route('/connection')
@@ -176,7 +261,57 @@ def mask():
     res = db_query(sql)
     return render_template('mask.html',result=res, content_type='application/json')
 
+#returns next article page
+@app.route('/<category>next/<id>', methods=['GET'])
+def next(category, id):
+    #print('called')
+    sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"' AND id > " + str(id)
+    res = db_query(sql)
+    print(res)
+    #if this is the last blog of this kind
+    if(len(res)==1):
+        res = res[0]
+        #print('this is the last one')
+        if (res['videoUrl'])!=None:
+            return render_template('blog-details-with-video-last.html',result=res, content_type='application/json')
+        else:
+            return render_template('blog-details-last.html',result=res, content_type='application/json')
+    #if having more than one next, just return the first one of them
+    if(len(res)!=1):
+        res = res[0]
+    #check if there is video in this blog
+    if (res['videoUrl'])!=None:
+        return render_template('blog-details-with-video.html',result=res, content_type='application/json')
+    else:
+        return render_template('blog-details.html',result=res, content_type='application/json')
 
+
+
+#returns previous article page
+@app.route('/<category>previous/<id>', methods=['GET'])
+def previous( category,id):
+    print('called previous')
+    sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"' AND id < " + str(id)
+    res = db_query(sql)
+
+    #if this is the first blog of this kind
+    if(len(res)==1):
+        res = res[0]
+
+        if (res['videoUrl'])!=None:
+            return render_template('blog-details-with-video-first.html',result=res, content_type='application/json')
+        else:
+            return render_template('blog-details-first.html',result=res, content_type='application/json')
+
+    #if having more than one previous, just return the first one of them
+    if(len(res)>1):
+        res = res[-1]
+
+    #check if there is video in this blog
+    if (res['videoUrl'])!=None:
+        return render_template('blog-details-with-video.html',result=res, content_type='application/json')
+    else:
+        return render_template('blog-details.html',result=res, content_type='application/json')
 
 # #vaccine page
 # @app.route('/vaccine')

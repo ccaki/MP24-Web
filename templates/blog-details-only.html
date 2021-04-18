@@ -56,16 +56,7 @@
                     <ul>
                         <li style="font-size:22px" ><a href="/precaution">Precautions</a></li>
                         <li style="font-size:22px"><a href="/{{result.urlName}}">{{result.category}}</a></li>
-                        <!-- "next-page" Area -->
-                        <div class="np">
-                            <p style="text-align:left;font-size:16px;margin-left: 1%;">
-                                <a  href="/{{result.category}}previous/{{result.id}}" >⇦Previous blog</a>
-                                <span style="float:right;font-size:16px;margin-right: 1%;">
-                                            <a href="/{{result.category}}next/{{result.id}}" >Next blog⇨</a>
-                                        </span>
-                            </p>
-                        </div>
-                        <!-- End "next-page" Area -->
+
                     </ul>
                 </div>
             </div>
@@ -102,7 +93,6 @@
                     <div class="details-text">
                         <h2>{{result.title}}</h2>
                         <span>  </span>
-                        <iframe width="560" height="315" src="{{result.videoUrl}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                         <div class = 'line-breaker'>
                             <pre style="font-size:20px;height: auto;max-height: 2000px;overflow: auto;word-break: normal;word-wrap: normal;white-space: pre-wrap;font-family: Arial, Helvetica, sans-serif;">{{result.body}}</pre>
