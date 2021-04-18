@@ -23,6 +23,10 @@ def home():
 def home1():
     return render_template('index.html')
 
+#vaccine page
+@app.route('/vaccine')
+def vaccine():
+    return render_template('vaccines.html')
 
 
 #about-us page

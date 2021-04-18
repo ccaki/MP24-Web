@@ -1,0 +1,43 @@
+#timeline{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left:30px;
+    top: 180px;
+
+}
+#textout{
+    position: static;
+    width:50px;
+    float: left;
+    height: 100%;
+    margin-left: 20px;
+    padding-top:10px;
+    cursor:pointer;
+}
+#lineout{
+    position: static;
+    width:4px;
+    height: 100%;
+    float: left;
+    margin-left: 12px;
+
+}
+.line{
+    width: 4px;
+    height: 50px;
+    background: #ccc;
+
+}
+.text{
+    width: 35px;
+    height: 50px;
+}
+#vaccine-timeline-picture{
+    width: 600px;
+    height: 500px;
+    margin-top: 50px;
+    margin-left:auto ;
+    margin-right:auto;
+
+}

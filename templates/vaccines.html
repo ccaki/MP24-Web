@@ -1,0 +1,188 @@
+﻿<!doctype html>
+<html lang="zxx">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/assets/css/bootstrap.min.css">
+    <!-- Boxican Css -->
+    <link rel="stylesheet" href="../static/assets/css/boxicons.min.css">
+    <!-- Meanmenu CSS -->
+    <link rel="stylesheet" href="../static/assets/css/meanmenu.min.css">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="../static/assets/css/nice-select.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="../static/assets/css/animate.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="../static/assets/css/owl.carousel.min.css">
+    <!-- Owl Theme CSS -->
+    <link rel="stylesheet" href="../static/assets/css/owl.theme.default.min.css">
+    <!-- Magnific CSS -->
+    <link rel="stylesheet" href="../static/assets/css/magnific-popup.min.css">
+    <!-- Jquery Datetimepicker CSS -->
+    <link rel="stylesheet" href="../static/assets/css/jquery.datetimepicker.min.css" />
+    <!-- Styleshet CSS -->
+    <link rel="stylesheet" href="../static/assets/css/style1.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="../static/assets/css/responsive.css">
+    <!-- Favican -->
+    <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
+    <!--11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->
+    <link rel="stylesheet" href="../static/assets/css/vaccine-timeline.css">
+    <!--11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->
+
+    <title>FSquare: COVID-19 rumours impacts on Victorian seniors</title>
+
+</head>
+
+
+<body>
+
+{% include 'nav.html' %}
+
+{% block navi %}
+{% endblock %}
+</header>
+<!-- End Heder Area -->
+
+
+<!-- Services Area -->
+<div class="services-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title-one">
+            <h2>Discover Covid-19 Vaccines</h2>
+        </div>
+
+
+        <div id="timeline">
+            <div id="textout">
+                <div class="text" onmousemove="movecolor(1)" onmouseout="outcolor(1)">Vaccine</div>
+                <div class="text" onmousemove="movecolor(2)" onmouseout="outcolor(2)">Test2</div>
+                <div class="text" onmousemove="movecolor(3)" onmouseout="outcolor(3)">Sanitizer</div>
+            </div>
+            <div id="lineout">
+                <div class="line" id="l1" onmousemove="movecolor(1)" onmouseout="outcolor(1)"></div>
+                <div class="line" id="l2" onmousemove="movecolor(2)" onmouseout="outcolor(2)"></div>
+                <div class="line" id="l3" onmousemove="movecolor(3)" onmouseout="outcolor(3)"></div>
+            </div>
+        </div>
+
+        <div id="vaccine-timeline-picture"><img id="backgroundimg" src="../static/assets/img/blog/blog-1.jpg" alt="This should be a picture"></div>
+
+        <script type="text/javascript">
+            function movecolor(num){
+                document.getElementById("l"+num).style.background = "#98E0FA" ;
+                document.getElementById("backgroundimg").src="../static/assets/img/blog/blog-"+num+".jpg";
+            }
+            function outcolor(num){
+                document.getElementById("l"+num).style.background = "#ccc" ;
+            }
+        </script>
+
+
+
+
+      <!--  <div class="row">
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-card">
+                    <i class='bx bx-home main-icon'></i>
+                    <h3><a href="/isolation" style="color:black">Isolation</a></h3>
+
+                    <div class="view-more">
+                        <a href="/isolation">
+                            View Details
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-card">
+                    <i class='bx bx-droplet main-icon'></i>
+                    <h3><a href="/good_hygiene" style="color:black">Hygiene</a></h3>
+
+                    <div class="view-more">
+                        <a href="/good_hygiene">
+                            View Details
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-card">
+                    <i class='bx bx-face main-icon'></i>
+                    <h3><a href="/mask" style="color:black">Mask</a></h3>
+
+                    <div class="view-more">
+                        <a href="/mask">
+                            View Details
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>-->
+
+
+            <!--            <div class="col-lg-4 col-sm-6">
+                            <div class="service-card">
+                                <i class='bx bx-home main-icon'></i>
+                                <h3>Do I need to stock toliet paper? </h3>
+                                <p>balabala</p>
+                                <div class="view-more">
+                                    <a href="#">
+                                        View More
+                                        <i class='bx bx-right-arrow-alt'></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div> -->
+        </div>
+    </div>
+</div>
+<!-- End Services Area -->
+
+{% include 'footer.html' %}
+
+{% block foot %}
+{% endblock %}
+<!-- Go Top -->
+<div class="go-top">
+    <i class='bx bxs-upvote'></i>
+</div>
+<!-- End Go Top -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../static/assets/js/jquery.min.js"></script>
+<script src="../static/assets/js/popper.min.js"></script>
+<script src="../static/assets/js/bootstrap.min.js"></script>
+<!-- Magnific -->
+<script src="../static/assets/js/jquery.magnific-popup.min.js"></script>
+<!-- Meanmenu JS -->
+<script src="../static/assets/js/meanmenu.min.js"></script>
+<!-- Nice Select JS -->
+<script src="../static/assets/js/jquery.nice-select.min.js"></script>
+<!-- Owl Carousel JS -->
+<script src="../static/assets/js/owl.carousel.min.js"></script>
+<!-- Jquery Mixitup JS -->
+<script src="../static/assets/js/jquery.mixitup.min.js"></script>
+<!-- Jquery Datetimepicker JS -->
+<script src="../static/assets/js/jquery.datetimepicker.full.min.js"></script>
+<!-- Form Validator JS -->
+<script src="../static/assets/js/form-validator.min.js"></script>
+<!-- Contact JS -->
+<script src="../static/assets/js/contact-form-script.js"></script>
+<!-- Ajaxchimp JS -->
+<script src="../static/assets/js/jquery.ajaxchimp.min.js"></script>
+<!-- Custom JS -->
+<script src="../static/assets/js/custom.js"></script>
+</body>
+</html>
