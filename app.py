@@ -122,7 +122,7 @@ def hygienedetail(variable):
 #travel detail page
 @app.route('/traveldetail/<variable>', methods=['GET'])
 def traveldetail(variable):
-    res = get_detail('travel',variable)
+    res = get_detail('travel restriction',variable)
     id = res['id']
     category = res['category']
     output,res = return_blog_detail(id, category,res)
