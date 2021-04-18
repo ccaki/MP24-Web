@@ -320,6 +320,6 @@ def previous( category,id):
 #     return render_template('vaccine.html',result=res, content_type='application/json')
 
 #test page
-# @app.route('/test')
-# def test():
-#     return render_template('test.html', content_type='application/json')
+@app.route('/test')
+def test():
+    return render_template('testing.html', content_type='application/json')
