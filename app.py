@@ -329,7 +329,12 @@ def vaccine():
     res = db_query(sql)
     return render_template('vaccine.html',result=res, content_type='application/json')
 
-# #test page
-# @app.route('/test')
-# def test():
-#     return render_template('testing.html', content_type='application/json')
+#test page
+@app.route('/test')
+def test():
+    return render_template('testing.html', content_type='application/json')
+
+#test page
+@app.route('/timeline')
+def timeline():
+    return render_template('timeline.html', content_type='application/json')
