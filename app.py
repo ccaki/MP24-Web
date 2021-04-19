@@ -203,6 +203,15 @@ def symptomdetail(variable):
     output,res = return_blog_detail(id, category,res)
     return render_template(output,result=res, content_type='application/json')
 
+#vaccine detail page
+@app.route('/vaccinedetail/<variable>', methods=['GET'])
+def vaccinedetail(variable):
+    res = get_detail('vaccine',variable)
+    id = res['id']
+    category = res['category']
+    output,res = return_blog_detail(id, category,res)
+    return render_template(output,result=res, content_type='application/json')
+
 # #test db connection
 # @app.route('/connection')
 # def connection():
@@ -316,7 +325,9 @@ def previous( category,id):
 #vaccine page
 @app.route('/vaccine')
 def vaccine():
-    return render_template('vaccine.html',content_type='application/json')
+    sql = "SELECT * FROM fsquare.articles WHERE category = 'vaccine'"
+    res = db_query(sql)
+    return render_template('vaccine.html',result=res, content_type='application/json')
 
 # #test page
 # @app.route('/test')

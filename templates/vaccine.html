@@ -29,24 +29,44 @@
     <link rel="stylesheet" href="../static/assets/css/responsive.css">
     <!-- Favican -->
     <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
-    <!--11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->
     <link rel="stylesheet" href="../static/assets/css/vaccine-timeline.css">
-    <!--11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->
 
-    <title>FSquare: COVID-19 rumours impacts on Victorian seniors</title>
-
+    <title>FSquare: COVID-19 rumours impacts on VIC's elders</title>
 </head>
+<style>
+    .hide {
+        display: none;
+    }
 
+    .b-card-text:hover + .hide {
+        display: block;
+    }
 
+</style>
 <body>
-
 {% include 'nav.html' %}
 
 {% block navi %}
 {% endblock %}
-</header>
-<!-- End Heder Area -->
 
+
+<!-- Page Banner Area -->
+<div class="page-banner-area bg-2">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-content">
+                    <h2>Vaccine</h2>
+                    <ul>
+
+                        <li style="font-size:22px"><a href="/vaccine">Vaccine</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Banner Area -->
 
 <!-- Services Area -->
 <div class="services-area pt-100 pb-70">
@@ -149,10 +169,71 @@
 </div>
 <!-- End Services Area -->
 
+<!-- Blog Area -->
+<div class="blog-area blog-area-two ptb-100">
+    <div class="container">
+        <div class="row">
+
+            {% for item in result %}
+            <div class="col-lg-4 col-md-6">
+                <div class="blog-card">
+                    <a href="blog-details.html">
+                        <!--                                <img src={{item.profileimg}} alt="Shape">-->
+                    </a>
+                    <div class="b-card-text">
+                        <span>{{item.publishdate}} <a href="/vaccinedetail/{{item.id}}"></a></span>
+                        <!--                                <span class="t-right"><i class='bx bx-user'></i> 200K</span>-->
+                        <h3><a href="/vaccinedetail/{{item.id}}">{{item.title}}</a></h3>
+                        <!--                        <pre style="font-size: 16px;overflow: auto;word-break: normal;word-wrap: normal;white-space: pre-wrap;font-family: Arial, Helvetica, sans-serif;">{{item.preview}}</pre>-->
+                        <script>
+
+                        </script>
+                        <div class="view-more">
+                            <a href="/vaccinedetail/{{item.id}}" class="view-more-btn" >
+                                Full details
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hide"  style="margin-right: 20px;margin-left: 20px;">
+                        {{item.description}}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+
+            <!-- Pagination -->
+            <!--                    <div class="col-lg-12 col-md-12">-->
+            <!--                        <ul class="pagination">-->
+            <!--                            <li class="page-item">-->
+            <!--                                <a class="page-link" href="#" aria-label="Previous">-->
+            <!--                                    <span aria-hidden="true">&laquo;</span>-->
+            <!--                                </a>-->
+            <!--                            </li>-->
+            <!--                            <li class="page-item active"><a class="page-link" href="#">1</a></li>-->
+            <!--                            <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+            <!--                            <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+            <!--                            <li class="page-item">-->
+            <!--                                <a class="page-link" href="#" aria-label="Next">-->
+            <!--                                    <span aria-hidden="true">&raquo;</span>-->
+            <!--                                </a>-->
+            <!--                            </li>-->
+            <!--                        </ul>-->
+            <!--                    </div>-->
+        </div>
+
+        <div class="flourish-embed flourish-map" data-src="visualisation/5897584"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+    </div>
+</div>
+<!-- End Blog Area -->
+
 {% include 'footer.html' %}
 
 {% block foot %}
 {% endblock %}
+
 <!-- Go Top -->
 <div class="go-top">
     <i class='bx bxs-upvote'></i>
@@ -161,6 +242,7 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="../static/assets/js/jquery.min.js"></script>
 <script src="../static/assets/js/popper.min.js"></script>
 <script src="../static/assets/js/bootstrap.min.js"></script>
