@@ -313,11 +313,10 @@ def previous( category,id):
     else:
         return render_template('blog-details.html',result=res, content_type='application/json')
 
-# #vaccine page
-# @app.route('/vaccine')
-# def vaccine():
-#     res = db_query('articles')
-#     return render_template('vaccine.html',result=res, content_type='application/json')
+#vaccine page
+@app.route('/vaccine')
+def vaccine():
+    return render_template('vaccine.html',content_type='application/json')
 
 # #test page
 # @app.route('/test')
