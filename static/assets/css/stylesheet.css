@@ -3,11 +3,11 @@ body { background-color: #fafafa; }
 h1 { text-align: center; margin: 150px auto 30px auto; }
 
 .carouse-wrapper {
-  max-height: 300px;
+  max-height: 360px;
 }
 
 .carousel {
-  height: 300px;
+  height: 360px;
   margin: 0 auto;
   position: relative;
   max-width: 88%;
