@@ -30,6 +30,7 @@
         <!-- Favican -->
         <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
         <link rel="stylesheet" href="../static/assets/css/stylesheet.css">
+        <link rel="stylesheet" href="../static/assets/css/vaccine-timeline.css">
 
         <title>FSquare: COVID-19 rumours impacts on VIC's elders</title>
 
@@ -55,7 +56,20 @@
                     </button>
                     <div class="carousel__track-container">
                         <ul id="track" class="carousel__track" >
-                            <li class="carousel__slide current-slide" >
+                            <li class="carousel__slide  current-slide">
+                                <img class="carousel__image" src="../static/assets/img/travel.jpg" alt="">
+                                <div style="color:#262020;text-shadow:   1px 1px 0 #ffffff;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
+                                    <p style="font-size:40px;">Discover Factoids</p>
+<!--                                    <p style="font-size:20px;">Always clearly understand restriction when you are travelling.</p>-->
+                                    <div class="about-btn">
+                                        <a href="/#tutorial" class="default-btn">
+                                            Start journey <span></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="carousel__slide" >
                                 <img class="carousel__image" src="../static/assets/img/vaccine.jpg" alt="">
                                 <div style="color:#262020;text-shadow:   1px 1px 0 #ffffff;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
                                     <p style="font-size:40px;">Vaccines</p>
@@ -86,6 +100,7 @@
 
                             </li>
 
+
                         </ul>
                     </div>
                     <button id="carouselNextSlideButton" class="carousel__button carousel__button--right">
@@ -96,10 +111,12 @@
                         <button class="carousel__indicator"></button>
                         <button class="carousel__indicator"></button>
                         <button class="carousel__indicator"></button>
-<!--                        <button class="carousel__indicator"></button>-->
+                        <button class="carousel__indicator"></button>
                     </div>
                 </div>
             </div>
+
+
 
 
             <div class="container" style="margin-top:40px">
@@ -235,7 +252,47 @@
                     </div>
                 </div>
             </div>
-        </div>
+
+
+
+            <div class="container">
+                <div class="section-title-one">
+                    <section id="tutorial"><h2>
+
+
+
+                        Discover Factoids
+
+                    </h2></section>
+                </div>
+
+
+                <div id="timeline">
+                    <div id="textout">
+                        <div class="text" onmousemove="movecolor(1)" onmouseout="outcolor(1)">Vaccine</div>
+                        <div class="text" onmousemove="movecolor(2)" onmouseout="outcolor(2)">Test2</div>
+                        <div class="text" onmousemove="movecolor(3)" onmouseout="outcolor(3)">Sanitizer</div>
+                    </div>
+                    <div id="lineout">
+                        <div class="line" id="l1" onmousemove="movecolor(1)" onmouseout="outcolor(1)"></div>
+                        <div class="line" id="l2" onmousemove="movecolor(2)" onmouseout="outcolor(2)"></div>
+                        <div class="line" id="l3" onmousemove="movecolor(3)" onmouseout="outcolor(3)"></div>
+                    </div>
+                </div>
+                <div id="vaccine-timeline-picture"><img id="backgroundimg" src="../static/assets/img/blog/blog-1.jpg" alt="This should be a picture"></div>
+
+                <script type="text/javascript">
+                    function movecolor(num){
+                        document.getElementById("l"+num).style.background = "#98E0FA" ;
+                        document.getElementById("backgroundimg").src="../static/assets/img/blog/blog-"+num+".jpg";
+                    }
+                    function outcolor(num){
+                        document.getElementById("l"+num).style.background = "#ccc" ;
+                    }
+                </script>
+
+            </div>
+
 <!--        &lt;!&ndash; End Appointment Area &ndash;&gt;-->
 
 <!--        &lt;!&ndash; Services Area &ndash;&gt;-->
