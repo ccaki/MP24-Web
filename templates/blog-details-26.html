@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="zxx">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/assets/css/bootstrap.min.css">
+    <!-- Boxican Css -->
+    <link rel="stylesheet" href="../static/assets/css/boxicons.min.css">
+    <!-- Meanmenu CSS -->
+    <link rel="stylesheet" href="../static/assets/css/meanmenu.min.css">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="../static/assets/css/nice-select.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="../static/assets/css/animate.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="../static/assets/css/owl.carousel.min.css">
+    <!-- Owl Theme CSS -->
+    <link rel="stylesheet" href="../static/assets/css/owl.theme.default.min.css">
+    <!-- Magnific CSS -->
+    <link rel="stylesheet" href="../static/assets/css/magnific-popup.min.css">
+    <!-- Jquery Datetimepicker CSS -->
+    <link rel="stylesheet" href="../static/assets/css/jquery.datetimepicker.min.css" />
+    <!-- Styleshet CSS -->
+    <link rel="stylesheet" href="../static/assets/css/style1.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="../static/assets/css/responsive.css">
+    <!-- Favican -->
+    <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
+
+    <title>Blog Details</title>
+</head>
+<style>
+    a {
+        color:white;
+    }
+    a:hover {
+        color: #207EF7;
+    }
+</style>
+<body>
+{% include 'nav.html' %}
+
+{% block navi %}
+{% endblock %}
+
+<!-- Page Banner Area -->
+<div class="page-banner-area bg-4">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-content">
+                    <h2>Blog Details</h2>
+                    <ul>
+                        <li style="font-size:22px" ><a href="/precaution">Precautions</a></li>
+                        <li style="font-size:22px"><a href="/{{result.urlName}}">{{result.category}}</a></li>
+                        <!-- "next-page" Area -->
+                        <div class="np">
+                            <p style="text-align:left;font-size:16px;margin-left: 1%;">
+                                <a  href="/{{result.category}}previous/{{result.id}}" >⇦Previous blog</a>
+                                <span style="float:right;font-size:16px;margin-right: 1%;">
+                                            <a href="/{{result.category}}next/{{result.id}}" >Next blog⇨</a>
+                                        </span>
+                            </p>
+                        </div>
+                        <!-- End "next-page" Area -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Banner Area -->
+
+<!-- Services Dateils Area -->
+<div class="services-dateils-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="services-details">
+                    <!--                            <div class="header-img">-->
+                    <!--                                <img src="../static/assets/img/blog/blog-details-1.jpg" alt="Image">-->
+                    <!--                            </div>-->
+
+                    <ul>
+                        <li>
+                            <i class='bx bx-calendar' style="font-size:16px">{{result.publishDate}}</i>
+
+                        </li>
+                        <li>
+
+                            <i class='bx bx-user' style="font-size:16px">{{result.creator}}</i>
+                        </li>
+                        <!--                                <li>-->
+                        <!--                                    <i class='bx bx-show-alt'></i>-->
+                        <!--                                    45 views-->
+                        <!--                                </li>-->
+                    </ul>
+
+                    <div class="details-text">
+                        <h2>{{result.title}}</h2>
+                        <span>  </span>
+                        <iframe width="560" height="315" src="{{result.videoUrl}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+                        <!--                                <div class="content-img">-->
+                        <!--                                    <div class="row">-->
+                        <!--                                        <div class="col-lg-6 col-sm-6">-->
+                        <!--                                            <img src="../static/assets/img/blog/blog-3.jpg" alt="Image">-->
+                        <!--                                        </div>-->
+
+                        <!--                                        <div class="col-lg-6 col-sm-6">-->
+                        <!--                                            <img src="../static/assets/img/blog/blog-2.jpg" alt="Image">-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+
+                    </div>
+                    <br></br>
+                    <h5>Take a look at this useful brochure made by the Australian government!</h5>
+                    <object data="../static/assets/vaccine-26.pdf" type="application/pdf" width="100%" height="800px">
+                    </object>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <div class="widget-area">
+                    <!--                            <div class="widget widget_search">-->
+                    <!--                                <h3 class="widget-title">Search</h3>-->
+
+                    <!--                                <form class="search-form">-->
+                    <!--                                    <input type="search" class="search-field" placeholder="Search...">-->
+                    <!--                                    <button type="submit"><i class='bx bx-search'></i></button>-->
+                    <!--                                </form>-->
+                    <!--                            </div>-->
+
+                    <div class="widget widget_posts_thumb">
+                        <!--                                <h3 class="widget-title">Latest news</h3>-->
+
+                        <!--                                <div class="item">-->
+                        <!--                                    <a href="#" class="thumb">-->
+                        <!--                                        <span class="fullimage cover bg1" role="img"></span>-->
+                        <!--                                    </a>-->
+                        <!--                                    <div class="info">-->
+                        <!--                                        <h4 class="title"><a href="#">You can easily connect to a doctor and make a treatment</a></h4>-->
+                        <!--                                        <span>07 Oct 2020</span>-->
+                        <!--                                    </div>-->
+
+                        <!--                                    <div class="clear"></div>-->
+                        <!--                                </div>-->
+
+                        <!--                                <div class="item">-->
+                        <!--                                    <a href="#" class="thumb">-->
+                        <!--                                        <span class="fullimage cover bg2" role="img"></span>-->
+                        <!--                                    </a>-->
+                        <!--                                    <div class="info">-->
+                        <!--                                        <h4 class="title"><a href="#">Lockdowns lead to fewer people seeking medical care</a></h4>-->
+                        <!--                                        <span>08 Oct 2020</span>-->
+                        <!--                                    </div>-->
+
+                        <!--                                    <div class="clear"></div>-->
+                        <!--                                </div>-->
+
+                        <!--                                <div class="item">-->
+                        <!--                                    <a href="#" class="thumb">-->
+                        <!--                                        <span class="fullimage cover bg3" role="img"></span>-->
+                        <!--                                    </a>-->
+                        <!--                                    <div class="info">-->
+                        <!--                                        <h4 class="title"><a href="#">Emergency medicine research course for the doctors</a></h4>-->
+                        <!--                                        <span>09 Oct 2020</span>-->
+                        <!--                                    </div>-->
+
+                        <!--                                    <div class="clear"></div>-->
+                        <!--                                </div>-->
+
+                        <!--                                <div class="item">-->
+                        <!--                                    <a href="#" class="thumb">-->
+                        <!--                                        <span class="fullimage cover bg4" role="img"></span>-->
+                        <!--                                    </a>-->
+                        <!--                                    <div class="info">-->
+                        <!--                                        <h4 class="title"><a href="#">How to choose the specialist list in massage</a></h4>-->
+                        <!--                                        <span>10 Oct 2020</span>-->
+                        <!--                                    </div>-->
+
+                        <!--                                    <div class="clear"></div>-->
+                        <!--                                </div>-->
+
+                        <!--                                <div class="item">-->
+                        <!--                                    <a href="#" class="thumb">-->
+                        <!--                                        <span class="fullimage cover bg5" role="img"></span>-->
+                        <!--                                    </a>-->
+                        <!--                                    <div class="info">-->
+                        <!--                                        <h4 class="title"><a href="#">The ten worst hospital design features</a></h4>-->
+                        <!--                                        <span>11 Oct 2020</span>-->
+                        <!--                                    </div>-->
+
+                        <!--                                    <div class="clear"></div>-->
+                        <!--                                </div>-->
+                    </div>
+
+
+
+                    <div class="side-bar-box tags-box">
+                        <h3 class="title">Tags</h3>
+                        <ul>
+
+                            <li><a href="/{{result.urlName}}">{{result.category}}</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Services Dateils Area -->
+
+{% include 'footer.html' %}
+
+{% block foot %}
+{% endblock %}
+
+<!-- Go Top -->
+<div class="go-top">
+    <i class='bx bxs-upvote'></i>
+</div>
+<!-- End Go Top -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../static/assets/js/jquery.min.js"></script>
+<script src="../static/assets/js/popper.min.js"></script>
+<script src="../static/assets/js/bootstrap.min.js"></script>
+<!-- Magnific -->
+<script src="../static/assets/js/jquery.magnific-popup.min.js"></script>
+<!-- Meanmenu JS -->
+<script src="../static/assets/js/meanmenu.min.js"></script>
+<!-- Nice Select JS -->
+<script src="../static/assets/js/jquery.nice-select.min.js"></script>
+<!-- Owl Carousel JS -->
+<script src="../static/assets/js/owl.carousel.min.js"></script>
+<!-- Jquery Mixitup JS -->
+<script src="../static/assets/js/jquery.mixitup.min.js"></script>
+<!-- Jquery Datetimepicker JS -->
+<script src="../static/assets/js/jquery.datetimepicker.full.min.js"></script>
+<!-- Form Validator JS -->
+<script src="../static/assets/js/form-validator.min.js"></script>
+<!-- Contact JS -->
+<script src="../static/assets/js/contact-form-script.js"></script>
+<!-- Ajaxchimp JS -->
+<script src="../static/assets/js/jquery.ajaxchimp.min.js"></script>
+<!-- Custom JS -->
+<script src="../static/assets/js/custom.js"></script>
+</body>
+</html>

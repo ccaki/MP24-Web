@@ -206,6 +206,12 @@ def symptomdetail(variable):
 #vaccine detail page
 @app.route('/vaccinedetail/<variable>', methods=['GET'])
 def vaccinedetail(variable):
+    # for the only one special article
+    if (str(variable)=='26'):
+        sql = "SELECT * FROM fsquare.articles WHERE category = 'vaccine' AND id = " + '26'
+        res = db_query(sql)
+        res=res[0]
+        return render_template('blog-details-26.html', result=res, content_type='application/js')
     res = get_detail('vaccine',variable)
     id = res['id']
     category = res['category']
@@ -273,10 +279,15 @@ def mask():
 #returns next article page
 @app.route('/<category>next/<id>', methods=['GET'])
 def next(category, id):
-    #print('called')
     sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"' AND id > " + str(id)
     res = db_query(sql)
-    print(res)
+    # for the only one special article
+    if (str(res[0]['id'])=='26' and res[0]['category']=='vaccine'):
+        sql = "SELECT * FROM fsquare.articles WHERE category = 'vaccine' AND id = " + '26'
+        res = db_query(sql)
+        res=res[0]
+        return render_template('blog-details-26.html', result=res, content_type='application/js')
+
     #if this is the last blog of this kind
     if(len(res)==1):
         res = res[0]
@@ -299,10 +310,14 @@ def next(category, id):
 #returns previous article page
 @app.route('/<category>previous/<id>', methods=['GET'])
 def previous( category,id):
-    print('called previous')
     sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"' AND id < " + str(id)
     res = db_query(sql)
-
+    # for the only one special article
+    if (str(res[-1]['id'])=='26' and res[0]['category']=='vaccine'):
+        sql = "SELECT * FROM fsquare.articles WHERE category = 'vaccine' AND id = " + '26'
+        res = db_query(sql)
+        res=res[0]
+        return render_template('blog-details-26.html', result=res, content_type='application/js')
     #if this is the first blog of this kind
     if(len(res)==1):
         res = res[0]
@@ -338,3 +353,11 @@ def test():
 @app.route('/timeline')
 def timeline():
     return render_template('timeline.html', content_type='application/json')
+
+#test page
+# @app.route('/26')
+# def t():
+#     sql = "SELECT * FROM fsquare.articles WHERE category = 'vaccine' AND id = " + '26'
+#     res = db_query(sql)
+#     res=res[0]
+#     return render_template('blog-details-26.html', result=res, content_type='application/js')
