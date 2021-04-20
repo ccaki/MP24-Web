@@ -6,7 +6,9 @@ from dbConnection import Database
 
 app = Flask(__name__)
 db = Database()
-
+# @app.route('/')
+# def home():
+#     return app.send_static_file('templates/Covax/about.html')
 
 def db_query(sql):
     rs = db.get_from_table(sql)
@@ -336,8 +338,3 @@ def test():
 @app.route('/timeline')
 def timeline():
     return render_template('timeline.html', content_type='application/json')
-
-# #test page
-# @app.route('/ppt')
-# def ppt():
-#     return render_template('ppt.html', content_type='application/json')
