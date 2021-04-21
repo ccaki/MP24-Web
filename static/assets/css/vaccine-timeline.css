@@ -20,7 +20,7 @@
     width:4px;
     height: 100%;
     float: left;
-    margin-left: 12px;
+    margin-left: 15px;
 
 }
 .line{
@@ -34,8 +34,8 @@
     height: 50px;
 }
 #vaccine-timeline-picture{
-    width: 600px;
-    height: 500px;
+    width: 60%;
+    height: 50%;
     margin-top: 50px;
     margin-left:auto ;
     margin-right:auto;
