@@ -1881,6 +1881,7 @@ Blog Area CSS
   -webkit-transition: 0.5s;
   transition: 0.5s;
   margin-bottom: 30px;
+  height: 90%;
 }
 
 .blog-card img {
