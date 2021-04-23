@@ -23,39 +23,1766 @@
     </style>
 </head>
 <body>
-<div id="map"></div>
-<script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoieXh1dTAxMDQiLCJhIjoiY2tuM2FyODdkMGo5dzJucXN4YnNjMmw2cCJ9.tTyzDSDye_FY3w7Qxh5BRg';
-    var map = new mapboxgl.Map({
-        container: 'map', // container id
-        style: 'mapbox://styles/yxuu0104/ckn8595jl14ku17qx2ozisv84', // stylesheet location
-        center: [145.00, -37.00 ],
-        zoom: 6
-    });
+<div id="storerocket-widget" style="height: 100%;"><div id="storerocket-panel" style="height: 498px;">
 
-    map.on('click', function (e) {
-        var features = map.queryRenderedFeatures(e.point, {
-            layers: ['clinic'] // replace this with the name of the layer
-        });
+    <div id="storerocket-overlay">
+        <div class="storerocket-overlay-content">
+            <a class="storerocket-overlay-close-button">✕</a>
 
-        if (!features.length) {
-            return;
-        }
+            <div id="storerocket-overlay-details" class="storerocket-overlay-section">
+                <img class="storerocket-overlay-details-image">
 
-        var feature = features[0];
+                <div class="storerocket-overlay-details-content">
+                    <div class="storerocket-overlay-details-name"></div>
+                    <div class="storerocket-overlay-details-address"></div>
 
-        var popup = new mapboxgl.Popup({ offset: [0, -15] })
-            .setLngLat(feature.geometry.coordinates)
-            .setHTML(
-                '<h3>' +
-                feature.properties.Address +
-                '</h3><p>' +
-                feature.properties.description +
-                '</p>'
-            )
-            .setLngLat(feature.geometry.coordinates)
-            .addTo(map);
-    });
-</script>
+                    <div class="storerocket-overlay-details-social">
+                        <div class="storerocket-overlay-details-social-item storerocket-overlay-details-social-facebook">
+                            <a class="storerocket-overlay-details-social-link storerocket-overlay-details-social-facebook-link" target="_blank" href="#">
+                                <img class="storerocket-overlay-details-social-item-icon storerocket-overlay-details-social-icon--facebook" src="https://cdn.storerocket.io/images/facebook-icon.png">
+                            </a>
+                        </div>
+
+                        <div class="storerocket-overlay-details-social-item storerocket-overlay-details-social-twitter">
+                            <a class="storerocket-overlay-details-social-link storerocket-overlay-details-social-twitter-link" target="_blank" href="#">
+                                <img class="storerocket-overlay-details-social-item-icon storerocket-overlay-details-social-icon--twitter" src="https://cdn.storerocket.io/images/twitter-icon.png">
+                            </a>
+                        </div>
+
+                        <div class="storerocket-overlay-details-social-item storerocket-overlay-details-social-instagram">
+                            <a class="storerocket-overlay-details-social-link storerocket-overlay-details-social-instagram-link" target="_blank" href="#">
+                                <img class="storerocket-overlay-details-social-item-icon storerocket-overlay-details-social-icon--instagram" src="https://cdn.storerocket.io/images/instagram-icon.png">
+                            </a>
+                        </div>
+
+                        <div class="storerocket-overlay-details-social-item storerocket-overlay-details-social-yelp">
+                            <a class="storerocket-overlay-details-social-link storerocket-overlay-details-social-yelp-link" target="_blank" href="#">
+                                <img class="storerocket-overlay-details-social-item-icon storerocket-overlay-details-social-icon--yelp" src="https://cdn.storerocket.io/images/yelp-icon.png">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="storerocket-overlay-details-actions">
+                        <div class="storerocket-overlay-details-action storerocket-overlay-details-action--directions">
+                            <a href="#" target="_blank" class="storerocket-overlay-details-action-button">
+                                <div class="storerocket-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+
+                                <span data-text-id="storerocket-get-directions">Directions</span>
+                            </a>
+                        </div>
+                        <div class="storerocket-overlay-details-action storerocket-overlay-details-action--website">
+                            <a href="#" target="_blank" class="storerocket-overlay-details-action-button"></a>
+                        </div>
+                        <div class="storerocket-overlay-details-action storerocket-overlay-details-action--phone">
+                            <a href="#" target="_blank" class="storerocket-overlay-details-action-button"></a>
+                        </div>
+                        <div class="storerocket-overlay-details-action storerocket-overlay-details-action--email">
+                            <a href="mailto:" target="_blank" class="storerocket-overlay-details-action-button"></a>
+                        </div>
+                        <div class="storerocket-overlay-details-custom-ctas"></div>
+                    </div>
+
+                    <div class="storerocket-overlay-filters"></div>
+
+                    <div class="storerocket-overlay-hours"></div>
+
+                    <div class="storerocket-overlay-fields"></div>
+                </div>
+            </div>
+
+            <div id="storerocket-overlay-filters" class="storerocket-overlay-section">
+                <div class="storerocket-overlay-filters-header storerocket-overlay-header">
+                    <div class="storerocket-overlay-header-title" data-text-id="storerocket-filters">Filters</div>
+                </div>
+                <div class="storerocket-overlay-filters-list storerocket-overlay-main">
+                </div>
+
+                <a class="storerocket-overlay-filters-apply-button" data-text-id="storerocket-apply-filters">Apply</a>
+            </div>
+
+            <div id="storerocket-overlay-radius" class="storerocket-overlay-section">
+                <div class="storerocket-overlay-radius-header storerocket-overlay-header">
+                    <div class="storerocket-overlay-header-title" data-text-id="storerocket-radius">Radius</div>
+                </div>
+                <div class="storerocket-overlay-radius-list storerocket-overlay-main">
+                    <div class="storerocket-overlay-list-item " data-radius="10">
+                        <div>10 <span data-text-id="storerocket-units-abbreviated">km</span></div>
+
+                        <span class="storerocket-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" style="height: 10px; width: 10px;" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+                            </span>
+                    </div>
+                    <div class="storerocket-overlay-list-item is-active" data-radius="20">
+                        <div>20 <span data-text-id="storerocket-units-abbreviated">km</span></div>
+
+                        <span class="storerocket-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" style="height: 10px; width: 10px;" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+                            </span>
+                    </div>
+                    <div class="storerocket-overlay-list-item " data-radius="50">
+                        <div>50 <span data-text-id="storerocket-units-abbreviated">km</span></div>
+
+                        <span class="storerocket-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" style="height: 10px; width: 10px;" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+                            </span>
+                    </div>
+                    <div class="storerocket-overlay-list-item " data-radius="100">
+                        <div>100 <span data-text-id="storerocket-units-abbreviated">km</span></div>
+
+                        <span class="storerocket-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" style="height: 10px; width: 10px;" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+                            </span>
+                    </div>
+                    <div class="storerocket-overlay-list-item " data-radius="250">
+                        <div>250 <span data-text-id="storerocket-units-abbreviated">km</span></div>
+
+                        <span class="storerocket-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" style="height: 10px; width: 10px;" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+                            </span>
+                    </div>
+                    <div class="storerocket-overlay-list-item " data-radius="500">
+                        <div>500 <span data-text-id="storerocket-units-abbreviated">km</span></div>
+
+                        <span class="storerocket-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" style="height: 10px; width: 10px;" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+                            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="storerocket-search">
+        <div class="storerocket-search-form">
+            <div class="storerocket-query">
+                <div class="storerocket-search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 16px; height: 16px;"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg>
+                </div>
+                <input type="text" class="storerocket-search-field" placeholder="Enter address or postcode.." data-text-id="storerocket-search-placeholder" autocomplete="off">
+                <div class="storerocket-search-spinner"></div>
+                <div id="storerocket-autocomplete"></div>
+                <div class="storerocket-clear-search" style="display: block;">✕</div>
+            </div>
+            <div id="storerocket-geolocate-button">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 640" enable-background="new 0 0 512 512" xml:space="preserve"><g><g><path d="M256,422c-91.533,0-166-74.467-166-166S164.467,90,256,90s166,74.467,166,166S347.533,422,256,422z M256,102    c-84.916,0-154,69.084-154,154s69.084,154,154,154s154-69.084,154-154S340.916,102,256,102z"></path></g><g><rect x="250" y="64" width="12" height="96"></rect></g><g><rect x="352" y="250" width="96" height="12"></rect></g><g><rect x="250" y="352" width="12" height="96"></rect></g><g><rect x="64" y="250" width="96" height="12"></rect></g></g></svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="storerocket-panel-options">
+
+        <a href="#" class="storerocket-radius-button">
+            <div>
+                <span class="storerocket-radius-button-value">20</span> <span data-text-id="storerocket-units-abbreviated">km</span>
+            </div>
+
+            <span class="storerocket-icon storerocket-icon-plus">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" class="transform transition-transform duration-500 ease-in-out"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </span>
+        </a>
+    </div>
+
+    <div class="storerocket-error" style="display: none;">
+        <div class="storerocket-error-body">
+            <p class="storerocket-message-text">
+                Your browser blocked our request to get your location.
+            </p>
+
+            <ul class="storerocket-message-list">
+                <li>Allow the geolocation on your browser and refresh the page.</li>
+                <li>Search an address in the search field above.</li>
+                <li>Show all locations by clicking the button below.</li>
+            </ul>
+        </div>
+
+        <button class="storerocket-show-all-results-link" data-text-id="storerocket-show-all-locations">Show all locations</button>
+    </div>
+
+    <div class="storerocket-no-results" style="height: 393px;">
+        <div class="storerocket-no-results-content">
+            <div class="storerocket-message">
+                <span class="storerocket-message-text" data-text-id="storerocket-no-locations-message">No results found.</span>
+            </div>
+
+            <div class="storerocket-lead">
+                <p class="storerocket-lead-desc" data-text-id="storerocket-get-notified-message">Get notified of new locations.</p>
+                <div class="storerocket-lead-thank-you">
+                    <p class="storerocket-lead-thank-you-title" data-text-id="storerocket-thank-you">Thank you!</p>
+                    <p class="storerocket-lead-thank-you-text">We will get in touch.</p>
+                </div>
+                <div class="storerocket-input-container">
+                    <form class="storerocket-lead-form">
+                        <div class="storerocket-lead-fields">
+
+
+
+                        </div>
+
+                        <div>
+                            <button class="storerocket-notify-me-button storerocket-button-status-style-1" data-text-id="storerocket-notify-me" type="submit">Notify Me!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <button class="storerocket-show-all-results-link storerocket-button-status-style-1" data-text-id="storerocket-show-all-locations">Show all locations</button>
+        </div>
+    </div>
+
+    <div class="storerocket-result-list" style="height: 393px;">
+        <div class="storerocket-result-list-content"><div class="storerocket-result" data-index="0">
+
+
+            <div class="storerocket-result-content">
+                <div class="storerocket-result-name">
+                    Chadstone - Golfers Drive
+                </div>
+
+
+                <div class="storerocket-result-address">
+                    Golfers Drive, Malvern East, Victoria 3145. Enter via Level 2, Multi Deck Car Park, Gate 4.
+                </div>
+
+
+
+
+                <div class="storerocket-result-website">
+                    <a href="https://www.coronavirus.vic.gov.au/where-get-tested-covid-19" target="_blank" class="storerocket-result-website-link">
+
+                        <span data-text-id="storerocket-visit-website">Visit website</span>
+                    </a>
+                </div>
+
+
+                <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                <div class="storerocket-result-distance">
+                    3.35 <span data-text-id="storerocket-distance">kilometers away</span>
+                </div>
+            </div>
+
+        </div>
+            <div class="storerocket-result" data-index="1">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Melbourne Pathology - Bentleigh
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        159 Jasper Street, Bentleigh, Victoria 3204.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.mps.com.au/coronavirus-covid-19/covid-19-dedicated-collection-sites/" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        4.94 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="2">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Prahran Respiratory Clinic (Star Health - Prahran Town Hall)
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        255A Chapel Street, Prahran, Victoria 3181. Prahran Town Hall.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.hotdoc.com.au/medical-centres/prahran-VIC-3181/prahran-respiratory-clinic/doctors?purpose=respiratory" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        5.31 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="3">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Alfred Health - The Alfred Hospital
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        55 Commercial Road, Melbourne, Victoria 3004. Helipad Car Park, Next to Emergency Department.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.alfredhealth.org.au/covid-19/clinical-support" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        6.47 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="4">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        4Cyte Pathology - Bentleigh East
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        609-611 South Road, Bentleigh East, Victoria 3165. Rear car park..
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.4cyte.com.au/Covid19_Location_Bentleigh.php" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        6.58 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="5">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Aughtie Walk - Albert Park
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        22 Aughtie Drive, Albert Park, Victoria 3206. Entry via carpark.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.coronavirus.vic.gov.au/where-get-tested-covid-19" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open storerocket-result-open-now" style="display: block;"><div class="storerocket-result-open-label">Open Now</div></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        6.88 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="6">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        4Cyte Pathology - Box Hill
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        6 Landale Street, Box Hill, Victoria 3128. Rear car park..
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.4cyte.com.au/Covid19_Location_Box_Hill.php" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        8.72 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="7">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Eastern Health - Box Hill Hospital
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        8 Arnold Street, Box Hill, Victoria 3128. Respiratory Assessment Clinic, Entry&nbsp;via Former Emergency Department, corner Nelson Road and Arnold Street.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.easternhealth.org.au/media-events/latest-news/item/1022-coronavirus-covid-19-information-hub" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        9.56 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="8">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Cohealth - Collingwood
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        365 Hoddle Street, Collingwood, Victoria 3066. Enter via Easey Street.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.cohealth.org.au/get-tested-for-coronavirus/" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        9.69 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="9">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Bourke Street Melbourne
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        227 Bourke Street, Melbourne, Victoria 3000. Located 140m from Tram stop 7 on Russell street..
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.coronavirus.vic.gov.au/where-get-tested-covid-19" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        9.73 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="10">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Sandringham Hospital
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        193 Bluff Road, Sandringham, Victoria 3191. Sandringham Ambulatory Care Centre Screening Clinic (rear of hospital main car park).
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="http://www.sandringhamacc.com.au/covidclinic/" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        9.74 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="11">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        St Vincent's Hospital Melbourne - Fever Clinic
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        2-4 Princes Street, Fitzroy, Victoria 3065. Fever Clinic. Off Nicholson Street, opposite Emergency Department.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.svhm.org.au/patients-visitors/information-about-coronavirus-disease-covid-19" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        9.75 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="12">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Port Melbourne Respiratory Clinic (Port Melbourne Medical)
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        405 Bay Street, Port Melbourne, Victoria 3207. Shop 3.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.hotdoc.com.au/medical-centres/port-melbourne-VIC-3207/port-melbourne-respiratory-clinic/doctors?purpose=respiratory" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        9.78 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="13">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Monash University - Clayton
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        133 Wellington Road, Clayton, Victoria 3168. Monash OC1 car park opposite Monash University.
+                    </div>
+
+
+
+
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        9.79 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="14">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        4Cyte Pathology - Melbourne CBD
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        231 Russell Street, Melbourne, Victoria 3000. Walk in room.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.4cyte.com.au/Covid19_Location_Melbourne.php" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        9.89 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="15">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Montague Street - South Melbourne
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        32 Johnson Street, South Melbourne, Victoria 3205.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.coronavirus.vic.gov.au/where-get-tested-covid-19" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        10.22 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="16">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Fitzroy Respiratory Clinic (Victorian Aboriginal Health Service)
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        186 Nicholson Street, Fitzroy, Victoria 3065.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.vahs.org.au/" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        10.46 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="17">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        ACL - Glen Waverley
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        3/274 Springvale Road, Glen Waverley, Victoria 3150.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.clinicallabs.com.au/about-us/doctor-media-releases/novel-coronavirus-vic/" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        10.71 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="18">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        The Royal Melbourne Hospital
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        300 Grattan Street, Parkville, Victoria 3052. Between entrances to Main Hospital and Emergency Department.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.thermh.org.au/patients-visitors/covid-19/screening-clinics-and-results" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        11.48 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="19">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        4Cyte Pathology - Fairfield
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        202 Station Street, Fairfield, Victoria 3078. Rear car park..
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.4cyte.com.au/Covid19_Location_Fairfield.php" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        11.73 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="20">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        The Royal Children's Hospital
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        50 Flemington Road, Parkville, Victoria 3052. Respiratory Infection Clinic (via Emergency Department).
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.rch.org.au/rch/Coronavirus_(COVID-19)/" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        12.32 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="21">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        4Cyte Pathology - Vermont
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        486 Burwood Highway, Vermont, Victoria 3133. Entry via Hartland Road Carpark.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.4cyte.com.au/Covid19_Location_Vermont.php" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        12.40 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="22">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Dorevitch - Heidelberg
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        18 Banksia Street, Heidelberg, Victoria 3084.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.dorevitch.com.au/siteassets/home-page/8-covid-19/coronavirus-locations-accs-26-feb.pdf" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        13.15 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="23">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Melbourne Pathology - North Melbourne
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        70 Alfred Street, North Melbourne, Victoria 3051.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.mps.com.au/coronavirus-covid-19/covid-19-dedicated-collection-sites/" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        13.31 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="24">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Austin Health - Austin Hospital
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        145 Studley Road, Heidelberg, Victoria 3084. Level 3, Lance Townsend Building (entry off Burgundy Street).
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.austin.org.au/coronavirus/testing/" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        13.34 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="25">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        4Cyte Pathology - Heidelberg Heights
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        455 Upper Heidelberg Road, Heidelberg Heights, Victoria 3081. Rear car park..
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.4cyte.com.au/Covid19_Location_Heidelberg.php" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        13.57 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="26">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Heidelberg Repatriation Hospital
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        Corner Waterdale Road and Bell Street, Heidelberg Heights, Victoria 3081. Outdoor Carpark, Heidelberg Repatriation Hospital, Enter via Waterdale Road.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.coronavirus.vic.gov.au/where-get-tested-covid-19" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        13.80 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="27">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        4Cyte Pathology - Spotswood
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        615 Melbourne Road, Spotswood, Victoria 3015. Rear car park..
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.4cyte.com.au/Covid19_Location_Spotswood.php" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        15.24 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="28">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Western Health - Melbourne Showgrounds (walk in)
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        Epsom Road, Ascot Vale, Victoria 3032. Via Gate 1.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.westernhealth.org.au/AboutUs/News/Pages/Coronavirus_Update.aspx" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        15.41 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="29">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Western Health - Melbourne Showgrounds (drive through)
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        Gate 4, Langs Road , Ascot Vale, Victoria 3032.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.westernhealth.org.au/AboutUs/News/Pages/Coronavirus_Update.aspx" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        15.77 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="30">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Wantirna Health - Wantirna Trash and Treasure Market
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        251 Mountain Highway, Wantirna, Victoria 3152.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.coronavirus.vic.gov.au/where-get-tested-covid-19" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        16.06 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="31">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Springers Leisure Centre
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        400 Cheltenham Road, Keysborough, Victoria 3173. Springers Leisure Centre.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.coronavirus.vic.gov.au/where-get-tested-covid-19" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        16.37 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="32">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Altona North Respiratory Clinic
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        230 Blackshaws Road, Altona North, Victoria 3025. Rear Carpark, Circle Health, Unit 6 North of main building.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.hotdoc.com.au/medical-centres/altona-north-VIC-3025/altona-north-respiratory-clinic/doctors?purpose=respiratory" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        16.76 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="33">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Cohealth - West Footscray
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        575A Barkley Street, West Footscray, Victoria 3011.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.cohealth.org.au/get-tested-for-coronavirus/" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open storerocket-result-open-now" style="display: block;"><div class="storerocket-result-open-label">Open Now</div></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        17.18 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="34">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        La Trobe University - Bundoora Campus
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        Carpark 7A, Latrobe University, Bundoora, Victoria 3083. Carpark 7, La Trobe University, Bundoora Campus (opposite La Trobe Wildlife Sanctuary).
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.coronavirus.vic.gov.au/where-get-tested-covid-19" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open storerocket-result-open-now" style="display: block;"><div class="storerocket-result-open-label">Open Now</div></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        17.57 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="35">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        EACH - Ringwood Respiratory Clinic
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        46 Warrandyte Road, Ringwood, Victoria 3134.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.each.com.au/coronavirus-covid-19-screening-clinics/" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        18.01 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="36">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        4Cyte Pathology - Ringwood
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        259 Maroondah Hwy , Ringwood, Victoria 3134. Rear Car Park.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.4cyte.com.au/Covid19_Location_Ringwood.php" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        18.02 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="37">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Hampstead Road
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        77 Hampstead Road (Victoria University Student Accommodation site), Maidstone, Victoria 3012. Victoria University Student Accommodation site.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.coronavirus.vic.gov.au/where-get-tested-covid-19" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        18.29 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="38">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Monash Health - Cleeland St, Dandenong
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        169 Cleeland Street, Dandenong, Victoria 3175.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://monashhealth.org/patients-visitors/coronavirus/getting-tested#dandenong-cleeland-street" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        18.55 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="39">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        4Cyte Pathology - Dandenong
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        154 Cleeland Street, Dandenong, Victoria 3175. Rear car park..
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.4cyte.com.au/Covid19_Location_Dandenong.php" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        18.67 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="40">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Dorevitch - Altona
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        99 Pier Street, Altona, Victoria 3018.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.dorevitch.com.au/siteassets/home-page/8-covid-19/coronavirus-locations-accs-26-feb.pdf" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        18.77 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="41">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        ACL - Dandenong
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        38 Herbert Street, Dandenong, Victoria 3175.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.clinicallabs.com.au/about-us/doctor-media-releases/novel-coronavirus-vic/" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        18.88 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="42">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Rowville&nbsp;Respiratory Clinic
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        1101 Wellington Road, Rowville, Victoria 3178.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://www.hotdoc.com.au/medical-centres/rowville-VIC-3178/rowville-respiratory-clinic/doctors?purpose=respiratory" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        18.97 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storerocket-result" data-index="43">
+
+
+                <div class="storerocket-result-content">
+                    <div class="storerocket-result-name">
+                        Monash Health - Carroll Lane, Dandenong - Drive Through
+                    </div>
+
+
+                    <div class="storerocket-result-address">
+                        Carroll Lane, Dandenong, Victoria 3175. Car Park, Off Cheltenham Road.
+                    </div>
+
+
+
+
+                    <div class="storerocket-result-website">
+                        <a href="https://monashhealth.org/patients-visitors/coronavirus/getting-tested#dandenong-carroll-lane" target="_blank" class="storerocket-result-website-link">
+
+                            <span data-text-id="storerocket-visit-website">Visit website</span>
+                        </a>
+                    </div>
+
+
+                    <div class="storerocket-result-is-open" style="display: none;"></div>
+
+
+
+                    <div class="storerocket-result-distance">
+                        19.19 <span data-text-id="storerocket-distance">kilometers away</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="storerocket-powered" style="display: none;">
+        Powered by
+        <a href="https://storerocket.io/?utm_source=BkJ1KXbpqR&amp;utm_medium=powered-by-link&amp;utm_campaign=powered-by-link" target="_blank">StoreRocket</a>
+    </div>
+
+</div>
+
+    <div id="storerocket-map-container">
+        <div id="storerocket-popup" class="storerocket-popup--info">
+            <div class="storerocket-popup-text">Getting your location..</div>
+            <div class="storerocket-popup-icon"></div>
+        </div>
+
+        <div id="storerocket-map" class="mapboxgl-map"><div class="mapboxgl-canary" style="visibility: hidden;"></div><div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate"><canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" role="region" width="341" height="498" style="width: 341px; height: 498px;"></canvas><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/Lt339N.png&quot;); transform: translate(-50%, -50%) translate(298px, 464px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/o47vSt.png&quot;); transform: translate(-50%, -50%) translate(225px, 563px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/NUnaty.png&quot;); transform: translate(-50%, -50%) translate(139px, 403px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/aIUu3W.png&quot;); transform: translate(-50%, -50%) translate(117px, 393px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/o47vSt.png&quot;); transform: translate(-50%, -50%) translate(244px, 596px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/Lt339N.png&quot;); transform: translate(-50%, -50%) translate(102px, 404px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/o47vSt.png&quot;); transform: translate(-50%, -50%) translate(371px, 353px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/aIUu3W.png&quot;); transform: translate(-50%, -50%) translate(366px, 322px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/NUnaty.png&quot;); transform: translate(-50%, -50%) translate(138px, 287px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/NUnaty.png&quot;); transform: translate(-50%, -50%) translate(91px, 320px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/NUnaty.png&quot;); transform: translate(-50%, -50%) translate(184px, 656px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/aIUu3W.png&quot;); transform: translate(-50%, -50%) translate(106px, 306px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/NUnaty.png&quot;); transform: translate(-50%, -50%) translate(54px, 367px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/Lt339N.png&quot;); transform: translate(-50%, -50%) translate(408px, 554px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/o47vSt.png&quot;); transform: translate(-50%, -50%) translate(92px, 315px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/Lt339N.png&quot;); transform: translate(-50%, -50%) translate(51px, 354px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/NUnaty.png&quot;); transform: translate(-50%, -50%) translate(106px, 288px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/o47vSt.png&quot;); transform: translate(-50%, -50%) translate(449px, 476px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/aIUu3W.png&quot;); transform: translate(-50%, -50%) translate(73px, 288px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/o47vSt.png&quot;); transform: translate(-50%, -50%) translate(185px, 227px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/aIUu3W.png&quot;); transform: translate(-50%, -50%) translate(59px, 277px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/o47vSt.png&quot;); transform: translate(-50%, -50%) translate(480px, 419px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/o47vSt.png&quot;); transform: translate(-50%, -50%) translate(277px, 198px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/o47vSt.png&quot;); transform: translate(-50%, -50%) translate(40px, 268px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/aIUu3W.png&quot;); transform: translate(-50%, -50%) translate(257px, 191px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/o47vSt.png&quot;); transform: translate(-50%, -50%) translate(252px, 186px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/Lt339N.png&quot;); transform: translate(-50%, -50%) translate(235px, 180px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/o47vSt.png&quot;); transform: translate(-50%, -50%) translate(-63px, 355px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/NUnaty.png&quot;); transform: translate(-50%, -50%) translate(-2px, 249px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/Lt339N.png&quot;); transform: translate(-50%, -50%) translate(-10px, 247px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/Lt339N.png&quot;); transform: translate(-50%, -50%) translate(552px, 401px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/Lt339N.png&quot;); transform: translate(-50%, -50%) translate(429px, 732px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/NUnaty.png&quot;); transform: translate(-50%, -50%) translate(-97px, 360px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/NUnaty.png&quot;); transform: translate(-50%, -50%) translate(-72px, 283px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/Lt339N.png&quot;); transform: translate(-50%, -50%) translate(243px, 104px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/NUnaty.png&quot;); transform: translate(-50%, -50%) translate(565px, 310px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/o47vSt.png&quot;); transform: translate(-50%, -50%) translate(570px, 320px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/Lt339N.png&quot;); transform: translate(-50%, -50%) translate(-68px, 237px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/NUnaty.png&quot;); transform: translate(-50%, -50%) translate(540px, 681px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/o47vSt.png&quot;); transform: translate(-50%, -50%) translate(540px, 685px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/o47vSt.png&quot;); transform: translate(-50%, -50%) translate(-153px, 441px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/o47vSt.png&quot;); transform: translate(-50%, -50%) translate(534px, 701px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/NUnaty.png&quot;); transform: translate(-50%, -50%) translate(601px, 577px) rotateX(0deg) rotateZ(0deg);"></div><div class="storerocket-custom-marker storerocket-marker-size-small mapboxgl-marker mapboxgl-marker-anchor-center" style="background-image: url(&quot;https://storerocket.global.ssl.fastly.net/uploads/users/BkJ1KXbpqR/markers/Lt339N.png&quot;); transform: translate(-50%, -50%) translate(524px, 722px) rotateX(0deg) rotateZ(0deg);"></div></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"></div><div class="mapboxgl-ctrl-top-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-group"><button class="mapboxgl-ctrl-zoom-in" type="button" title="Zoom in" aria-label="Zoom in" aria-disabled="false"><span class="mapboxgl-ctrl-icon" aria-hidden="true"></span></button><button class="mapboxgl-ctrl-zoom-out" type="button" title="Zoom out" aria-label="Zoom out" aria-disabled="false"><span class="mapboxgl-ctrl-icon" aria-hidden="true"></span></button><button class="mapboxgl-ctrl-compass" type="button" title="Reset bearing to north" aria-label="Reset bearing to north"><span class="mapboxgl-ctrl-icon" aria-hidden="true" style="transform: rotate(0deg);"></span></button></div><div class="mapboxgl-ctrl mapboxgl-ctrl-group"><button class="mapboxgl-ctrl-geolocate" type="button" title="Find my location" aria-label="Find my location" aria-pressed="false"><span class="mapboxgl-ctrl-icon" aria-hidden="true"></span></button></div></div><div class="mapboxgl-ctrl-bottom-left"><div class="mapboxgl-ctrl" style="display: block;"><a class="mapboxgl-ctrl-logo" target="_blank" rel="noopener nofollow" href="https://www.mapbox.com/" aria-label="Mapbox logo"></a></div></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-attrib mapboxgl-compact"><button class="mapboxgl-ctrl-attrib-button" title="Toggle attribution" aria-label="Toggle attribution"></button><div class="mapboxgl-ctrl-attrib-inner" role="list"><a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> <a href="http://www.openstreetmap.org/about/" target="_blank">© OpenStreetMap</a> <a class="mapbox-improve-map" href="https://apps.mapbox.com/feedback/?owner=mapbox&amp;id=navigation-preview-day-v2&amp;access_token=pk.eyJ1Ijoiam9obm9sYWgiLCJhIjoiY2traHg5ZjR0MGZqeTJucWszYzRtdHlhdSJ9.luvFpqC8haZe4nQYXr8EHw" target="_blank" rel="noopener nofollow" title="Map feedback" aria-label="Map feedback">Improve this map</a></div></div></div></div><button class="storerocket-map-show-all-locations-button is-visible" style="position: absolute; z-index: 10; background-color: rgb(0, 82, 194);">Show all locations</button></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!--<div id="map"></div>-->
+<!--<script>-->
+<!--    mapboxgl.accessToken = 'pk.eyJ1IjoieXh1dTAxMDQiLCJhIjoiY2tuM2FyODdkMGo5dzJucXN4YnNjMmw2cCJ9.tTyzDSDye_FY3w7Qxh5BRg';-->
+<!--    var map = new mapboxgl.Map({-->
+<!--        container: 'map', // container id-->
+<!--        style: 'mapbox://styles/yxuu0104/ckn8595jl14ku17qx2ozisv84', // stylesheet location-->
+<!--        center: [145.00, -37.00 ],-->
+<!--        zoom: 6-->
+<!--    });-->
+
+<!--    map.on('click', function (e) {-->
+<!--        var features = map.queryRenderedFeatures(e.point, {-->
+<!--            layers: ['clinic'] // replace this with the name of the layer-->
+<!--        });-->
+
+<!--        if (!features.length) {-->
+<!--            return;-->
+<!--        }-->
+
+<!--        var feature = features[0];-->
+
+<!--        var popup = new mapboxgl.Popup({ offset: [0, -15] })-->
+<!--            .setLngLat(feature.geometry.coordinates)-->
+<!--            .setHTML(-->
+<!--                '<h3>' +-->
+<!--                feature.properties.Address +-->
+<!--                '</h3><p>' +-->
+<!--                feature.properties.description +-->
+<!--                '</p>'-->
+<!--            )-->
+<!--            .setLngLat(feature.geometry.coordinates)-->
+<!--            .addTo(map);-->
+<!--    });-->
+<!--</script>-->
 </body>
 </html>
