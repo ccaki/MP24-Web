@@ -340,9 +340,24 @@ def previous( category,id):
 #vaccine page
 @app.route('/vaccine')
 def vaccine():
+    return render_template('vaccine.html', content_type='application/json')
+
+#vaccine map page
+@app.route('/vaccine_map')
+def vaccine_map():
+    return render_template('vaccine-map.html', content_type='application/json')
+
+#vaccine timeline page
+@app.route('/vaccine_timeline')
+def vaccine_timeline():
+    return render_template('vaccine-timeline.html', content_type='application/json')
+
+#vaccine blog page
+@app.route('/vaccine_blog')
+def vaccine_blog():
     sql = "SELECT * FROM fsquare.articles WHERE category = 'vaccine'"
     res = db_query(sql)
-    return render_template('vaccine.html',result=res, content_type='application/json')
+    return render_template('vaccine-blog.html',result=res, content_type='application/json')
 
 #test page
 @app.route('/test')

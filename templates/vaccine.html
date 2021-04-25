@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zxx">
 <head>
     <!-- Required meta tags -->
@@ -29,256 +29,325 @@
     <link rel="stylesheet" href="../static/assets/css/responsive.css">
     <!-- Favican -->
     <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
-    <link rel="stylesheet" href="../static/assets/css/vaccine-timeline.css">
-    <link rel="stylesheet" href="../static/assets/css/style-timeline.css" />
 
-    <title>FSquare: COVID-19 rumours impacts on VIC's elders</title>
+    <title>FSquare: COVID-19 rumours impacts on Victorian seniors</title>
+
 </head>
-<style>
-    .hide {
-        display: none;
-    }
 
-    .b-card-text:hover + .hide {
-        display: block;
-    }
 
-</style>
 <body>
+
 {% include 'nav.html' %}
 
 {% block navi %}
 {% endblock %}
+</header>
+<!-- End Heder Area -->
 
-
-<!-- Page Banner Area -->
-<div class="page-banner-area bg-2">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="page-content">
-                    <h2>Vaccine</h2>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Page Banner Area -->
 
 <!-- Services Area -->
-<!--<div class="services-area pt-100 pb-70">-->
-<!--    <div class="container">-->
-<!--        <div class="section-title-one">-->
-<!--            <h2>Discover Covid-19 Vaccines</h2>-->
-<!--        </div>-->
-
-<!--        <section id="when"><p> </p></section>-->
-<!--        <div id="timeline">-->
-<!--            <div id="textout">-->
-<!--                <div class="text" onmousemove="movecolor(1)" onmouseout="outcolor(1)">Vaccine</div>-->
-<!--                <div class="text" onmousemove="movecolor(2)" onmouseout="outcolor(2)">Test2</div>-->
-<!--                <div class="text" onmousemove="movecolor(3)" onmouseout="outcolor(3)">Sanitizer</div>-->
-<!--            </div>-->
-<!--            <div id="lineout">-->
-<!--                <div class="line" id="l1" onmousemove="movecolor(1)" onmouseout="outcolor(1)"></div>-->
-<!--                <div class="line" id="l2" onmousemove="movecolor(2)" onmouseout="outcolor(2)"></div>-->
-<!--                <div class="line" id="l3" onmousemove="movecolor(3)" onmouseout="outcolor(3)"></div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--            <h4 style="text-align: center">When do I get vaccinated?</h4>-->
-
-<!--        <div id="vaccine-timeline-picture"><img id="backgroundimg" src="../static/assets/img/blog/blog-1.jpg" alt="This should be a picture"></div>-->
-
-<!--        <script type="text/javascript">-->
-<!--            function movecolor(num){-->
-<!--                document.getElementById("l"+num).style.background = "#98E0FA" ;-->
-<!--                document.getElementById("backgroundimg").src="../static/assets/img/blog/blog-"+num+".jpg";-->
-<!--            }-->
-<!--            function outcolor(num){-->
-<!--                document.getElementById("l"+num).style.background = "#ccc" ;-->
-<!--            }-->
-<!--        </script>-->
-
-<!--    </div>-->
-<!--</div>-->
-
-<!-- new timeline area -->
-<section id="cd-timeline" class="cd-container">
-    <div class="cd-timeline-block">
-        <h2></h2>>
-        <div class="cd-timeline-img cd-picture">
-            <img src="static/assets/img/cd-icon-picture.svg" alt="Picture">
-        </div>
-
-        <div class="cd-timeline-content">
-<!--            <h2>HTML5+CSS3 Response type vertical timeline</h2>-->
-            <p>The novel Corona Virus was declared as a global pandemic depicting significant effect on the lives of millions.
-
-                Lockdowns were imposed in multiple cities worldwide leading scientists and health care officials to go scourging for a vaccine to a health scare like never seen before in recent times.
-            </p>
-<!--            <a href="#" class="cd-read-more" target="_blank">Read more</a>-->
-            <span class="cd-date">February 2020</span>
-        </div>
-    </div>
-    <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-movie">
-            <img src="static/assets/img/cd-icon-movie.svg" alt="Movie">
-        </div>
-
-        <div class="cd-timeline-content">
-<!--            <h2>HTML5+CSS3 Response type vertical timeline</h2>-->
-            <p>Gaining unprecedented traction, the “Operation Warp Speed (OWS)” was introduced by the U.S. Department of Health and Human Services in a bid to acquire a Covid-19 vaccine.</p>
-
-            <p>Keeping all safety measures in check, two companies namely Pfizer and Moderna undertook a prolonged vaccine technology project known as Messenger RNA (mRNA) vaccines.
-            </p>
-<!--            <a href="#" class="cd-read-more" target="_blank">Read more</a>-->
-            <span class="cd-date">March 30, 2020</span>
-        </div>
-    </div>
-    <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-picture">
-            <img src="static/assets/img/cd-icon-picture.svg" alt="Picture">
-        </div>
-
-        <div class="cd-timeline-content">
-<!--            <h2>HTML5+CSS3 Response type vertical timeline</h2>-->
-            <p>Carving a niche as leaders of Covid-19 vaccine technology, Moderna published Phase l/ll trial data on July 14, 2020 whereas Pfizer released the data on August 12, 2020.</p>
-
-            <p>Both vaccines were deemed effective when tested on vaccinated animals showing prevention of viral replication in the nose resulting in the inception of Phase lll trials.
-            </p>
-<!--            <a href="#" class="cd-read-more" target="_blank">Read more</a>-->
-            <span class="cd-date">July 2020 – August 2020 </span>
-        </div>
-    </div>
-    <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-movie">
-            <img src="static/assets/img/cd-icon-movie.svg" alt="Movie">
-        </div>
-
-        <div class="cd-timeline-content">
-<!--            <h2>HTML5+CSS3 Response type vertical timeline</h2>-->
-            <p>As enrolment for Phase lll trials were rolled out, almost 70,000 people registered to get vaccinated with Moderna leading vaccine testing that was US-centred whereas Pfizer decided to drive its focus on a global magnitude.</p>
-            <p>The status of Covid-19 in the tested people was tracked for 10 weeks as they went about their normal lives during this period.</p>
-<!--            <a href="#" class="cd-read-more" target="_blank">Read more</a>-->
-            <span class="cd-date">September 2020</span>
-        </div>
-    </div>
-    <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-movie">
-            <img src="static/assets/img/cd-icon-location.svg" alt="Location">
-        </div>
-
-        <div class="cd-timeline-content">
-<!--            <h2>HTML5+CSS3 Response type vertical timeline</h2>-->
-            <p>Showing promising results, Pfizer’s Phase lll data displayed an efficacy rate of 95%. Similarly, Moderna also displayed an efficacy rate of approx. 95% with traces of any adverse effects being only observed in the placebo arm and not the vaccine arm.</p>
-            <p>The positive bearings of the results were presented to the U.S. FDA and official statements were released by both parties that Moderna hoped to roll out 20 million doses and Pfizer aimed for 50 million vaccine doses to be globally existing by end of 2020.</p>
-<!--            <a href="#" class="cd-read-more" target="_blank">Read more</a>-->
-            <span class="cd-date">November 2020</span>
-        </div>
-    </div>
-
-    <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-movie">
-            <img src="static/assets/img/cd-icon-location.svg" alt="Location">
-        </div>
-
-        <div class="cd-timeline-content">
-<!--            <h2>HTML5+CSS3 Response type vertical timeline</h2>-->
-            <p>UK distributed the controversial AstraZeneca vaccines and yet failed to control the number of cases deciding to mix doses of AstraZeneca and Pfizer. Health officials and pharmacies had started giving out vaccines with the highest priority given to patients with high heart failure conditions.</p>
-            <p>Most countries have suspended AstraZeneca vaccine however positive results have been shown in the patients who were vaccinated with both Moderna and Pfizer doses in the Phase l/ll trial indicating the rollout of the 2 vaccines will continue. WHO aspires to get global vaccination by the end of 2022.</p>
-<!--            <a href="#" class="cd-read-more" target="_blank">Read more</a>-->
-            <span class="cd-date">January 2021 – March 2021</span>
-        </div>
-    </div>
-</section>
-
-
-<!-- end of new timeline area -->
-
-<!-- End Services Area -->
-
-<!-- Blog Area -->
-<section id="blog">
-    <p> </p>
-</section>
-<div class="blog-area blog-area-two ptb-100">
-
+<div class="services-area pt-100 pb-70">
     <div class="container">
-
-            <h4 style="text-align: center">What do I need to know before that?</h4>
+        <div class="section-title-one">
+            <h2>Discover Covid-19 vaccines</h2>
+        </div>
 
         <div class="row">
 
-            {% for item in result %}
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-card">
+                    <i class='bx bx-question-mark main-icon'></i>
+                    <h3><a href="/vaccine_blog" style="color:black">Have concerns?</a></h3>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-card">
-                    <a href="blog-details.html">
-                        <!--                                <img src={{item.profileimg}} alt="Shape">-->
-                    </a>
-                    <div class="b-card-text">
-                        <span>{{item.publishdate}} <a href="/vaccinedetail/{{item.id}}"></a></span>
-                        <!--                                <span class="t-right"><i class='bx bx-user'></i> 200K</span>-->
-                        <h3><a href="/vaccinedetail/{{item.id}}">{{item.title}}</a></h3>
-                        <!--                        <pre style="font-size: 16px;overflow: auto;word-break: normal;word-wrap: normal;white-space: pre-wrap;font-family: Arial, Helvetica, sans-serif;">{{item.preview}}</pre>-->
-                        <script>
-
-                        </script>
-                        <div class="view-more">
-                            <a href="/vaccinedetail/{{item.id}}" class="view-more-btn" >
-                                Full details
-                                <span></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="hide"  style="margin-right: 20px;margin-left: 20px;">
-                        {{item.description}}
-                        <br></br>
+                    <div class="view-more">
+                        <a href="/vaccine_blog">
+                            Read the articles
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            {% endfor %}
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-card">
+                    <i class='bx bx-time main-icon'></i>
+                    <h3><a href="/vaccine_timeline" style="color:black">When would it be available?</a></h3>
+
+                    <div class="view-more">
+                        <a href="/vaccine_timeline">
+                            Explore the timeline
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
 
 
-            <!-- Pagination -->
-            <!--                    <div class="col-lg-12 col-md-12">-->
-            <!--                        <ul class="pagination">-->
-            <!--                            <li class="page-item">-->
-            <!--                                <a class="page-link" href="#" aria-label="Previous">-->
-            <!--                                    <span aria-hidden="true">&laquo;</span>-->
-            <!--                                </a>-->
-            <!--                            </li>-->
-            <!--                            <li class="page-item active"><a class="page-link" href="#">1</a></li>-->
-            <!--                            <li class="page-item"><a class="page-link" href="#">2</a></li>-->
-            <!--                            <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-            <!--                            <li class="page-item">-->
-            <!--                                <a class="page-link" href="#" aria-label="Next">-->
-            <!--                                    <span aria-hidden="true">&raquo;</span>-->
-            <!--                                </a>-->
-            <!--                            </li>-->
-            <!--                        </ul>-->
-            <!--                    </div>-->
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-card">
+                    <i class='bx bx-map main-icon'></i>
+                    <h3><a href="/vaccine_map" style="color:black">Where to get it?</a></h3>
+
+                    <div class="view-more">
+                        <a href="/vaccine_map">
+                            Find on the map
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+<!--            <div class="col-lg-4 col-sm-6">
+                <div class="service-card">
+                    <i class='bx bx-home main-icon'></i>
+                    <h3>Do I need to stock toliet paper? </h3>
+                    <p>balabala</p>
+                    <div class="view-more">
+                        <a href="#">
+                            View More
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+            </div> -->
         </div>
-
-
-        <section id="where">
-            <p> </p>
-        </section>
-            <h4 style="text-align: center">Where do I get vaccinated?</h4>
-        <div class="flourish-embed flourish-map" data-src="visualisation/5897584"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-
     </div>
 </div>
-<!-- End Blog Area -->
+<!-- End Services Area -->
 
+
+
+<!--&lt;!&ndash;        &lt;!&ndash; Blog Area &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="blog-area ptb-100">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="section-title-one">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span>COVID News</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <h2>The latest news</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                <div class="blog-slider owl-carousel owl-theme">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="blog-card">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <a href="blog-details.html">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <img src="../static/assets/img/blog/blog-1.jpg" alt="Shape">&ndash;&gt;-->
+<!--&lt;!&ndash;                        </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="b-card-text">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <span>September 22 , 2020</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <span class="t-right"><i class='bx bx-user'></i> 200K</span>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            <h3><a href="blog-details.html">You can easily connect to a doctor and make a treatment</a></h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <p>We have started a new innovation and that makes to connect all of the doctor to you in a simplest way and it is effective.</p>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            <div class="view-more">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    View more&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <i class='bx bx-right-arrow-alt'></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <div class="blog-card">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <a href="blog-details.html">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <img src="../static/assets/img/blog/blog-2.jpg" alt="Shape">&ndash;&gt;-->
+<!--&lt;!&ndash;                        </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="b-card-text">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <span>September 23 , 2020</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <span class="t-right"><i class='bx bx-user'></i> 180K</span>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            <h3><a href="blog-details.html">Lockdowns lead to fewer people seeking medical care</a></h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <p>We have started a new innovation and that makes to connect all of the doctor to you in a simplest way and it is effective.</p>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            <div class="view-more">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    View more&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <i class='bx bx-right-arrow-alt'></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <div class="blog-card">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <a href="blog-details.html">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <img src="../static/assets/img/blog/blog-3.jpg" alt="Shape">&ndash;&gt;-->
+<!--&lt;!&ndash;                        </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="b-card-text">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <span>September 24 , 2020</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <span class="t-right"><i class='bx bx-user'></i> 170K</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <h3><a href="blog-details.html">Emergency medicine research course for the doctors</a></h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <p>We have started a new innovation and that makes to connect all of the doctor to you in a simplest way and it is effective.</p>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            <div class="view-more">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    View more&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <i class='bx bx-right-arrow-alt'></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <div class="blog-card">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <a href="blog-details.html">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <img src="../static/assets/img/blog/blog-4.jpg" alt="Shape">&ndash;&gt;-->
+<!--&lt;!&ndash;                        </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="b-card-text">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <span>September 27 , 2020</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <span class="t-right"><i class='bx bx-user'></i> 170K</span>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            <h3><a href="blog-details.html">Emergency medicine research course for the doctors</a></h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <p>We have started a new innovation and that makes to connect all of the doctor to you in a simplest way and it is effective.</p>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            <div class="view-more">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    View more&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <i class='bx bx-right-arrow-alt'></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; End Blog Area &ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;        &lt;!&ndash; Footer Area&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <footer class="footer-area bg-color pt-100 pb-70">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="row">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="col-lg-3 col-sm-6">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="footer-widget">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <h2>Find us</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <p>Shop 4/21 Chancellors Walk, Clayton VIC 3168</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <ul class="contact">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <i class='bx bx-location-plus'></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    Somewhere over the rainbow&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <i class='bx bx-phone-call'></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        +61 0416824196&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="mailto:info@covax.com">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <i class='bx bx-message-dots'></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        web tech support: cche0165@student&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <div class="col-lg-3 col-sm-6">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="footer-widget pl-50">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <h2>Quick links</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <ul class="widget-list">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        Home&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        Covid precautions&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        Medical sevices&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        Dashboard&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        News&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        About us&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <div class="col-lg-3 col-sm-6">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="footer-widget">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <h2>Join our community</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <ul class="widget-list">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        Contribute to our blogs&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        Join development team&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;                            </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <div class="col-lg-3 col-sm-6">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="footer-widget pl-50">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <h2>Meet our team</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <ul class="widget-time">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>Developers: Chen Chen, Ruoyu Tian</li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>Data scientist: Yishun Xu</li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>Business analyst: Rachael Coutinho, Ming Kong</li>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </ul>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            <ul class="social-link">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#" target="_blank">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <i class='bx bxl-facebook bg-1'></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#" target="_blank">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <i class='bx bxl-twitter bg-2'></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#" target="_blank">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <i class='bx bxl-linkedin bg-3'></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#" target="_blank">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <i class='bx bxl-instagram bg-4'></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </footer>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; End Footer Area &ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;        &lt;!&ndash; Footer Bottom Area &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="footer-bottom-area">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;                <p>Copyright @2021 FSquare. All rights reserved <a href="http://www.bootstrapmb.com/" target="_blank">FSquare</a></p>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--        &lt;!&ndash; End Footer Bottom Area &ndash;&gt;-->
 {% include 'footer.html' %}
 
 {% block foot %}
 {% endblock %}
-
 <!-- Go Top -->
 <div class="go-top">
     <i class='bx bxs-upvote'></i>
@@ -287,7 +356,6 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="../static/assets/js/jquery.min.js"></script>
 <script src="../static/assets/js/popper.min.js"></script>
 <script src="../static/assets/js/bootstrap.min.js"></script>
