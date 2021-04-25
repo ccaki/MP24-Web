@@ -59,11 +59,11 @@
                             <li class="carousel__slide  current-slide">
                                 <img class="carousel__image" src="../static/assets/img/explore.jpg" alt="">
                                 <div style="color:#262020;text-shadow:   1px 1px 0 #ffffff;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
-                                    <p style="font-size:40px;">Discover Factoids</p>
+                                    <p style="font-size:40px;"><a style="color:#262020" href="/#tutorial">Discover Factoids</a></p>
 <!--                                    <p style="font-size:20px;">Always clearly understand restriction when you are travelling.</p>-->
                                     <div class="about-btn">
                                         <a href="/#tutorial" class="default-btn">
-                                            Start journey <span></span>
+                                            Start journey
                                         </a>
                                     </div>
                                 </div>
@@ -78,14 +78,14 @@
                             </li>
                             <li class="carousel__slide" >
                                 <img class="carousel__image" src="../static/assets/img/symptom.jpg" alt="">
-                                <div style="color:#262020;text-shadow:   1px 1px 0 #ffffff;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
+                                <div style="color:#262020;text-shadow:   2px 2px 0 #ffffff;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
                                     <p style="font-size:40px;"><a style="color:#262020" href="/symptom">Symptoms</a></p>
                                     <p style="font-size:20px;">Respond quickly but don't panic!</p>
                                 </div>
                             </li>
                             <li class="carousel__slide">
                                 <img class="carousel__image" src="../static/assets/img/mask.jpg" alt="">
-                                <div style="color:#262020;text-shadow:   1px 1px 0 #ffffff;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
+                                <div style="color:#262020;text-shadow:   2px 2px 0 #ffffff;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
                                     <p style="font-size:40px;"><a style="color:#262020" href="/mask">Mask</a></p>
                                     <p style="font-size:20px;">Mask or respirator，which to wear?</p>
                                 </div>
@@ -93,7 +93,7 @@
 
                             <li class="carousel__slide" style="left: 2253px;">
                                 <img class="carousel__image" src="../static/assets/img/travel.jpg" alt="">
-                                <div style="color:#262020;text-shadow:   1px 1px 0 #ffffff;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
+                                <div style="color:#262020;text-shadow:   2px 2px 0 #ffffff;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
                                     <p style="font-size:40px;"><a style="color:#262020" href="/travel_restriction">Travel Restriction</a></p>
                                     <p style="font-size:20px;">Always clearly understand restriction when you are travelling.</p>
                                 </div>
@@ -267,38 +267,38 @@
                 </div>
 
 
-                <div id="timeline">
-                    <div id="textout">
-                        <div class="text" onmousemove="movecolor(1)" onmouseout="outcolor(1)">Facts</div>
-                        <div class="text" onmousemove="movecolor(2)" onmouseout="outcolor(2)">Precaution</div>
-                        <div class="text" onmousemove="movecolor(3)" onmouseout="outcolor(3)">Vaccine</div>
-                        <div class="text" onmousemove="movecolor(4)" onmouseout="outcolor(4)">About</div>
-                    </div>
-                    <div id="lineout">
-                        <div class="line" id="l1" onmousemove="movecolor(1)" onmouseout="outcolor(1)"></div>
-                        <div class="line" id="l2" onmousemove="movecolor(2)" onmouseout="outcolor(2)"></div>
-                        <div class="line" id="l3" onmousemove="movecolor(3)" onmouseout="outcolor(3)"></div>
-                        <div class="line" id="l4" onmousemove="movecolor(4)" onmouseout="outcolor(4)"></div>
-                    </div>
-                </div>
-                <div id="vaccine-timeline-picture">
-                    <img id="backgroundimg" src="../static/assets/img/blog/blog-1.jpg" alt="This should be a picture">
-                    <p id="timeline-guides">
-                    </p>
-                </div>
+<!--                <div id="timeline">-->
+<!--                    <div id="textout">-->
+<!--                        <div class="text" onmousemove="movecolor(1)" onmouseout="outcolor(1)">Facts</div>-->
+<!--                        <div class="text" onmousemove="movecolor(2)" onmouseout="outcolor(2)">Precaution</div>-->
+<!--                        <div class="text" onmousemove="movecolor(3)" onmouseout="outcolor(3)">Vaccine</div>-->
+<!--                        <div class="text" onmousemove="movecolor(4)" onmouseout="outcolor(4)">About</div>-->
+<!--                    </div>-->
+<!--                    <div id="lineout">-->
+<!--                        <div class="line" id="l1" onmousemove="movecolor(1)" onmouseout="outcolor(1)"></div>-->
+<!--                        <div class="line" id="l2" onmousemove="movecolor(2)" onmouseout="outcolor(2)"></div>-->
+<!--                        <div class="line" id="l3" onmousemove="movecolor(3)" onmouseout="outcolor(3)"></div>-->
+<!--                        <div class="line" id="l4" onmousemove="movecolor(4)" onmouseout="outcolor(4)"></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div id="vaccine-timeline-picture">-->
+<!--                    <img id="backgroundimg" src="../static/assets/img/blog/blog-1.jpg" alt="This should be a picture">-->
+<!--                    <p id="timeline-guides">-->
+<!--                    </p>-->
+<!--                </div>-->
 
-                <script type="text/javascript">
-                    function movecolor(num){
-                        document.getElementById("l"+num).style.background = "#98E0FA" ;
-                        document.getElementById("backgroundimg").src="../static/assets/img/blog/blog-"+num+".jpg";
-                        document.getElementById("timeline-guides").innerHTML = num;
-                    }
-                    function outcolor(num){
-                        document.getElementById("l"+num).style.background = "#ccc" ;
-                    }
-                </script>
+<!--                <script type="text/javascript">-->
+<!--                    function movecolor(num){-->
+<!--                        document.getElementById("l"+num).style.background = "#98E0FA" ;-->
+<!--                        document.getElementById("backgroundimg").src="../static/assets/img/blog/blog-"+num+".jpg";-->
+<!--                        document.getElementById("timeline-guides").innerHTML = num;-->
+<!--                    }-->
+<!--                    function outcolor(num){-->
+<!--                        document.getElementById("l"+num).style.background = "#ccc" ;-->
+<!--                    }-->
+<!--                </script>-->
 
-            </div>
+<!--            </div>-->
 
 <!--        &lt;!&ndash; End Appointment Area &ndash;&gt;-->
 
