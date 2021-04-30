@@ -1,44 +1,262 @@
 <!DOCTYPE html>
-<html>
 <head>
-    <title>Add Map</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <style type="text/css">
-        /* Set the size of the div element that contains the map */
-        #map {
-            height: 400px;
-            /* The height is 400 pixels */
-            width: 100%;
-            /* The width is the width of the web page */
-        }
-    </style>
-    <script>
-        // Initialize and add the map
-        function initMap() {
-            // The location of Uluru
-            const uluru = { lat: -25.344, lng: 131.036 };
-            // The map, centered at Uluru
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 4,
-                center: uluru,
-            });
-            // The marker, positioned at Uluru
-            const marker = new google.maps.Marker({
-                position: uluru,
-                map: map,
-            });
-        }
-    </script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/assets/css/bootstrap.min.css">
+    <!-- Boxican Css -->
+    <link rel="stylesheet" href="../static/assets/css/boxicons.min.css">
+    <!-- Meanmenu CSS -->
+    <link rel="stylesheet" href="../static/assets/css/meanmenu.min.css">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="../static/assets/css/nice-select.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="../static/assets/css/animate.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="../static/assets/css/owl.carousel.min.css">
+    <!-- Owl Theme CSS -->
+    <link rel="stylesheet" href="../static/assets/css/owl.theme.default.min.css">
+    <!-- Magnific CSS -->
+    <link rel="stylesheet" href="../static/assets/css/magnific-popup.min.css">
+    <!-- Jquery Datetimepicker CSS -->
+    <link rel="stylesheet" href="../static/assets/css/jquery.datetimepicker.min.css" />
+    <!-- Styleshet CSS -->
+    <link rel="stylesheet" href="../static/assets/css/style1.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="../static/assets/css/responsive.css">
+    <!-- Favican -->
+    <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
+    <link rel="stylesheet" href="../static/assets/css/stylesheet.css">
+    <link rel="stylesheet" href="../static/assets/css/vaccine-timeline.css">
+
+    <title>FSquare: COVID-19 rumours impacts on VIC's elders</title>
+
 </head>
-<body>
-<h3>My Google Maps Demo</h3>
-<!--The div element for the map -->
-<div id="map"></div>
 
-<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-<script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRelbYbazNSkr-BXoHkTdRs8Iua4bQqAs&callback=initMap&libraries=&v=weekly"
-        async
-></script>
+<html>
+<body>
+
+
+
+
+    <div class="main-navbar">
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="/" style="max-height:60px; max-width:60px;">
+                    <img src="../static/assets/img/lg.png" alt="image" style="width:50px;height:50px;">
+                </a>
+
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link" style="font-size:22px">
+                                Home
+                                <!--                                            <i class='bx bx-chevron-down'></i>-->
+                            </a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a href="/fact" class="nav-link" style="font-size:22px">
+                                COVID Facts
+                                <i class='bx bx-chevron-down'></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="/transmission" class="nav-link" style="font-size:20px">
+                                        Transmission
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/symptom" class="nav-link" style="font-size:20px">
+                                        Symptoms&testing
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="/travel_restriction" class="nav-link" style="font-size:20px">
+                                        Travel Restriction
+                                    </a>
+                                </li>
+
+
+
+                            </ul>
+
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/precaution" class="nav-link" style="font-size:22px">
+                                precautions
+                                <i class='bx bx-chevron-down'></i>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li class="nav-item">
+                                    <a href="/good_hygiene" class="nav-link" style="font-size:20px">
+                                        Hygiene
+                                        <!--                                                    <i class='bx bx-chevron-down'></i>-->
+                                    </a>
+
+
+                                </li>
+
+
+
+                                <li class="nav-item">
+                                    <a href="/isolation" class="nav-link" style="font-size:20px">
+                                        Isolation
+                                    </a>
+                                </li>
+
+
+
+
+
+                                <li class="nav-item">
+                                    <a href="/mask" class="nav-link" style="font-size:20px">
+                                        Mask
+                                    </a>
+                                </li>
+
+
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/vaccine" class="nav-link" style="font-size:22px">
+                                Vaccine
+                                <i class='bx bx-chevron-down'></i>
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li class="nav-item">
+                                    <a href="/vaccine_blog" class="nav-link" style="font-size:20px">
+                                        Questions?
+                                        <!--                                                    <i class='bx bx-chevron-down'></i>-->
+                                    </a>
+
+
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/vaccine_timeline" class="nav-link" style="font-size:20px">
+                                        When?
+                                        <!--                                                    <i class='bx bx-chevron-down'></i>-->
+                                    </a>
+
+
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="/vaccine_map" class="nav-link" style="font-size:20px">
+                                        Where?
+                                        <!--                                                    <i class='bx bx-chevron-down'></i>-->
+                                    </a>
+
+
+                                </li>
+
+
+
+                                <!--                                    <li class="nav-item">-->
+                                <!--                                        <a href="/timeline" class="nav-link" style="font-size:20px">-->
+                                <!--                                            How it was developed-->
+                                <!--                                        </a>-->
+                                <!--                                    </li>-->
+
+
+
+                            </ul>
+
+                        </li>
+                        <li class="nav-item">
+                            <a href="/about" class="nav-link" style="font-size:22px">
+                                About
+                            </a>
+                        </li>
+
+                        <li>
+                            <div class="search-wrapper">
+                                <img class="search-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+                                <input class="search-input" placeholder="Search" type="text" >
+                                <img class="clear-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxLjk3NiA1MS45NzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxLjk3NiA1MS45NzY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDQuMzczLDcuNjAzYy0xMC4xMzctMTAuMTM3LTI2LjYzMi0xMC4xMzgtMzYuNzcsMGMtMTAuMTM4LDEwLjEzOC0xMC4xMzcsMjYuNjMyLDAsMzYuNzdzMjYuNjMyLDEwLjEzOCwzNi43NywwICAgQzU0LjUxLDM0LjIzNSw1NC41MSwxNy43NCw0NC4zNzMsNy42MDN6IE0zNi4yNDEsMzYuMjQxYy0wLjc4MSwwLjc4MS0yLjA0NywwLjc4MS0yLjgyOCwwbC03LjQyNS03LjQyNWwtNy43NzgsNy43NzggICBjLTAuNzgxLDAuNzgxLTIuMDQ3LDAuNzgxLTIuODI4LDBjLTAuNzgxLTAuNzgxLTAuNzgxLTIuMDQ3LDAtMi44MjhsNy43NzgtNy43NzhsLTcuNDI1LTcuNDI1Yy0wLjc4MS0wLjc4MS0wLjc4MS0yLjA0OCwwLTIuODI4ICAgYzAuNzgxLTAuNzgxLDIuMDQ3LTAuNzgxLDIuODI4LDBsNy40MjUsNy40MjVsNy4wNzEtNy4wNzFjMC43ODEtMC43ODEsMi4wNDctMC43ODEsMi44MjgsMGMwLjc4MSwwLjc4MSwwLjc4MSwyLjA0NywwLDIuODI4ICAgbC03LjA3MSw3LjA3MWw3LjQyNSw3LjQyNUMzNy4wMjIsMzQuMTk0LDM3LjAyMiwzNS40NiwzNi4yNDEsMzYuMjQxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+                            </div>
+
+                            <style>
+                                .search-wrapper {
+                                    position: relative;
+                                    display: flex;
+                                    min-width: 100px;
+                                    /*padding-top: 20%;*/
+                                    margin-top: 13%;
+                                }
+
+                                .search-input {
+                                    border: 1px solid grey;
+                                    border-radius: 5px;
+                                    height: 25px;
+                                    width: 100%;
+                                    padding: 2px 23px 2px 30px;
+                                    outline: 0;
+                                    background-color: #f5f5f5;
+                                }
+
+                                .search-icon {
+                                    position: absolute;
+                                    top: 8px;
+                                    left: 8px;
+                                    width: 14px;
+                                }
+
+                                .clear-icon {
+                                    position: absolute;
+                                    top: 9px;
+                                    right: 8px;
+                                    width: 12px;
+                                    cursor: pointer;
+                                    visibility: hidden;
+                                }
+
+                                /*.search-wrapper:hover, */
+                                .search-wrapper:focus {
+                                    border: 1px solid #009688;
+                                    background-color: white;
+                                }
+                            </style>
+
+                            <script>
+                                const clearIcon = document.querySelector(".clear-icon");
+                                const searchBar = document.querySelector(".search-input");
+
+                                searchBar.addEventListener("keyup", () => {
+                                    if(searchBar.value && clearIcon.style.visibility != "visible"){
+                                        clearIcon.style.visibility = "visible";
+                                    } else if(!searchBar.value) {
+                                        clearIcon.style.visibility = "hidden";
+                                    }
+                                });
+
+                                clearIcon.addEventListener("click", () => {
+                                    searchBar.value = "";
+                                    clearIcon.style.visibility = "hidden";
+                                })
+                            </script>
+
+
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+
+
+            </li>
+        </div>
+    </div>
 </body>
 </html>
