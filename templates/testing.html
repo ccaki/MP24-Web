@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="zxx">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -28,235 +29,208 @@
     <link rel="stylesheet" href="../static/assets/css/responsive.css">
     <!-- Favican -->
     <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
-    <link rel="stylesheet" href="../static/assets/css/stylesheet.css">
-    <link rel="stylesheet" href="../static/assets/css/vaccine-timeline.css">
 
     <title>FSquare: COVID-19 rumours impacts on VIC's elders</title>
-
 </head>
 
-<html>
 <body>
 
+{% include 'nav.html' %}
+
+{% block navi %}
+{% endblock %}
 
 
 
-    <div class="main-navbar">
-        <div class="container">
-            <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="/" style="max-height:60px; max-width:60px;">
-                    <img src="../static/assets/img/lg.png" alt="image" style="width:50px;height:50px;">
-                </a>
-
-                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                    <ul class="navbar-nav m-auto">
-                        <li class="nav-item">
-                            <a href="/" class="nav-link" style="font-size:22px">
-                                Home
-                                <!--                                            <i class='bx bx-chevron-down'></i>-->
-                            </a>
-
-                        </li>
-                        <li class="nav-item">
-                            <a href="/fact" class="nav-link" style="font-size:22px">
-                                COVID Facts
-                                <i class='bx bx-chevron-down'></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="/transmission" class="nav-link" style="font-size:20px">
-                                        Transmission
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/symptom" class="nav-link" style="font-size:20px">
-                                        Symptoms&testing
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="/travel_restriction" class="nav-link" style="font-size:20px">
-                                        Travel Restriction
-                                    </a>
-                                </li>
-
-
-
-                            </ul>
-
-
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="/precaution" class="nav-link" style="font-size:22px">
-                                precautions
-                                <i class='bx bx-chevron-down'></i>
-                            </a>
-
-                            <ul class="dropdown-menu">
-
-                                <li class="nav-item">
-                                    <a href="/good_hygiene" class="nav-link" style="font-size:20px">
-                                        Hygiene
-                                        <!--                                                    <i class='bx bx-chevron-down'></i>-->
-                                    </a>
-
-
-                                </li>
-
-
-
-                                <li class="nav-item">
-                                    <a href="/isolation" class="nav-link" style="font-size:20px">
-                                        Isolation
-                                    </a>
-                                </li>
-
-
-
-
-
-                                <li class="nav-item">
-                                    <a href="/mask" class="nav-link" style="font-size:20px">
-                                        Mask
-                                    </a>
-                                </li>
-
-
-
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="/vaccine" class="nav-link" style="font-size:22px">
-                                Vaccine
-                                <i class='bx bx-chevron-down'></i>
-                            </a>
-
-                            <ul class="dropdown-menu">
-
-                                <li class="nav-item">
-                                    <a href="/vaccine_blog" class="nav-link" style="font-size:20px">
-                                        Questions?
-                                        <!--                                                    <i class='bx bx-chevron-down'></i>-->
-                                    </a>
-
-
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/vaccine_timeline" class="nav-link" style="font-size:20px">
-                                        When?
-                                        <!--                                                    <i class='bx bx-chevron-down'></i>-->
-                                    </a>
-
-
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="/vaccine_map" class="nav-link" style="font-size:20px">
-                                        Where?
-                                        <!--                                                    <i class='bx bx-chevron-down'></i>-->
-                                    </a>
-
-
-                                </li>
-
-
-
-                                <!--                                    <li class="nav-item">-->
-                                <!--                                        <a href="/timeline" class="nav-link" style="font-size:20px">-->
-                                <!--                                            How it was developed-->
-                                <!--                                        </a>-->
-                                <!--                                    </li>-->
-
-
-
-                            </ul>
-
-                        </li>
-                        <li class="nav-item">
-                            <a href="/about" class="nav-link" style="font-size:22px">
-                                About
-                            </a>
-                        </li>
-
-                        <li>
-                            <div class="search-wrapper">
-                                <img class="search-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
-                                <input class="search-input" placeholder="Search" type="text" >
-                                <img class="clear-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxLjk3NiA1MS45NzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxLjk3NiA1MS45NzY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDQuMzczLDcuNjAzYy0xMC4xMzctMTAuMTM3LTI2LjYzMi0xMC4xMzgtMzYuNzcsMGMtMTAuMTM4LDEwLjEzOC0xMC4xMzcsMjYuNjMyLDAsMzYuNzdzMjYuNjMyLDEwLjEzOCwzNi43NywwICAgQzU0LjUxLDM0LjIzNSw1NC41MSwxNy43NCw0NC4zNzMsNy42MDN6IE0zNi4yNDEsMzYuMjQxYy0wLjc4MSwwLjc4MS0yLjA0NywwLjc4MS0yLjgyOCwwbC03LjQyNS03LjQyNWwtNy43NzgsNy43NzggICBjLTAuNzgxLDAuNzgxLTIuMDQ3LDAuNzgxLTIuODI4LDBjLTAuNzgxLTAuNzgxLTAuNzgxLTIuMDQ3LDAtMi44MjhsNy43NzgtNy43NzhsLTcuNDI1LTcuNDI1Yy0wLjc4MS0wLjc4MS0wLjc4MS0yLjA0OCwwLTIuODI4ICAgYzAuNzgxLTAuNzgxLDIuMDQ3LTAuNzgxLDIuODI4LDBsNy40MjUsNy40MjVsNy4wNzEtNy4wNzFjMC43ODEtMC43ODEsMi4wNDctMC43ODEsMi44MjgsMGMwLjc4MSwwLjc4MSwwLjc4MSwyLjA0NywwLDIuODI4ICAgbC03LjA3MSw3LjA3MWw3LjQyNSw3LjQyNUMzNy4wMjIsMzQuMTk0LDM3LjAyMiwzNS40NiwzNi4yNDEsMzYuMjQxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
-                            </div>
-
-                            <style>
-                                .search-wrapper {
-                                    position: relative;
-                                    display: flex;
-                                    min-width: 100px;
-                                    /*padding-top: 20%;*/
-                                    margin-top: 13%;
-                                }
-
-                                .search-input {
-                                    border: 1px solid grey;
-                                    border-radius: 5px;
-                                    height: 25px;
-                                    width: 100%;
-                                    padding: 2px 23px 2px 30px;
-                                    outline: 0;
-                                    background-color: #f5f5f5;
-                                }
-
-                                .search-icon {
-                                    position: absolute;
-                                    top: 8px;
-                                    left: 8px;
-                                    width: 14px;
-                                }
-
-                                .clear-icon {
-                                    position: absolute;
-                                    top: 9px;
-                                    right: 8px;
-                                    width: 12px;
-                                    cursor: pointer;
-                                    visibility: hidden;
-                                }
-
-                                /*.search-wrapper:hover, */
-                                .search-wrapper:focus {
-                                    border: 1px solid #009688;
-                                    background-color: white;
-                                }
-                            </style>
-
-                            <script>
-                                const clearIcon = document.querySelector(".clear-icon");
-                                const searchBar = document.querySelector(".search-input");
-
-                                searchBar.addEventListener("keyup", () => {
-                                    if(searchBar.value && clearIcon.style.visibility != "visible"){
-                                        clearIcon.style.visibility = "visible";
-                                    } else if(!searchBar.value) {
-                                        clearIcon.style.visibility = "hidden";
-                                    }
-                                });
-
-                                clearIcon.addEventListener("click", () => {
-                                    searchBar.value = "";
-                                    clearIcon.style.visibility = "hidden";
-                                })
-                            </script>
-
-
-                        </li>
-
+<!-- Page Banner Area -->
+<div class="page-banner-area bg-2">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-content">
+                    <h2>Symptoms</h2>
+                    <ul>
+                        <li style="font-size:22px"><a href="/fact">Facts</a></li>
+                        <li style="font-size:22px"><a href="/symptom">Typical rumors & misleading info</a></li>
                     </ul>
                 </div>
-            </nav>
-
-
-            </li>
+            </div>
         </div>
     </div>
+</div>
+<!-- End Page Banner Area -->
+
+
+<!-- Blog Area -->
+
+<style>
+
+    .daddy{
+        min-height: 1000px;
+        margin-top: 5%;
+        margin-left: 12%;
+        /*padding-left: 2%;*/
+    }
+    .brother1{
+        width:40%;
+        height:300px;
+        background-color: #E1F3FF;
+        margin-top: 2%;
+        /*margin-left: 2%;*/
+        float:left;
+        opacity: 1;
+        -webkit-transition: 1s;
+        border-radius: 10px;
+        filter:Alpha(opacity=100);
+    }
+    .brother2{
+        width:50%;
+        height:300px;
+        float:left;
+        opacity: 0;
+        margin-top: 2%;
+        margin-left: 2%;
+        -webkit-transition: 3s;
+        filter:Alpha(opacity=0);
+    }
+
+
+    .brother1:hover {
+        background-color: #207EF7;
+        /*border: 1px solid #207EF7;*/
+        border-radius: 30px;
+        color: #ffffff;
+        -webkit-box-shadow: 0px 0px 20px #d4d4d4;
+        box-shadow: 0px 0px 20px #d4d4d4;
+    }
+
+    .brother1:hover+.brother2{
+        opacity: 1;
+        filter:Alpha(opacity=100);
+        background-color: #207EF7;
+        /*border: 1px solid #207EF7;*/
+        border-radius: 30px;
+        /*color: #ffffff;*/
+        -webkit-box-shadow: 0px 0px 20px #d4d4d4;
+        box-shadow: 0px 0px 20px #d4d4d4;
+    }
+
+</style>
+<div class="daddy">
+    <div class="container" >
+
+        <div class="brother1">
+            <h3>Targeted misinformation</h3>
+            <div class="view-more">
+                <a href="#" class="view-more-btn" >
+                    How to check it
+                </a>
+            </div>
+
+        </div>
+
+        <div class="brother2">
+            <p>
+                News that is misleading, which is produced to deceive and do harm which can help them achieve the intended purposes.	For example:
+            </p>
+            <p>
+                1.5G WiFi networks could be responsible for the rapid spread of the new coronavirus.
+            </p>
+            <p>
+                2.One or some of the Asian countries has produced the Covid-19 (increase the race conflict)
+            </p>
+        </div>
+
+    </div>
+    <div class="container" >
+
+    <!--    <div class="brother2">-->
+    <!--        <p>News that contains some grains of truth that are not fully verified, which are used to support a certain position or view. For example:</p>-->
+    <!--        <p>1. Achieve herd immunity by “natural” infections. </p>-->
+    <!--        <p>-->
+    <!--            2. Masks were not recommended for the general public in the early stage of Covid-19 pandemic-->
+    <!--        </p>-->
+    <!--    </div>-->
+
+        <div class="brother1">
+            <h3>Sloppy reporting</h3>
+            <div class="view-more">
+                <a href="#" class="view-more-btn" >
+                    How to check it
+                </a>
+            </div>
+        </div>
+
+        <div class="brother2">
+            <p>News that contains some grains of truth that are not fully verified, which are used to support a certain position or view. For example:</p>
+            <p>1. Achieve herd immunity by “natural” infections. </p>
+            <p>
+                2. Masks were not recommended for the general public in the early stage of Covid-19 pandemic
+            </p>
+        </div>
+
+    </div>
+
+    <div class="container" >
+
+        <div class="brother1">
+            <h3>Misleading news</h3>
+            <div class="view-more">
+                <a href="#" class="view-more-btn" >
+                    How to check it
+                </a>
+            </div>
+
+        </div>
+
+        <div class="brother2">
+            <p>Misleading news that’s not based on facts, but supports an on-going narrative – news where there is no established baseline for truth, often where ideologies or opinions clash and unconscious biases come into play. For example:</p>
+            <p>1. Injecting bleach or highly concentrated rubbing alcohol can help combat the virus</p>
+            <p>
+                2. The children are virtually immune to Covid-19.
+            </p>
+            <p>3. Covid-19 will disappear like a miracle in summer.</p>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- End Blog Area -->
+{% include 'footer.html' %}
+{% block foot %}
+{% endblock %}
+
+<!-- Go Top -->
+<div class="go-top">
+    <i class='bx bxs-upvote'></i>
+</div>
+<!-- End Go Top -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../static/assets/js/jquery.min.js"></script>
+<script src="../static/assets/js/popper.min.js"></script>
+<script src="../static/assets/js/bootstrap.min.js"></script>
+<!-- Magnific -->
+<script src="../static/assets/js/jquery.magnific-popup.min.js"></script>
+<!-- Meanmenu JS -->
+<script src="../static/assets/js/meanmenu.min.js"></script>
+<!-- Nice Select JS -->
+<script src="../static/assets/js/jquery.nice-select.min.js"></script>
+<!-- Owl Carousel JS -->
+<script src="../static/assets/js/owl.carousel.min.js"></script>
+<!-- Jquery Mixitup JS -->
+<script src="../static/assets/js/jquery.mixitup.min.js"></script>
+<!-- Jquery Datetimepicker JS -->
+<script src="../static/assets/js/jquery.datetimepicker.full.min.js"></script>
+<!-- Form Validator JS -->
+<script src="../static/assets/js/form-validator.min.js"></script>
+<!-- Contact JS -->
+<script src="../static/assets/js/contact-form-script.js"></script>
+<!-- Ajaxchimp JS -->
+<script src="../static/assets/js/jquery.ajaxchimp.min.js"></script>
+<!-- Custom JS -->
+<script src="../static/assets/js/custom.js"></script>
 </body>
 </html>
