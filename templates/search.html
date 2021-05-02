@@ -121,44 +121,53 @@
 </div>
 <!-- End Page Banner Area -->
 
-<!--<div class="blog-area blog-area-two ptb-100">-->
-<!--    <div class="container">-->
+<div class="blog-area blog-area-two ptb-100">
+    <div class="container">
+        <h4 style="text-align: center">Here are your search results:</h4>
+        {% for item in result %}
+        <br>
+            <a style="margin: 0;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 16px 25px;
+  border: 1px solid #eee;
+  border-radius: 30px;
+  position: relative;
+  display: inline-flex;
+  background-color: #ffffff;color:#364b63;font-size: 20px;text-decoration: underline;" href="{{item.link}}">{{item.name}}</a>
+            <br> </br>
+        </li>
+        {% endfor %}
+<!--        <div class="frequently-area ptb-100">-->
+<!--            <div class="container">-->
+<!--                <div class="row align-items-center">-->
+<!--                    <div class="col-lg-6">-->
+<!--                        <div class="frequently-text">-->
+<!--                            <div class="section-title-two">-->
+<!--                                <h4 style="text-align: center">Here are your search results:</h4>-->
+<!--                                   </div>-->
+<!--                            <div class="faq-contant">-->
+<!--                                <div class="row align-items-center">-->
+<!--                                    <ul class="accordion">-->
+<!--                                        {% for item in result %}-->
+<!--                                        <li>-->
+<!--                                            <h3 class="title1"><a style="color:#364b63;font-size: 20px;text-decoration: underline;width:800px" href="{{item.link}}">{{item.name}}</a></h3>-->
 
-<!--        {% for item in result %}-->
-<!--        <br>-->
-<!--            <a style="font-size: 20px;text-decoration: underline;" href="{{item.link}}">{{item.name}}</a>-->
-<!--            <br> </br>-->
-<!--        </li>-->
-<!--        {% endfor %}-->
-        <div class="frequently-area ptb-100">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="frequently-text">
-                            <div class="faq-contant">
-                                <div class="row align-items-center">
-                                    <ul class="accordion">
-                                        {% for item in result %}
-                                        <li>
-                                            <h3 class="title1"><a style="color:#364b63;font-size: 20px;text-decoration: underline;width:800px" href="{{item.link}}">{{item.name}}</a></h3>
-<!--                                            <div class="accordion-content">-->
-<!--                                                <p style="font-size:18px">Factoid contains almost all information about COVID-19 from the official platform, guarantees the authenticity of the information, and updates the information in real time. Presenting this information in text, pictures, and video to help you avoid being misled by fake COVID-19 news.</p>-->
-<!--                                            </div>-->
-                                        </li>
-                                        {% endfor %}
+<!--                                        </li>-->
+<!--                                        {% endfor %}-->
 
 
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                </div>
-            </div>
-        </div>
-<!--    </div>-->
-<!--</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+</div>
 
 {% include 'footer.html' %}
 
