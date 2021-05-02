@@ -44,7 +44,6 @@ def fact():
 #get detailed blog entry from database
 def get_detail(category,id):
     sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"' AND id = " + id
-    print(sql)
     res = db_query(sql)
     #get the only element in the res list
     res = res[0]
@@ -364,6 +363,8 @@ def vaccine_blog():
 def test():
     return render_template('testing.html', content_type='application/json')
 
+
+
 #test page
 @app.route('/timeline')
 def timeline():
@@ -376,3 +377,127 @@ def timeline():
 #     res = db_query(sql)
 #     res=res[0]
 #     return render_template('blog-details-26.html', result=res, content_type='application/js')
+
+#algorithm to search in a column in database
+def search_in_db(keyword,res,col):
+    sql = "SELECT *FROM  fsquare.articles WHERE `"+col+"` LIKE '%"+keyword+"%'"
+    result = db_query(sql)
+    for r in result:
+        item = {}
+        item['name'] = r['title']
+        category = r['category']
+        id = str(r['id'])
+        item['link'] = '/'+category+'detail/'+id
+        res.append(item)
+    return res
+
+
+#db title search algorithm
+def title_search(keyword,res):
+    res= search_in_db(keyword,res,'title')
+    return res
+
+#db content search algorithm
+def content_search(keyword,res):
+    res= search_in_db(keyword,body,'title')
+    return res
+
+#integrated database searching algorithm
+def db_search(keyword,res):
+    res = title_search(keyword, res)
+    return res
+
+#html names
+htmls=['travel','transmission','hygiene','isolation','symptom','precaution','mask','fact','vaccine']
+#html searching algorithm
+def html_search(keyword,res):
+    if keyword in htmls:
+        name = "Read about "+keyword
+        #for travel and hygiene, change the link names
+        if (keyword =='travel'):
+            keyword = 'travel_restriction'
+        if (keyword =='hygiene'):
+            keyword = 'good_hygiene'
+        link = "/"+keyword
+        item = {"name":name,"link":link}
+        res.append(item)
+    print(res)
+    return res
+
+
+
+
+#integrated search algorithm
+def search_algorithm(keyword):
+    #format of res: a list of dic, key=title, value=href
+    """
+    e.g. [{"vaccine","/vaccine"},"vaccine_article","/articlelink"]
+    """
+    res = []
+
+    #search algorithm
+    res = html_search(keyword,res)
+    res = db_search(keyword,res)
+    return res
+
+
+#a dictionary for synonyms
+synonym_dic={
+    "travel":"travel",
+    "travel ban":"travel",
+    "travel restrictions":"travel",
+    "travel bans":"travel",
+    "masks":"mask",
+    "respirator":"mask",
+    "respirators":"mask",
+    "quarantine":"isolation",
+    "quarantines":"isolation",
+    "self isolation":"isolation",
+    "self-isolation":"isolation",
+    "precautions":"precaution",
+    "protection":"precaution",
+    "protections":"precaution",
+    "symptoms":"symptom",
+    "transmissions":"transmission",
+    "vaccines":"vaccine",
+    }
+#find synonyms of keyword for better search results
+def find_synonym(keyword):
+    if keyword in synonym_dic.keys():
+        keyword = synonym_dic[keyword]
+    return keyword
+
+@app.route('/search/', methods = ['POST', 'GET'])
+def search():
+    if request.method == 'GET':
+        return render_template('error-404.html',form_data = form_data)
+
+    if request.method == 'POST':
+        form_data = request.form
+        input = form_data['keyword']
+
+        #make the input case insensitive
+        keyword = input.lower()
+
+        #keyword grouping
+        keyword = find_synonym(keyword)
+
+        #get results
+        res = search_algorithm(keyword)
+        #print(res)
+
+        #check if no search result is found
+        if (len(res)>=1):
+            return render_template('search.html',result = res)
+        else:
+            return render_template('noSearchResult.html')
+
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            error = 'Error Message Text'
+        else:
+            return redirect(url_for('home'))
+    return render_template('index.html', error=error)
