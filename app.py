@@ -412,10 +412,16 @@ htmls=['travel','transmission','hygiene','isolation','symptom','precaution','mas
 #html searching algorithm
 def html_search(keyword,res):
     if keyword in htmls:
-        link = "/"+keyword
         name = "Read about "+keyword
+        #for travel and hygiene, change the link names
+        if (keyword =='travel'):
+            keyword = 'travel_restriction'
+        if (keyword =='hygiene'):
+            keyword = 'good_hygiene'
+        link = "/"+keyword
         item = {"name":name,"link":link}
         res.append(item)
+    print(res)
     return res
 
 
@@ -481,7 +487,7 @@ def search():
         #print(res)
 
         #check if no search result is found
-        if (len(res)>1):
+        if (len(res)>=1):
             return render_template('search.html',result = res)
         else:
             return render_template('noSearchResult.html')
