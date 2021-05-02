@@ -478,8 +478,13 @@ def search():
 
         #get results
         res = search_algorithm(keyword)
-        print(res)
-        return render_template('search.html',result = res)
+        #print(res)
+
+        #check if no search result is found
+        if (len(res)>1):
+            return render_template('search.html',result = res)
+        else:
+            return render_template('noSearchResult.html')
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
