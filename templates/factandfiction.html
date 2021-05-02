@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="zxx">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/assets/css/bootstrap.min.css">
+    <!-- Boxican Css -->
+    <link rel="stylesheet" href="../static/assets/css/boxicons.min.css">
+    <!-- Meanmenu CSS -->
+    <link rel="stylesheet" href="../static/assets/css/meanmenu.min.css">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="../static/assets/css/nice-select.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="../static/assets/css/animate.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="../static/assets/css/owl.carousel.min.css">
+    <!-- Owl Theme CSS -->
+    <link rel="stylesheet" href="../static/assets/css/owl.theme.default.min.css">
+    <!-- Magnific CSS -->
+    <link rel="stylesheet" href="../static/assets/css/magnific-popup.min.css">
+    <!-- Jquery Datetimepicker CSS -->
+    <link rel="stylesheet" href="../static/assets/css/jquery.datetimepicker.min.css" />
+    <!-- Styleshet CSS -->
+    <link rel="stylesheet" href="../static/assets/css/style1.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="../static/assets/css/responsive.css">
+    <!-- Favican -->
+    <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
+
+    <title>FSquare: COVID-19 rumours impacts on VIC's elders</title>
+</head>
+
+<body>
+
+{% include 'nav.html' %}
+
+{% block navi %}
+{% endblock %}
+
+
+
+<!-- Page Banner Area -->
+<div class="page-banner-area bg-2">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-content">
+                    <h2>Anti Fictions</h2>
+                    <ul>
+                        <li style="font-size:22px"><a href="/fact">Facts</a></li>
+                        <li style="font-size:22px"><a href="/fiction">Anti Fictions</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Banner Area -->
+
+
+<!-- Blog Area -->
+
+<style>
+
+    .daddy{
+        min-height: 1200px;
+        margin-top: 5%;
+        /*margin-left: 10%;*/
+        /*padding-left: 2%;*/
+    }
+    .mother{
+        width:100%;
+        height:100%;
+        padding-left: 10%;
+    }
+    .brother1{
+        width:35%;
+        height:300px;
+        background-color: #E1F3FF;
+        margin-top: 2%;
+        /*margin-left: 2%;*/
+        float:left;
+        opacity: 1;
+        -webkit-transition: 1s;
+        border-radius: 10px;
+        filter:Alpha(opacity=100);
+    }
+    .brother1 h3{
+        position: relative;
+        padding-top:10%;
+        margin-left: 10%;
+    }
+
+    .brother1 h3 a{
+        line-height: 1.1;
+        color: #292323;
+    }
+    .view-more {
+        background-color: transparent;
+        display: inline-block;
+        border: 1px solid #207EF7;
+        border-radius: 30px;
+        color: #555555;
+        margin-left: 10%;
+        margin-top: 3%;
+        padding: 15px 30px;
+        transition: 0.5s;
+    }
+
+
+    .brother2 p{
+        font-size: 25px;
+        margin-top: 30px;
+        margin-left: 5%;
+    }
+
+    .brother2{
+        width:50%;
+        height:300px;
+        float:left;
+        opacity: 0;
+        margin-top: 2%;
+        margin-left: 5%;
+        -webkit-transition: 3s;
+        filter:Alpha(opacity=0);
+    }
+
+    .brother2 p{
+        font-size: 20px;
+
+    }
+
+
+    .brother1:hover {
+        /*background-color: #207EF7;*/
+        background-color: #FFFFFF;
+        /*border: 1px solid #207EF7;*/
+        border-radius: 30px;
+        color: #ffffff;
+        -webkit-box-shadow: 0px 0px 20px #d4d4d4;
+        box-shadow: 0px 0px 20px #d4d4d4;
+    }
+
+    .brother1:hover+.brother2{
+        opacity: 1;
+        filter:Alpha(opacity=100);
+        background-color: #E1F3FF;
+        /*border: 1px solid #207EF7;*/
+        border-radius: 30px;
+        /*color: #ffffff;*/
+        -webkit-box-shadow: 0px 0px 20px #d4d4d4;
+        box-shadow: 0px 0px 20px #d4d4d4;
+    }
+
+    .view-more:hover{
+        background-color: #E1F3FF;
+    }
+
+</style>
+<div class="daddy">
+    <div class="mother" >
+
+        <div class="brother1">
+            <h3><a href="#">Misleading information: Targeted misinformation</a></h3>
+            <div class="view-more">
+                <a href="/fictiondetails">
+                    How to check it
+                </a>
+            </div>
+
+        </div>
+
+        <div class="brother2">
+            <p>
+                News that is misleading, which is produced to deceive and do harm which can help them achieve the intended purposes.	For example:
+            </p>
+            <p>
+                1.5G WiFi networks could be responsible for the rapid spread of the new coronavirus.
+            </p>
+            <p>
+                2.One or some of the Asian countries has produced the Covid-19 (increase the race conflict)
+            </p>
+        </div>
+
+    </div>
+    <div class="mother" >
+
+        <!--    <div class="brother2">-->
+        <!--        <p>News that contains some grains of truth that are not fully verified, which are used to support a certain position or view. For example:</p>-->
+        <!--        <p>1. Achieve herd immunity by “natural” infections. </p>-->
+        <!--        <p>-->
+        <!--            2. Masks were not recommended for the general public in the early stage of Covid-19 pandemic-->
+        <!--        </p>-->
+        <!--    </div>-->
+
+        <div class="brother1">
+            <h3>Misleading information: Sloppy reporting   </h3>
+            <div class="view-more">
+                <a href="/fictiondetails">
+                    How to check it
+                </a>
+            </div>
+        </div>
+
+        <div class="brother2">
+            <p>News that contains some grains of truth that are not fully verified, which are used to support a certain position or view. For example:</p>
+            <p>1. Achieve herd immunity by “natural” infections. </p>
+            <p>
+                2. Masks were not recommended for the general public in the early stage of Covid-19 pandemic
+            </p>
+        </div>
+
+    </div>
+
+    <div class="mother" >
+
+        <div class="brother1">
+            <h3>Misleading information: Misleading news    </h3>
+            <div class="view-more">
+                <a href="/fictiondetails">
+                    How to check it
+                </a>
+            </div>
+
+        </div>
+
+        <div class="brother2">
+            <p>Misleading news that’s not based on facts, but supports an on-going narrative – news where there is no established baseline for truth, often where ideologies or opinions clash and unconscious biases come into play. For example:</p>
+            <p>1. Injecting bleach or highly concentrated rubbing alcohol can help combat the virus</p>
+            <p>
+                2. The children are virtually immune to Covid-19.
+            </p>
+            <p>3. Covid-19 will disappear like a miracle in summer.</p>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- End Blog Area -->
+{% include 'footer.html' %}
+{% block foot %}
+{% endblock %}
+
+<!-- Go Top -->
+<div class="go-top">
+    <i class='bx bxs-upvote'></i>
+</div>
+<!-- End Go Top -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../static/assets/js/jquery.min.js"></script>
+<script src="../static/assets/js/popper.min.js"></script>
+<script src="../static/assets/js/bootstrap.min.js"></script>
+<!-- Magnific -->
+<script src="../static/assets/js/jquery.magnific-popup.min.js"></script>
+<!-- Meanmenu JS -->
+<script src="../static/assets/js/meanmenu.min.js"></script>
+<!-- Nice Select JS -->
+<script src="../static/assets/js/jquery.nice-select.min.js"></script>
+<!-- Owl Carousel JS -->
+<script src="../static/assets/js/owl.carousel.min.js"></script>
+<!-- Jquery Mixitup JS -->
+<script src="../static/assets/js/jquery.mixitup.min.js"></script>
+<!-- Jquery Datetimepicker JS -->
+<script src="../static/assets/js/jquery.datetimepicker.full.min.js"></script>
+<!-- Form Validator JS -->
+<script src="../static/assets/js/form-validator.min.js"></script>
+<!-- Contact JS -->
+<script src="../static/assets/js/contact-form-script.js"></script>
+<!-- Ajaxchimp JS -->
+<script src="../static/assets/js/jquery.ajaxchimp.min.js"></script>
+<!-- Custom JS -->
+<script src="../static/assets/js/custom.js"></script>
+</body>
+</html>
