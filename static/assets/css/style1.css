@@ -3521,7 +3521,16 @@ Frequently Area Two CSS
   position: relative;
   background-color: #ffffff;
 }
-
+.frequently-area .frequently-text .faq-contant .accordion li .title1 {
+  margin: 0;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 16px 25px;
+  border: 1px solid #eee;
+  border-radius: 30px;
+  position: relative;
+  background-color: #ffffff;
+}
 .frequently-area .frequently-text .faq-contant .accordion li .title:after {
   width: 10px;
   height: 10px;
