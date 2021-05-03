@@ -417,7 +417,7 @@ def db_search(keyword,res):
     return res
 
 #html names
-htmls=['travel','transmission','hygiene','isolation','symptom','precaution','mask','fact','vaccine']
+htmls=['travel','transmission','hygiene','isolation','symptom','precaution','mask','fact','vaccine','fiction']
 #html searching algorithm
 def html_search(keyword,res):
     if keyword in htmls:
@@ -469,6 +469,16 @@ synonym_dic={
     "symptoms":"symptom",
     "transmissions":"transmission",
     "vaccines":"vaccine",
+    "fact":"fiction",
+    "facts":"fiction",
+    "fictions":"fiction",
+    "rumor":"fiction",
+    "rumors":"fiction",
+    "fact check":"fiction",
+    "facts check":"fiction",
+    "real":"fiction",
+    "reality":"fiction",
+
     }
 #find synonyms of keyword for better search results
 def find_synonym(keyword):
