@@ -469,6 +469,16 @@ synonym_dic={
     "symptoms":"symptom",
     "transmissions":"transmission",
     "vaccines":"vaccine",
+    "fact":"fiction",
+    "facts":"fiction",
+    "fictions":"fiction",
+    "rumor":"fiction",
+    "rumors":"fiction",
+    "fact check":"fiction",
+    "facts check":"fiction",
+    "real":"fiction",
+    "reality":"fiction",
+
     }
 #find synonyms of keyword for better search results
 def find_synonym(keyword):
