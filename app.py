@@ -417,7 +417,7 @@ def db_search(keyword,res):
     return res
 
 #html names
-htmls=['travel','transmission','hygiene','isolation','symptom','precaution','mask','fact','vaccine']
+htmls=['travel','transmission','hygiene','isolation','symptom','precaution','mask','fact','vaccine','fiction']
 #html searching algorithm
 def html_search(keyword,res):
     if keyword in htmls:
