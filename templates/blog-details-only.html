@@ -80,10 +80,10 @@
                             <i class='bx bx-calendar' style="font-size:16px">{{result.publishDate}}</i>
 
                         </li>
-                        <li>
+<!--                        <li>-->
 
-                            <i class='bx bx-user' style="font-size:16px">{{result.creator}}</i>
-                        </li>
+<!--                            <i class='bx bx-user' style="font-size:16px">{{result.creator}}</i>-->
+<!--                        </li>-->
                         <!--                                <li>-->
                         <!--                                    <i class='bx bx-show-alt'></i>-->
                         <!--                                    45 views-->
@@ -96,6 +96,11 @@
 
                         <div class = 'line-breaker'>
                             <pre style="font-size:20px;height: auto;max-height: 2000px;overflow: auto;word-break: normal;word-wrap: normal;white-space: pre-wrap;font-family: Arial, Helvetica, sans-serif;">{{result.body}}</pre>
+                            <br></br>
+                            <p style="font-size: 18px;color:#292323;font-weight: bold">Read more at:
+                            </p>
+                            <a style="font-size: 18px;color:#207EF7;text-decoration: underline;" href="{{result.reference}}">{{result.reference}}</a>
+
 
                         </div>
 
