@@ -1,668 +1,665 @@
 ﻿<!doctype html>
 <html lang="zxx">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="../static/assets/css/bootstrap.min.css">
-        <!-- Boxican Css -->
-        <link rel="stylesheet" href="../static/assets/css/boxicons.min.css">
-        <!-- Meanmenu CSS -->
-        <link rel="stylesheet" href="../static/assets/css/meanmenu.min.css">
-        <!-- Nice Select CSS -->
-        <link rel="stylesheet" href="../static/assets/css/nice-select.css">
-        <!-- Animate CSS -->
-        <link rel="stylesheet" href="../static/assets/css/animate.min.css">
-        <!-- Owl Carousel CSS -->
-        <link rel="stylesheet" href="../static/assets/css/owl.carousel.min.css">
-        <!-- Owl Theme CSS -->
-        <link rel="stylesheet" href="../static/assets/css/owl.theme.default.min.css">
-        <!-- Magnific CSS -->
-        <link rel="stylesheet" href="../static/assets/css/magnific-popup.min.css">
-        <!-- Jquery Datetimepicker CSS -->
-        <link rel="stylesheet" href="../static/assets/css/jquery.datetimepicker.min.css" />
-        <!-- Styleshet CSS -->
-        <link rel="stylesheet" href="../static/assets/css/style1.css">
-        <!-- Responsive CSS -->
-        <link rel="stylesheet" href="../static/assets/css/responsive.css">
-        <!-- Favican -->
-        <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
-        <link rel="stylesheet" href="../static/assets/css/stylesheet.css">
-        <link rel="stylesheet" href="../static/assets/css/vaccine-timeline.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/assets/css/bootstrap.min.css">
+    <!-- Boxican Css -->
+    <link rel="stylesheet" href="../static/assets/css/boxicons.min.css">
+    <!-- Meanmenu CSS -->
+    <link rel="stylesheet" href="../static/assets/css/meanmenu.min.css">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="../static/assets/css/nice-select.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="../static/assets/css/animate.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="../static/assets/css/owl.carousel.min.css">
+    <!-- Owl Theme CSS -->
+    <link rel="stylesheet" href="../static/assets/css/owl.theme.default.min.css">
+    <!-- Magnific CSS -->
+    <link rel="stylesheet" href="../static/assets/css/magnific-popup.min.css">
+    <!-- Jquery Datetimepicker CSS -->
+    <link rel="stylesheet" href="../static/assets/css/jquery.datetimepicker.min.css" />
+    <!-- Styleshet CSS -->
+    <link rel="stylesheet" href="../static/assets/css/style1.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="../static/assets/css/responsive.css">
+    <!-- Favican -->
+    <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
+    <link rel="stylesheet" href="../static/assets/css/stylesheet.css">
+    <link rel="stylesheet" href="../static/assets/css/vaccine-timeline.css">
 
-        <title>FSquare: COVID-19 rumours impacts on VIC's elders</title>
+    <!--        <title>FSquare: COVID-19 rumours impacts on VIC's elders</title>-->
 
-    </head>
+</head>
 
-    <body>
-        <header>
-            {% include 'nav.html' %}
+<body>
+<header>
+    {% include 'nav.html' %}
 
-            {% block navi %}
-            {% endblock %}
-        </header>
-        <!-- End Header Area -->
-
-
-        <!-- Banner Area -->
-        <div class="banner-area bg-color ptb-100" style="margin-bottom: 10px">
-
-            <div class="carousel-wrapper", style="height:5%;max-height: 5%">
-                <div class="carousel">
-                    <button id="carouselPreviousSlideButton" class="carousel__button carousel__button--left">
-                        <img src="../static/assets/carousel-arrow-left.svg" alt="">
-                    </button>
-                    <div class="carousel__track-container">
-                        <ul id="track" class="carousel__track" >
-                            <li class="carousel__slide  current-slide">
-                                <img class="carousel__image" src="../static/assets/img/journey.jpg" alt="">
-                                <div style="color:#262020;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
-                                    <p style="font-size:40px;"><a style="color:#262020;text-shadow:   1px 1px 0 #ffffff;" href="/#tutorial">Discover Factoids</a></p>
-<!--                                    <p style="font-size:20px;">Always clearly understand restriction when you are travelling.</p>-->
-                                    <div class="about-btn">
-                                        <a href="/#tutorial" class="default-btn">
-                                            Start journey
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="carousel__slide" >
-                                <img class="carousel__image" src="../static/assets/img/vaccines.jpg" alt="">
-                                <div style="color:#262020;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
-                                    <p style="font-size:40px;"><a style="color:#262020;text-shadow:   1px 1px 0 #ffffff;" href="/vaccine">Vaccines</a></p>
-                                    <p style="font-size:20px;color:#262020">Health is in your own hands - learn about the vaccines.</p>
-                                </div>
-                            </li>
-                            <li class="carousel__slide" >
-                                <img class="carousel__image" src="../static/assets/img/symptoms.jpg" alt="">
-                                <div style="color:#262020;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
-                                    <p style="font-size:40px;"><a style="color:#262020;text-shadow:   2px 2px 0 #ffffff;" href="/symptom">Symptoms</a></p>
-                                    <p style="font-size:20px;color:#262020">Respond quickly but don't panic!</p>
-                                </div>
-                            </li>
-                            <li class="carousel__slide">
-                                <img class="carousel__image" src="../static/assets/img/masks.jpg" alt="">
-                                <div style="color:#262020;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
-                                    <p style="font-size:40px;"><a style="color:#262020;text-shadow:   2px 2px 0 #ffffff;" href="/mask">Mask</a></p>
-                                    <p style="font-size:20px;color:#262020">Mask or respirator，which to wear?</p>
-                                </div>
-                            </li>
-
-                            <li class="carousel__slide" style="left: 2253px;">
-                                <img class="carousel__image" src="../static/assets/img/travelling.jpg" alt="">
-                                <div style="color:#262020;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
-                                    <p style="font-size:40px;"><a style="color:#262020;text-shadow:   2px 2px 0 #ffffff;" href="/travel_restriction">Travel Restriction</a></p>
-                                    <p style="font-size:20px;color:#262020">Always clearly understand restriction when you are travelling.</p>
-                                </div>
-
-                            </li>
+    {% block navi %}
+    {% endblock %}
+</header>
+<!-- End Header Area -->
 
 
-                        </ul>
-                    </div>
-                    <button id="carouselNextSlideButton" class="carousel__button carousel__button--right">
-                        <img src="../static/assets/carousel-arrow-right.svg" alt="">
-                    </button>
-                    <div id="carouselNav" class="carousel__nav">
-                        <button class="carousel__indicator current-slide"></button>
-                        <button class="carousel__indicator"></button>
-                        <button class="carousel__indicator"></button>
-                        <button class="carousel__indicator"></button>
-                        <button class="carousel__indicator"></button>
-                    </div>
+<!-- Banner Area -->
+<div class="banner-area bg-color ptb-100" style="margin-bottom: 10px">
+
+    <div class="carousel-wrapper", style="height:5%;max-height: 5%">
+        <div class="carousel">
+            <button id="carouselPreviousSlideButton" class="carousel__button carousel__button--left">
+                <img src="../static/assets/carousel-arrow-left.svg" alt="">
+            </button>
+            <div class="carousel__track-container">
+                <ul id="track" class="carousel__track" >
+                    <li class="carousel__slide  current-slide">
+                        <img class="carousel__image" src="../static/assets/img/explore.jpg" alt="">
+                        <div style="color:#262020;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
+                            <p style="font-size:40px;"><a style="color:#262020;text-shadow:   1px 1px 0 #ffffff;" href="/about">Discover Factoids</a></p>
+                            <p style="font-size:20px;color:#262020">Welcome to VIC Senior Covid-19 Fact Checker Pro where
+                                you can access Covid-19 facts or fiction that you may be confused about.</p>
+                            <!--                                    <p style="font-size:20px;">Always clearly understand restriction when you are travelling.</p>-->
+                            <div class="about-btn">
+                                <a href="/about" class="default-btn">
+                                    Start Journey
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="carousel__slide" >
+                        <img class="carousel__image" src="../static/assets/img/vaccine.jpg" alt="">
+                        <div style="color:#262020;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
+                            <p style="font-size:40px;"><a style="color:#262020;text-shadow:   1px 1px 0 #ffffff;" href="/vaccine">Vaccines</a></p>
+                            <p style="font-size:20px;color:#262020">Health is in your own hands - learn about the vaccines.</p>
+                        </div>
+                    </li>
+                    <li class="carousel__slide" >
+                        <img class="carousel__image" src="../static/assets/img/symptoms.jpg" alt="">
+                        <div style="color:#262020;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
+                            <p style="font-size:40px;"><a style="color:#262020;text-shadow:   2px 2px 0 #ffffff;" href="/symptom">Symptoms</a></p>
+                            <p style="font-size:20px;color:#262020">Respond quickly but don't panic!</p>
+                        </div>
+                    </li>
+                    <li class="carousel__slide">
+                        <img class="carousel__image" src="../static/assets/img/mask.jpg" alt="">
+                        <div style="color:#262020;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
+                            <p style="font-size:40px;"><a style="color:#262020;text-shadow:   2px 2px 0 #ffffff;" href="/mask">Mask</a></p>
+                            <p style="font-size:20px;color:#262020">Mask or respirator，which one should you wear?</p>
+                        </div>
+                    </li>
+
+                    <li class="carousel__slide" style="left: 2253px;">
+                        <img class="carousel__image" src="../static/assets/img/travelling.jpg" alt="">
+                        <div style="color:#262020;position: absolute;top: 60%;left: 40%;transform: translate(-50%, -50%);">
+                            <p style="font-size:40px;"><a style="color:#262020;text-shadow:   2px 2px 0 #ffffff;" href="/travel_restriction">Travel Restriction</a></p>
+                            <p style="font-size:20px;color:#262020">Know your restrictions before you go travelling!</p>
+                        </div>
+
+                    </li>
+
+
+                </ul>
+            </div>
+            <button id="carouselNextSlideButton" class="carousel__button carousel__button--right">
+                <img src="../static/assets/carousel-arrow-right.svg" alt="">
+            </button>
+            <div id="carouselNav" class="carousel__nav">
+                <button class="carousel__indicator current-slide"></button>
+                <button class="carousel__indicator"></button>
+                <button class="carousel__indicator"></button>
+                <button class="carousel__indicator"></button>
+                <button class="carousel__indicator"></button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container" style="margin-top:40px">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="banner-text">
+                    <h3>Make Good Health and Wellbeing a Choice,
+                        Not an Option!</h3>
+
+
+                    <!--                          <ul>
+                                                  <li>
+                                                      <i class='bx bx-bone'></i>
+                                                      bulletpoint1
+                                                  </li>
+                                                  <li>
+                                                      <i class='bx bx-heart'></i>
+                                                      bulletpoint2
+                                                  </li>
+                                                  <li>
+                                                      <i class='bx bx-brain'></i>
+                                                      bulletpoint3
+                                                  </li>
+                                              </ul> -->
+
+                    <p style="font-size:18px">
+                        In tough times like these, as a community we provide our seniors an extended hand
+                        in battling Covid-19 like a true "pro". Access a range of solutions to benefit your wellbeing and be your own judge of determining any facts or fiction surrounding Covid-19.
+                    </p>
+
+
+
+                </div>
+                <div class="about-btn">
+                    <a href="/about" class="default-btn">
+                        Read More <span></span>
+                    </a>
                 </div>
             </div>
 
-
-
-
-            <div class="container" style="margin-top:40px">
-                <div class="row align-items-center">
-                    <div class="col-lg-7">
-                        <div class="banner-text">
-                            <h3>Make Good Health and Wellbeing a Choice,
-                                Not an Option!</h3>
-
-
-  <!--                          <ul>
-                                <li>
-                                    <i class='bx bx-bone'></i>
-                                    bulletpoint1
-                                </li>
-                                <li>
-                                    <i class='bx bx-heart'></i>
-                                    bulletpoint2
-                                </li>
-                                <li>
-                                    <i class='bx bx-brain'></i>
-                                    bulletpoint3
-                                </li>
-                            </ul> -->
-
-                            <p style="font-size:18px">Welcome to the Home of Senior Covid-19 Fact Checker Pro where
-                                you can access Covid-19 facts or information that you may have been confused about.
-
-                                In tough times like these, as a community we provide our seniors an extended hand
-                                in battling Covid-19 like a true "pro".
-                            </p>
-                            <p style="font-size:18px">
-                                Access a range of solutions to benefit your wellbeing and be your own judge of determining any facts or fiction surrounding Covid-19.
-                            </p>
-
-
-
-                        </div>
-                        <div class="about-btn">
-                            <a href="/about" class="default-btn">
-                                Read More <span></span>
-                            </a>
-                        </div>
+            <div class="col-lg-5">
+                <div class="banner-img">
+                    <div class="shape-1">
+                        <img src="../static/assets/img/shapes/shape-1.png" alt="Shape">
                     </div>
-
-                    <div class="col-lg-5">
-                        <div class="banner-img">
-                            <div class="shape-1">
-                                <img src="../static/assets/img/shapes/shape-1.png" alt="Shape">
-                            </div>
-                            <div class="shape-2">
-                                <img src="../static/assets/img/shapes/shape-2.png" alt="Shape">
-                            </div>
-                            <div class="image-1">
-                                <img src="../static/assets/img/banner/banner-2.jpg" alt="Image">
-                            </div>
-                            <div class="image-2">
-                                <img src="../static/assets/img/banner/banner1.jpg" alt="Image">
-                            </div>
-                            <div class="image-3">
-                                <img src="../static/assets/img/banner/banner3.jpg" alt="Image">
-                            </div>
-                        </div>
+                    <div class="shape-2">
+                        <img src="../static/assets/img/shapes/shape-2.png" alt="Shape">
+                    </div>
+                    <div class="image-1">
+                        <img src="../static/assets/img/banner/banner-2.jpg" alt="Image">
+                    </div>
+                    <div class="image-2">
+                        <img src="../static/assets/img/banner/banner1.jpg" alt="Image">
+                    </div>
+                    <div class="image-3">
+                        <img src="../static/assets/img/banner/banner3.jpg" alt="Image">
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Banner Area -->
+    </div>
+</div>
+<!-- End Banner Area -->
 
 
 
-        <!-- Appointment Area -->
-        <div class="appointment-area bg-color-1 ptb-100">
-            <div class="container">
-                <div class="row align-items-center">
+<!-- Appointment Area -->
+<div class="appointment-area bg-color-1 ptb-100">
+    <div class="container">
+        <div class="row align-items-center">
 
-                    <div class="col-lg-6">
-                        <div class="banner-text">
-                            <h5>Covid-19 Rumours, Stop Here!</h5>
-                            <h2>A quick tip about reliable information sources</h2>
-
-
-<!--                            <ul>-->
-<!--                                <li>-->
-<!--                                    <i class='bx bx-bone'></i>-->
-<!--                                    bulletpoint1-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <i class='bx bx-heart'></i>-->
-<!--                                    bulletpoint2-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <i class='bx bx-brain'></i>-->
-<!--                                    bulletpoint3-->
-<!--                                </li>-->
-<!--                            </ul>-->
-
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/o93pM-b97HI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="col-lg-6">
+                <div class="banner-text">
+                    <h5>Covid-19 Rumours, Stop Here!</h5>
+                    <h2>A quick tip about reliable information sources</h2>
 
 
+                    <!--                            <ul>-->
+                    <!--                                <li>-->
+                    <!--                                    <i class='bx bx-bone'></i>-->
+                    <!--                                    bulletpoint1-->
+                    <!--                                </li>-->
+                    <!--                                <li>-->
+                    <!--                                    <i class='bx bx-heart'></i>-->
+                    <!--                                    bulletpoint2-->
+                    <!--                                </li>-->
+                    <!--                                <li>-->
+                    <!--                                    <i class='bx bx-brain'></i>-->
+                    <!--                                    bulletpoint3-->
+                    <!--                                </li>-->
+                    <!--                            </ul>-->
 
-                        </div>
-                        <!--<div class="about-btn">
-                            <a href="#" class="default-btn">
-                                Read More <span></span>
-                            </a>
-                        </div> -->
-                    </div>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/o93pM-b97HI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-                    <div class="col-lg-6">
-                        <div class="appointment-img">
-                            <div class="img-one">
-                                <img src="../static/assets/img/trust/trust-6.jpg" alt="Image">
-                            </div>
-                            <div class="img-two">
-                                <img src="../static/assets/img/trust/appointment-2.jpg" alt="Image">
-                            </div>
-                            <div class="img-three">
-                                <img src="../static/assets/img/trust/appointment-3.jpg" alt="Image">
-                            </div>
-                        </div>
-<!--                        <div class="appointment-img">-->
-<!--                            <div class="img-one">-->
-<!--                                <img src="../static/assets/img/trust/appointment-3.jpg" alt="Image">-->
-<!--                            </div>-->
-<!--                            <div class="img-two">-->
-<!--                                <img src="../static/assets/img/trust/appointment-3.jpg" alt="Image">-->
-<!--                            </div>-->
-<!--                            <div class="img-three">-->
-<!--                                <img src="../static/assets/img/trust/appointment-2.jpg" alt="Image">-->
-<!--                            </div>-->
-<!--                        </div>-->
-                    </div>
+
+
                 </div>
+                <!--<div class="about-btn">
+                    <a href="#" class="default-btn">
+                        Read More <span></span>
+                    </a>
+                </div> -->
             </div>
 
-
-
-            <div class="container">
-                <div class="section-title-one">
-                    <section id="tutorial"><h2>
-
-
-
-                        Discover Factoids
-
-                    </h2></section>
+            <div class="col-lg-6">
+                <div class="appointment-img">
+                    <div class="img-one">
+                        <img src="../static/assets/img/trust/trust-6.jpg" alt="Image">
+                    </div>
+                    <div class="img-two">
+                        <img src="../static/assets/img/trust/appointment-2.jpg" alt="Image">
+                    </div>
+                    <div class="img-three">
+                        <img src="../static/assets/img/trust/appointment-3.jpg" alt="Image">
+                    </div>
                 </div>
-<!--                <div id="timeline">-->
-<!--                    <div id="textout">-->
-<!--                        <div class="text" onmousemove="movecolor(1)" onmouseout="outcolor(1)">Facts</div>-->
-<!--                        <div class="text" onmousemove="movecolor(2)" onmouseout="outcolor(2)">Precaution</div>-->
-<!--                        <div class="text" onmousemove="movecolor(3)" onmouseout="outcolor(3)">Vaccine</div>-->
-<!--                        <div class="text" onmousemove="movecolor(4)" onmouseout="outcolor(4)">About</div>-->
-<!--                    </div>-->
-<!--                    <div id="lineout">-->
-<!--                        <div class="line" id="l1" onmousemove="movecolor(1)" onmouseout="outcolor(1)"></div>-->
-<!--                        <div class="line" id="l2" onmousemove="movecolor(2)" onmouseout="outcolor(2)"></div>-->
-<!--                        <div class="line" id="l3" onmousemove="movecolor(3)" onmouseout="outcolor(3)"></div>-->
-<!--                        <div class="line" id="l4" onmousemove="movecolor(4)" onmouseout="outcolor(4)"></div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div id="vaccine-timeline-picture">-->
-<!--                    <img id="backgroundimg" src="../static/assets/img/blog/blog-1.jpg" alt="This should be a picture">-->
-<!--                    <p id="timeline-guides">-->
-<!--                    </p>-->
-<!--                </div>-->
-
-<!--                <script type="text/javascript">-->
-<!--                    function movecolor(num){-->
-<!--                        document.getElementById("l"+num).style.background = "#98E0FA" ;-->
-<!--                        document.getElementById("backgroundimg").src="../static/assets/img/blog/blog-"+num+".jpg";-->
-<!--                        document.getElementById("timeline-guides").innerHTML = num;-->
-<!--                    }-->
-<!--                    function outcolor(num){-->
-<!--                        document.getElementById("l"+num).style.background = "#ccc" ;-->
-<!--                    }-->
-<!--                </script>-->
-
-<!--            </div>-->
-
-<!--        &lt;!&ndash; End Appointment Area &ndash;&gt;-->
-
-<!--        &lt;!&ndash; Services Area &ndash;&gt;-->
-<!--        <div class="services-area pt-100 pb-70">-->
-<!--            <div class="container">-->
-<!--                <div class="section-title-one">-->
-<!--                    <h5>Covid-19 precautions</h5>-->
-<!--                    <h2>Discover Covid-19 facts given by the government</h2>-->
-<!--                </div>-->
-
-<!--                <div class="row">-->
-<!--                    <div class="col-lg-4 col-sm-6">-->
-<!--                        <div class="service-card">-->
-<!--                            <i class='bx bx-strikethrough main-icon'></i>-->
-<!--                            <h3>What makes this virus dangerous?</h3>-->
-<!--                            <p>A master of deception, the virus decieves the body in thinking everything is a-ok. But it's actually like a hit-and-run driver, proving to be fatal at times.</p>-->
-
-<!--                            <div class="view-more">-->
-<!--                                <a href="#">-->
-<!--                                    View More -->
-<!--                                    <i class='bx bx-right-arrow-alt'></i>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="col-lg-4 col-sm-6">-->
-<!--                        <div class="service-card">-->
-<!--                            <i class='bx bx-bulb main-icon'></i>-->
-<!--                            <h3>How effective are the vaccines?</h3>-->
-<!--                            <p>There is still some perplexity with the effectiveness of the vaccines however an effective vaccine reduces mild, moderate and severe cases of COVID-19.</p>-->
-<!--                            <div class="view-more">-->
-<!--                                <a href="#">-->
-<!--                                    View More -->
-<!--                                    <i class='bx bx-right-arrow-alt'></i>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="col-lg-4 col-sm-6">-->
-<!--                        <div class="service-card">-->
-<!--                            <i class='bx bx-droplet main-icon'></i>-->
-<!--                            <h3>Do I need to wear a mask?</h3>-->
-<!--                            <p>While masks are no longer mandated, evidence shows wearing a mask makes a real difference in slowing the spread of the virus so masks should be worn in public.</p>-->
-<!--                            <div class="view-more">-->
-<!--                                <a href="#">-->
-<!--                                    View More -->
-<!--                                    <i class='bx bx-right-arrow-alt'></i>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="col-lg-4 col-sm-6">-->
-<!--                        <div class="service-card">-->
-<!--                            <i class='bx bx-test-tube main-icon'></i>-->
-<!--                            <h3>What are the symptoms?</h3>-->
-<!--                            <p>The most common symptoms are fever, tiredness, shortness of breath and dry cough while less common symptoms are bodyache, sore throat and a loss of taste or smell.</p>-->
-<!--                            <div class="view-more">-->
-<!--                                <a href="#">-->
-<!--                                    View More -->
-<!--                                    <i class='bx bx-right-arrow-alt'></i>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="col-lg-4 col-sm-6">-->
-<!--                        <div class="service-card">-->
-<!--                            <i class='bx bx-donate-heart main-icon'></i>-->
-<!--                            <h3>where do I go if I have symptoms?</h3>-->
-<!--                            <p>If you have any kind of Covid-19 symptoms or have been in close contact with someone travelling overseas, then you should visit the nearest centre and get tested.</p>-->
-<!--                            <div class="view-more">-->
-<!--                                <a href="#">-->
-<!--                                    View More -->
-<!--                                    <i class='bx bx-right-arrow-alt'></i>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="col-lg-4 col-sm-6">-->
-<!--                        <div class="service-card">-->
-<!--                            <i class='bx bx-home main-icon'></i>-->
-<!--                            <h3>Do I need to stock toliet paper? </h3>-->
-<!--                            <p>Although there is a practical reason to stock up on toilet paper in the case of a lockdown - In most circumstances for Victoria, it is okay to not stock up!</p>-->
-<!--                            <div class="view-more">-->
-<!--                                <a href="#">-->
-<!--                                    View More -->
-<!--                                    <i class='bx bx-right-arrow-alt'></i>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-        <!-- End Services Area -->
-
-
-
-<!--        &lt;!&ndash; Blog Area &ndash;&gt;-->
-<!--        <div class="blog-area ptb-100">-->
-<!--            <div class="container">-->
-<!--                <div class="section-title-one">-->
-<!--                    <span>COVID News</span>-->
-<!--                    <h2>The latest news</h2>-->
-<!--                </div>-->
-
-<!--                <div class="blog-slider owl-carousel owl-theme">-->
-<!--                    <div class="blog-card">-->
-<!--                        <a href="blog-details.html">-->
-<!--                            <img src="../static/assets/img/blog/blog-1.jpg" alt="Shape">-->
-<!--                        </a>-->
-<!--                        <div class="b-card-text">-->
-<!--                            <span>September 22 , 2020</span>-->
-<!--                            <span class="t-right"><i class='bx bx-user'></i> 200K</span>-->
-
-<!--                            <h3><a href="blog-details.html">You can easily connect to a doctor and make a treatment</a></h3>-->
-<!--                            <p>We have started a new innovation and that makes to connect all of the doctor to you in a simplest way and it is effective.</p>-->
-
-<!--                            <div class="view-more">-->
-<!--                                <a href="#">-->
-<!--                                    View more-->
-<!--                                    <i class='bx bx-right-arrow-alt'></i>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="blog-card">-->
-<!--                        <a href="blog-details.html">-->
-<!--                            <img src="../static/assets/img/blog/blog-2.jpg" alt="Shape">-->
-<!--                        </a>-->
-<!--                        <div class="b-card-text">-->
-<!--                            <span>September 23 , 2020</span>-->
-<!--                            <span class="t-right"><i class='bx bx-user'></i> 180K</span>-->
-
-<!--                            <h3><a href="blog-details.html">Lockdowns lead to fewer people seeking medical care</a></h3>-->
-<!--                            <p>We have started a new innovation and that makes to connect all of the doctor to you in a simplest way and it is effective.</p>-->
-
-<!--                            <div class="view-more">-->
-<!--                                <a href="#">-->
-<!--                                    View more-->
-<!--                                    <i class='bx bx-right-arrow-alt'></i>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="blog-card">-->
-<!--                        <a href="blog-details.html">-->
-<!--                            <img src="../static/assets/img/blog/blog-3.jpg" alt="Shape">-->
-<!--                        </a>-->
-<!--                        <div class="b-card-text">-->
-<!--                            <span>September 24 , 2020</span>-->
-<!--                            <span class="t-right"><i class='bx bx-user'></i> 170K</span>-->
-<!--                            <h3><a href="blog-details.html">Emergency medicine research course for the doctors</a></h3>-->
-<!--                            <p>We have started a new innovation and that makes to connect all of the doctor to you in a simplest way and it is effective.</p>-->
-
-<!--                            <div class="view-more">-->
-<!--                                <a href="#">-->
-<!--                                    View more-->
-<!--                                    <i class='bx bx-right-arrow-alt'></i>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="blog-card">-->
-<!--                        <a href="blog-details.html">-->
-<!--                            <img src="../static/assets/img/blog/blog-4.jpg" alt="Shape">-->
-<!--                        </a>-->
-<!--                        <div class="b-card-text">-->
-<!--                            <span>September 27 , 2020</span>-->
-<!--                            <span class="t-right"><i class='bx bx-user'></i> 170K</span>-->
-
-<!--                            <h3><a href="blog-details.html">Emergency medicine research course for the doctors</a></h3>-->
-<!--                            <p>We have started a new innovation and that makes to connect all of the doctor to you in a simplest way and it is effective.</p>-->
-
-<!--                            <div class="view-more">-->
-<!--                                <a href="#">-->
-<!--                                    View more-->
-<!--                                    <i class='bx bx-right-arrow-alt'></i>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash; End Blog Area &ndash;&gt;-->
-
-<!--        &lt;!&ndash; Footer Area&ndash;&gt;-->
-<!--        <footer class="footer-area bg-color pt-100 pb-70">-->
-<!--            <div class="container">-->
-<!--                <div class="row">-->
-<!--                    <div class="col-lg-3 col-sm-6">-->
-<!--                        <div class="footer-widget">-->
-<!--                            <h2>Find us</h2>-->
-<!--                            <p>Shop 4/21 Chancellors Walk, Clayton VIC 3168</p>-->
-<!--                            <ul class="contact">-->
-<!--                                <li>-->
-<!--                                    <i class='bx bx-location-plus'></i>-->
-<!--                                    Somewhere over the rainbow-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="">-->
-<!--                                        <i class='bx bx-phone-call'></i>-->
-<!--                                        +61 0416824196-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="mailto:info@covax.com">-->
-<!--                                        <i class='bx bx-message-dots'></i>-->
-<!--                                        web tech support: cche0165@student-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="col-lg-3 col-sm-6">-->
-<!--                        <div class="footer-widget pl-50">-->
-<!--                            <h2>Quick links</h2>-->
-<!--                            <ul class="widget-list">-->
-<!--                                <li>-->
-<!--                                    <a href="#">-->
-<!--                                        Home-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="#">-->
-<!--                                        Covid precautions-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="#">-->
-<!--                                        Medical sevices-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="#">-->
-<!--                                        Dashboard-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="#">-->
-<!--                                        News-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="#">-->
-<!--                                        About us-->
-<!--                                    </a>-->
-<!--                                </li>-->
-
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="col-lg-3 col-sm-6">-->
-<!--                        <div class="footer-widget">-->
-<!--                            <h2>Join our community</h2>-->
-<!--                            <ul class="widget-list">-->
-<!--                                <li>-->
-<!--                                    <a href="#">-->
-<!--                                        Contribute to our blogs-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="#">-->
-<!--                                        Join development team-->
-<!--                                    </a>-->
-<!--                                </li>-->
-
-
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="col-lg-3 col-sm-6">-->
-<!--                        <div class="footer-widget pl-50">-->
-<!--                            <h2>Meet our team</h2>-->
-<!--                            <ul class="widget-time">-->
-<!--                                <li>Developers: Chen Chen, Ruoyu Tian</li>-->
-<!--                                <li>Data Scientist: Yishun Xu</li>-->
-<!--                                <li>Business Analyst: Rachael Coutinho, Ming Kong</li>-->
-<!--                            </ul>-->
-
-<!--                            <ul class="social-link">-->
-<!--                                <li>-->
-<!--                                    <a href="#" target="_blank">-->
-<!--                                        <i class='bx bxl-facebook bg-1'></i>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="#" target="_blank">-->
-<!--                                        <i class='bx bxl-twitter bg-2'></i>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="#" target="_blank">-->
-<!--                                        <i class='bx bxl-linkedin bg-3'></i>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="#" target="_blank">-->
-<!--                                        <i class='bx bxl-instagram bg-4'></i>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </footer>-->
-<!--        &lt;!&ndash; End Footer Area &ndash;&gt;-->
-
-<!--        &lt;!&ndash; Footer Bottom Area &ndash;&gt;-->
-<!--        <div class="footer-bottom-area">-->
-<!--            <div class="container">-->
-<!--                <p>Copyright @2021 Factoids. All rights reserved <a href="http://www.bootstrapmb.com/" target="_blank">Factoids</a></p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash; End Footer Bottom Area &ndash;&gt;-->
+                <!--                        <div class="appointment-img">-->
+                <!--                            <div class="img-one">-->
+                <!--                                <img src="../static/assets/img/trust/appointment-3.jpg" alt="Image">-->
+                <!--                            </div>-->
+                <!--                            <div class="img-two">-->
+                <!--                                <img src="../static/assets/img/trust/appointment-3.jpg" alt="Image">-->
+                <!--                            </div>-->
+                <!--                            <div class="img-three">-->
+                <!--                                <img src="../static/assets/img/trust/appointment-2.jpg" alt="Image">-->
+                <!--                            </div>-->
+                <!--                        </div>-->
             </div>
         </div>
-        {% include 'footer.html' %}
+    </div>
 
-        {% block foot %}
-        {% endblock %}
-        <!-- Go Top -->
-            <div class="go-top">
-                <i class='bx bxs-upvote'></i>
-            </div>
-            <!-- End Go Top -->
 
-            <!-- Optional JavaScript -->
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <script src="../static/assets/js/jquery.min.js"></script>
-            <script src="../static/assets/js/popper.min.js"></script>
-            <script src="../static/assets/js/bootstrap.min.js"></script>
-            <!-- Magnific -->
-            <script src="../static/assets/js/jquery.magnific-popup.min.js"></script>
-            <!-- Meanmenu JS -->
-            <script src="../static/assets/js/meanmenu.min.js"></script>
-            <!-- Nice Select JS -->
-            <script src="../static/assets/js/jquery.nice-select.min.js"></script>
-            <!-- Owl Carousel JS -->
-            <script src="../static/assets/js/owl.carousel.min.js"></script>
-            <!-- Jquery Mixitup JS -->
-            <script src="../static/assets/js/jquery.mixitup.min.js"></script>
-            <!-- Jquery Datetimepicker JS -->
-            <script src="../static/assets/js/jquery.datetimepicker.full.min.js"></script>
-            <!-- Form Validator JS -->
-            <script src="../static/assets/js/form-validator.min.js"></script>
-            <!-- Contact JS -->
-            <script src="../static/assets/js/contact-form-script.js"></script>
-            <!-- Ajaxchimp JS -->
-            <script src="../static/assets/js/jquery.ajaxchimp.min.js"></script>
-            <!-- Custom JS -->
-            <script src="../static/assets/js/custom.js"></script>
-            <script src="../static/assets/js/script-ppt.js"></script>
 
-    </body>
+    <div class="container">
+        <!--                <div class="section-title-one">-->
+        <!--                    <section id="tutorial"><h2>-->
+
+
+
+        <!--                        Discover Factoids-->
+
+        <!--                    </h2></section>-->
+    </div>
+    <!--                <div id="timeline">-->
+    <!--                    <div id="textout">-->
+    <!--                        <div class="text" onmousemove="movecolor(1)" onmouseout="outcolor(1)">Facts</div>-->
+    <!--                        <div class="text" onmousemove="movecolor(2)" onmouseout="outcolor(2)">Precaution</div>-->
+    <!--                        <div class="text" onmousemove="movecolor(3)" onmouseout="outcolor(3)">Vaccine</div>-->
+    <!--                        <div class="text" onmousemove="movecolor(4)" onmouseout="outcolor(4)">About</div>-->
+    <!--                    </div>-->
+    <!--                    <div id="lineout">-->
+    <!--                        <div class="line" id="l1" onmousemove="movecolor(1)" onmouseout="outcolor(1)"></div>-->
+    <!--                        <div class="line" id="l2" onmousemove="movecolor(2)" onmouseout="outcolor(2)"></div>-->
+    <!--                        <div class="line" id="l3" onmousemove="movecolor(3)" onmouseout="outcolor(3)"></div>-->
+    <!--                        <div class="line" id="l4" onmousemove="movecolor(4)" onmouseout="outcolor(4)"></div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--                <div id="vaccine-timeline-picture">-->
+    <!--                    <img id="backgroundimg" src="../static/assets/img/blog/blog-1.jpg" alt="This should be a picture">-->
+    <!--                    <p id="timeline-guides">-->
+    <!--                    </p>-->
+    <!--                </div>-->
+
+    <!--                <script type="text/javascript">-->
+    <!--                    function movecolor(num){-->
+    <!--                        document.getElementById("l"+num).style.background = "#98E0FA" ;-->
+    <!--                        document.getElementById("backgroundimg").src="../static/assets/img/blog/blog-"+num+".jpg";-->
+    <!--                        document.getElementById("timeline-guides").innerHTML = num;-->
+    <!--                    }-->
+    <!--                    function outcolor(num){-->
+    <!--                        document.getElementById("l"+num).style.background = "#ccc" ;-->
+    <!--                    }-->
+    <!--                </script>-->
+
+    <!--            </div>-->
+
+    <!--        &lt;!&ndash; End Appointment Area &ndash;&gt;-->
+
+    <!--        &lt;!&ndash; Services Area &ndash;&gt;-->
+    <!--        <div class="services-area pt-100 pb-70">-->
+    <!--            <div class="container">-->
+    <!--                <div class="section-title-one">-->
+    <!--                    <h5>Covid-19 precautions</h5>-->
+    <!--                    <h2>Discover Covid-19 facts given by the government</h2>-->
+    <!--                </div>-->
+
+    <!--                <div class="row">-->
+    <!--                    <div class="col-lg-4 col-sm-6">-->
+    <!--                        <div class="service-card">-->
+    <!--                            <i class='bx bx-strikethrough main-icon'></i>-->
+    <!--                            <h3>What makes this virus dangerous?</h3>-->
+    <!--                            <p>A master of deception, the virus decieves the body in thinking everything is a-ok. But it's actually like a hit-and-run driver, proving to be fatal at times.</p>-->
+
+    <!--                            <div class="view-more">-->
+    <!--                                <a href="#">-->
+    <!--                                    View More -->
+    <!--                                    <i class='bx bx-right-arrow-alt'></i>-->
+    <!--                                </a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="col-lg-4 col-sm-6">-->
+    <!--                        <div class="service-card">-->
+    <!--                            <i class='bx bx-bulb main-icon'></i>-->
+    <!--                            <h3>How effective are the vaccines?</h3>-->
+    <!--                            <p>There is still some perplexity with the effectiveness of the vaccines however an effective vaccine reduces mild, moderate and severe cases of COVID-19.</p>-->
+    <!--                            <div class="view-more">-->
+    <!--                                <a href="#">-->
+    <!--                                    View More -->
+    <!--                                    <i class='bx bx-right-arrow-alt'></i>-->
+    <!--                                </a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="col-lg-4 col-sm-6">-->
+    <!--                        <div class="service-card">-->
+    <!--                            <i class='bx bx-droplet main-icon'></i>-->
+    <!--                            <h3>Do I need to wear a mask?</h3>-->
+    <!--                            <p>While masks are no longer mandated, evidence shows wearing a mask makes a real difference in slowing the spread of the virus so masks should be worn in public.</p>-->
+    <!--                            <div class="view-more">-->
+    <!--                                <a href="#">-->
+    <!--                                    View More -->
+    <!--                                    <i class='bx bx-right-arrow-alt'></i>-->
+    <!--                                </a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="col-lg-4 col-sm-6">-->
+    <!--                        <div class="service-card">-->
+    <!--                            <i class='bx bx-test-tube main-icon'></i>-->
+    <!--                            <h3>What are the symptoms?</h3>-->
+    <!--                            <p>The most common symptoms are fever, tiredness, shortness of breath and dry cough while less common symptoms are bodyache, sore throat and a loss of taste or smell.</p>-->
+    <!--                            <div class="view-more">-->
+    <!--                                <a href="#">-->
+    <!--                                    View More -->
+    <!--                                    <i class='bx bx-right-arrow-alt'></i>-->
+    <!--                                </a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="col-lg-4 col-sm-6">-->
+    <!--                        <div class="service-card">-->
+    <!--                            <i class='bx bx-donate-heart main-icon'></i>-->
+    <!--                            <h3>where do I go if I have symptoms?</h3>-->
+    <!--                            <p>If you have any kind of Covid-19 symptoms or have been in close contact with someone travelling overseas, then you should visit the nearest centre and get tested.</p>-->
+    <!--                            <div class="view-more">-->
+    <!--                                <a href="#">-->
+    <!--                                    View More -->
+    <!--                                    <i class='bx bx-right-arrow-alt'></i>-->
+    <!--                                </a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="col-lg-4 col-sm-6">-->
+    <!--                        <div class="service-card">-->
+    <!--                            <i class='bx bx-home main-icon'></i>-->
+    <!--                            <h3>Do I need to stock toliet paper? </h3>-->
+    <!--                            <p>Although there is a practical reason to stock up on toilet paper in the case of a lockdown - In most circumstances for Victoria, it is okay to not stock up!</p>-->
+    <!--                            <div class="view-more">-->
+    <!--                                <a href="#">-->
+    <!--                                    View More -->
+    <!--                                    <i class='bx bx-right-arrow-alt'></i>-->
+    <!--                                </a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!-- End Services Area -->
+
+
+
+    <!--        &lt;!&ndash; Blog Area &ndash;&gt;-->
+    <!--        <div class="blog-area ptb-100">-->
+    <!--            <div class="container">-->
+    <!--                <div class="section-title-one">-->
+    <!--                    <span>COVID News</span>-->
+    <!--                    <h2>The latest news</h2>-->
+    <!--                </div>-->
+
+    <!--                <div class="blog-slider owl-carousel owl-theme">-->
+    <!--                    <div class="blog-card">-->
+    <!--                        <a href="blog-details.html">-->
+    <!--                            <img src="../static/assets/img/blog/blog-1.jpg" alt="Shape">-->
+    <!--                        </a>-->
+    <!--                        <div class="b-card-text">-->
+    <!--                            <span>September 22 , 2020</span>-->
+    <!--                            <span class="t-right"><i class='bx bx-user'></i> 200K</span>-->
+
+    <!--                            <h3><a href="blog-details.html">You can easily connect to a doctor and make a treatment</a></h3>-->
+    <!--                            <p>We have started a new innovation and that makes to connect all of the doctor to you in a simplest way and it is effective.</p>-->
+
+    <!--                            <div class="view-more">-->
+    <!--                                <a href="#">-->
+    <!--                                    View more-->
+    <!--                                    <i class='bx bx-right-arrow-alt'></i>-->
+    <!--                                </a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="blog-card">-->
+    <!--                        <a href="blog-details.html">-->
+    <!--                            <img src="../static/assets/img/blog/blog-2.jpg" alt="Shape">-->
+    <!--                        </a>-->
+    <!--                        <div class="b-card-text">-->
+    <!--                            <span>September 23 , 2020</span>-->
+    <!--                            <span class="t-right"><i class='bx bx-user'></i> 180K</span>-->
+
+    <!--                            <h3><a href="blog-details.html">Lockdowns lead to fewer people seeking medical care</a></h3>-->
+    <!--                            <p>We have started a new innovation and that makes to connect all of the doctor to you in a simplest way and it is effective.</p>-->
+
+    <!--                            <div class="view-more">-->
+    <!--                                <a href="#">-->
+    <!--                                    View more-->
+    <!--                                    <i class='bx bx-right-arrow-alt'></i>-->
+    <!--                                </a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="blog-card">-->
+    <!--                        <a href="blog-details.html">-->
+    <!--                            <img src="../static/assets/img/blog/blog-3.jpg" alt="Shape">-->
+    <!--                        </a>-->
+    <!--                        <div class="b-card-text">-->
+    <!--                            <span>September 24 , 2020</span>-->
+    <!--                            <span class="t-right"><i class='bx bx-user'></i> 170K</span>-->
+    <!--                            <h3><a href="blog-details.html">Emergency medicine research course for the doctors</a></h3>-->
+    <!--                            <p>We have started a new innovation and that makes to connect all of the doctor to you in a simplest way and it is effective.</p>-->
+
+    <!--                            <div class="view-more">-->
+    <!--                                <a href="#">-->
+    <!--                                    View more-->
+    <!--                                    <i class='bx bx-right-arrow-alt'></i>-->
+    <!--                                </a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="blog-card">-->
+    <!--                        <a href="blog-details.html">-->
+    <!--                            <img src="../static/assets/img/blog/blog-4.jpg" alt="Shape">-->
+    <!--                        </a>-->
+    <!--                        <div class="b-card-text">-->
+    <!--                            <span>September 27 , 2020</span>-->
+    <!--                            <span class="t-right"><i class='bx bx-user'></i> 170K</span>-->
+
+    <!--                            <h3><a href="blog-details.html">Emergency medicine research course for the doctors</a></h3>-->
+    <!--                            <p>We have started a new innovation and that makes to connect all of the doctor to you in a simplest way and it is effective.</p>-->
+
+    <!--                            <div class="view-more">-->
+    <!--                                <a href="#">-->
+    <!--                                    View more-->
+    <!--                                    <i class='bx bx-right-arrow-alt'></i>-->
+    <!--                                </a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        &lt;!&ndash; End Blog Area &ndash;&gt;-->
+
+    <!--        &lt;!&ndash; Footer Area&ndash;&gt;-->
+    <!--        <footer class="footer-area bg-color pt-100 pb-70">-->
+    <!--            <div class="container">-->
+    <!--                <div class="row">-->
+    <!--                    <div class="col-lg-3 col-sm-6">-->
+    <!--                        <div class="footer-widget">-->
+    <!--                            <h2>Find us</h2>-->
+    <!--                            <p>Shop 4/21 Chancellors Walk, Clayton VIC 3168</p>-->
+    <!--                            <ul class="contact">-->
+    <!--                                <li>-->
+    <!--                                    <i class='bx bx-location-plus'></i>-->
+    <!--                                    Somewhere over the rainbow-->
+    <!--                                </li>-->
+    <!--                                <li>-->
+    <!--                                    <a href="">-->
+    <!--                                        <i class='bx bx-phone-call'></i>-->
+    <!--                                        +61 0416824196-->
+    <!--                                    </a>-->
+    <!--                                </li>-->
+    <!--                                <li>-->
+    <!--                                    <a href="mailto:info@covax.com">-->
+    <!--                                        <i class='bx bx-message-dots'></i>-->
+    <!--                                        web tech support: cche0165@student-->
+    <!--                                    </a>-->
+    <!--                                </li>-->
+    <!--                            </ul>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="col-lg-3 col-sm-6">-->
+    <!--                        <div class="footer-widget pl-50">-->
+    <!--                            <h2>Quick links</h2>-->
+    <!--                            <ul class="widget-list">-->
+    <!--                                <li>-->
+    <!--                                    <a href="#">-->
+    <!--                                        Home-->
+    <!--                                    </a>-->
+    <!--                                </li>-->
+    <!--                                <li>-->
+    <!--                                    <a href="#">-->
+    <!--                                        Covid precautions-->
+    <!--                                    </a>-->
+    <!--                                </li>-->
+    <!--                                <li>-->
+    <!--                                    <a href="#">-->
+    <!--                                        Medical sevices-->
+    <!--                                    </a>-->
+    <!--                                </li>-->
+    <!--                                <li>-->
+    <!--                                    <a href="#">-->
+    <!--                                        Dashboard-->
+    <!--                                    </a>-->
+    <!--                                </li>-->
+    <!--                                <li>-->
+    <!--                                    <a href="#">-->
+    <!--                                        News-->
+    <!--                                    </a>-->
+    <!--                                </li>-->
+    <!--                                <li>-->
+    <!--                                    <a href="#">-->
+    <!--                                        About us-->
+    <!--                                    </a>-->
+    <!--                                </li>-->
+
+    <!--                            </ul>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="col-lg-3 col-sm-6">-->
+    <!--                        <div class="footer-widget">-->
+    <!--                            <h2>Join our community</h2>-->
+    <!--                            <ul class="widget-list">-->
+    <!--                                <li>-->
+    <!--                                    <a href="#">-->
+    <!--                                        Contribute to our blogs-->
+    <!--                                    </a>-->
+    <!--                                </li>-->
+    <!--                                <li>-->
+    <!--                                    <a href="#">-->
+    <!--                                        Join development team-->
+    <!--                                    </a>-->
+    <!--                                </li>-->
+
+
+    <!--                            </ul>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="col-lg-3 col-sm-6">-->
+    <!--                        <div class="footer-widget pl-50">-->
+    <!--                            <h2>Meet our team</h2>-->
+    <!--                            <ul class="widget-time">-->
+    <!--                                <li>Developers: Chen Chen, Ruoyu Tian</li>-->
+    <!--                                <li>Data Scientist: Yishun Xu</li>-->
+    <!--                                <li>Business Analyst: Rachael Coutinho, Ming Kong</li>-->
+    <!--                            </ul>-->
+
+    <!--                            <ul class="social-link">-->
+    <!--                                <li>-->
+    <!--                                    <a href="#" target="_blank">-->
+    <!--                                        <i class='bx bxl-facebook bg-1'></i>-->
+    <!--                                    </a>-->
+    <!--                                </li>-->
+    <!--                                <li>-->
+    <!--                                    <a href="#" target="_blank">-->
+    <!--                                        <i class='bx bxl-twitter bg-2'></i>-->
+    <!--                                    </a>-->
+    <!--                                </li>-->
+    <!--                                <li>-->
+    <!--                                    <a href="#" target="_blank">-->
+    <!--                                        <i class='bx bxl-linkedin bg-3'></i>-->
+    <!--                                    </a>-->
+    <!--                                </li>-->
+    <!--                                <li>-->
+    <!--                                    <a href="#" target="_blank">-->
+    <!--                                        <i class='bx bxl-instagram bg-4'></i>-->
+    <!--                                    </a>-->
+    <!--                                </li>-->
+    <!--                            </ul>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </footer>-->
+    <!--        &lt;!&ndash; End Footer Area &ndash;&gt;-->
+
+    <!--        &lt;!&ndash; Footer Bottom Area &ndash;&gt;-->
+    <!--        <div class="footer-bottom-area">-->
+    <!--            <div class="container">-->
+    <!--                <p>Copyright @2021 Factoids. All rights reserved <a href="http://www.bootstrapmb.com/" target="_blank">Factoids</a></p>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        &lt;!&ndash; End Footer Bottom Area &ndash;&gt;-->
+</div>
+</div>
+{% include 'footer.html' %}
+
+{% block foot %}
+{% endblock %}
+<!-- Go Top -->
+<div class="go-top">
+    <i class='bx bxs-upvote'></i>
+</div>
+<!-- End Go Top -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../static/assets/js/jquery.min.js"></script>
+<script src="../static/assets/js/popper.min.js"></script>
+<script src="../static/assets/js/bootstrap.min.js"></script>
+<!-- Magnific -->
+<script src="../static/assets/js/jquery.magnific-popup.min.js"></script>
+<!-- Meanmenu JS -->
+<script src="../static/assets/js/meanmenu.min.js"></script>
+<!-- Nice Select JS -->
+<script src="../static/assets/js/jquery.nice-select.min.js"></script>
+<!-- Owl Carousel JS -->
+<script src="../static/assets/js/owl.carousel.min.js"></script>
+<!-- Jquery Mixitup JS -->
+<script src="../static/assets/js/jquery.mixitup.min.js"></script>
+<!-- Jquery Datetimepicker JS -->
+<script src="../static/assets/js/jquery.datetimepicker.full.min.js"></script>
+<!-- Form Validator JS -->
+<script src="../static/assets/js/form-validator.min.js"></script>
+<!-- Contact JS -->
+<script src="../static/assets/js/contact-form-script.js"></script>
+<!-- Ajaxchimp JS -->
+<script src="../static/assets/js/jquery.ajaxchimp.min.js"></script>
+<!-- Custom JS -->
+<script src="../static/assets/js/custom.js"></script>
+<script src="../static/assets/js/script-ppt.js"></script>
+
+</body>
 </html>
