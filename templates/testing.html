@@ -30,174 +30,57 @@
     <!-- Favican -->
     <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
 
-    <title>FSquare: COVID-19 rumours impacts on VIC's elders</title>
+    <title>How to distinguish fictions</title>
 </head>
+<style>
+    a {
+        color:white;
+    }
+    a:hover {
+        color: #207EF7;
+    }
+</style>
 
 <body>
-
 {% include 'nav.html' %}
 
 {% block navi %}
 {% endblock %}
+<!--<h1>Area 1</h1>-->
+<!--<div class="gcse-search">-->
+<!--    <div style="border: 1px solid blue;">-->
+<!--        Area 1 (for example a sidebar)-->
+<!--        <div class="gcse-searchbox"></div>-->
+<!--    </div>-->
 
+<!--    <div style="border: 1px solid red;">-->
+<!--        Area 2 (for example main area of the page)-->
+<!--        <div class="gcse-searchresults"></div>-->
+<!--    </div>-->
+<!--</div>-->
 
+<!--<script async src="https://cse.google.com/cse.js?cx=000888210889775888983:pqb3ch1ewhg"></script>-->
 
-<!-- Page Banner Area -->
-<div class="page-banner-area bg-2">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="page-content">
-                    <h2>Symptoms</h2>
-                    <ul>
-                        <li style="font-size:22px"><a href="/fact">Facts</a></li>
-                        <li style="font-size:22px"><a href="/symptom">Typical rumors & misleading info</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Page Banner Area -->
+<!--<h1>Area 3</h1>-->
+<!--<div class="gcse-search" enableAutoComplete="true"></div>-->
 
+<h1>Area 4 </h1>
+<form method="get" action="http://www.google.com/search">
 
-<!-- Blog Area -->
+    <input type="text"   name="q" size="31"
+           maxlength="255" value="" />
+    <input type="submit" value="Google Search" /><br>
+<!--    <input type="radio"  name="sitesearch" value="" />-->
+<!--    Internet Search-->
+<!--    <input type="radio"  name="sitesearch"-->
+<!--           value="foxavideo.com" checked />Internal Search<br />-->
 
-<style>
+</form>
 
-    .daddy{
-        min-height: 1000px;
-        margin-top: 5%;
-        margin-left: 12%;
-        /*padding-left: 2%;*/
-    }
-    .brother1{
-        width:40%;
-        height:300px;
-        background-color: #E1F3FF;
-        margin-top: 2%;
-        /*margin-left: 2%;*/
-        float:left;
-        opacity: 1;
-        -webkit-transition: 1s;
-        border-radius: 10px;
-        filter:Alpha(opacity=100);
-    }
-    .brother2{
-        width:50%;
-        height:300px;
-        float:left;
-        opacity: 0;
-        margin-top: 2%;
-        margin-left: 2%;
-        -webkit-transition: 3s;
-        filter:Alpha(opacity=0);
-    }
+<!-- End Services Dateils Area -->
 
-
-    .brother1:hover {
-        background-color: #207EF7;
-        /*border: 1px solid #207EF7;*/
-        border-radius: 30px;
-        color: #ffffff;
-        -webkit-box-shadow: 0px 0px 20px #d4d4d4;
-        box-shadow: 0px 0px 20px #d4d4d4;
-    }
-
-    .brother1:hover+.brother2{
-        opacity: 1;
-        filter:Alpha(opacity=100);
-        background-color: #207EF7;
-        /*border: 1px solid #207EF7;*/
-        border-radius: 30px;
-        /*color: #ffffff;*/
-        -webkit-box-shadow: 0px 0px 20px #d4d4d4;
-        box-shadow: 0px 0px 20px #d4d4d4;
-    }
-
-</style>
-<div class="daddy">
-    <div class="container" >
-
-        <div class="brother1">
-            <h3>Targeted misinformation</h3>
-            <div class="view-more">
-                <a href="#" class="view-more-btn" >
-                    How to check it
-                </a>
-            </div>
-
-        </div>
-
-        <div class="brother2">
-            <p>
-                News that is misleading, which is produced to deceive and do harm which can help them achieve the intended purposes.	For example:
-            </p>
-            <p>
-                1.5G WiFi networks could be responsible for the rapid spread of the new coronavirus.
-            </p>
-            <p>
-                2.One or some of the Asian countries has produced the Covid-19 (increase the race conflict)
-            </p>
-        </div>
-
-    </div>
-    <div class="container" >
-
-    <!--    <div class="brother2">-->
-    <!--        <p>News that contains some grains of truth that are not fully verified, which are used to support a certain position or view. For example:</p>-->
-    <!--        <p>1. Achieve herd immunity by “natural” infections. </p>-->
-    <!--        <p>-->
-    <!--            2. Masks were not recommended for the general public in the early stage of Covid-19 pandemic-->
-    <!--        </p>-->
-    <!--    </div>-->
-
-        <div class="brother1">
-            <h3>Sloppy reporting</h3>
-            <div class="view-more">
-                <a href="#" class="view-more-btn" >
-                    How to check it
-                </a>
-            </div>
-        </div>
-
-        <div class="brother2">
-            <p>News that contains some grains of truth that are not fully verified, which are used to support a certain position or view. For example:</p>
-            <p>1. Achieve herd immunity by “natural” infections. </p>
-            <p>
-                2. Masks were not recommended for the general public in the early stage of Covid-19 pandemic
-            </p>
-        </div>
-
-    </div>
-
-    <div class="container" >
-
-        <div class="brother1">
-            <h3>Misleading news</h3>
-            <div class="view-more">
-                <a href="#" class="view-more-btn" >
-                    How to check it
-                </a>
-            </div>
-
-        </div>
-
-        <div class="brother2">
-            <p>Misleading news that’s not based on facts, but supports an on-going narrative – news where there is no established baseline for truth, often where ideologies or opinions clash and unconscious biases come into play. For example:</p>
-            <p>1. Injecting bleach or highly concentrated rubbing alcohol can help combat the virus</p>
-            <p>
-                2. The children are virtually immune to Covid-19.
-            </p>
-            <p>3. Covid-19 will disappear like a miracle in summer.</p>
-        </div>
-
-    </div>
-</div>
-
-
-<!-- End Blog Area -->
 {% include 'footer.html' %}
+
 {% block foot %}
 {% endblock %}
 
