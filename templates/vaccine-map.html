@@ -34,9 +34,14 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
     <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 80%; }
+        .mapboxgl-popup-content {
+            font-size: 16px;
+        }
 
-        #map { position: absolute; width: 80%; }
     </style>
+
 
     <title>FSquare: COVID-19 rumours impacts on VIC's elders</title>
 </head>
@@ -58,7 +63,7 @@
         position:relative;
         margin-top: 0%;
         width: 100%;
-        height:100%;
+        height:130%;
 
     }
 
@@ -119,7 +124,7 @@
                         mapboxgl.accessToken = 'pk.eyJ1IjoieXh1dTAxMDQiLCJhIjoiY2tuM2FyODdkMGo5dzJucXN4YnNjMmw2cCJ9.tTyzDSDye_FY3w7Qxh5BRg';
                         var map = new mapboxgl.Map({
                             container: 'map',
-                            style: 'mapbox://styles/yxuu0104/cknv8ui181h6217mf5fep008c',
+                            style: 'mapbox://styles/yxuu0104/cko29lt8j08ph17ocd1j9axxb',
                             center: [145.00, -37.00],
                             zoom: 6
                         });
@@ -134,7 +139,7 @@
 
                         map.on('click', function(e) {
                             var features = map.queryRenderedFeatures(e.point, {
-                                layers: ['test-location'] // replace this with the name of the layer
+                                layers: ['vaccine-location'] // replace this with the name of the layer
                             });
 
                             if (!features.length) {
@@ -147,9 +152,9 @@
                                 .setLngLat(feature.geometry.coordinates)
                                 .setHTML(
                                     '<h3>' +
-                                    feature.properties.Site_Name+
+                                    feature.properties.Site_name+
                                     '</h3><p>' +
-                                    feature.properties.address +'<br>'+ feature.properties.Phone +'<br>'+feature.properties.Service_Availability+
+                                    feature.properties.address +'<br>'+ feature.properties.Phone +'<br>'+feature.properties.Available_Time+
                                     '</p>'
                                 )
                                 .addTo(map);
