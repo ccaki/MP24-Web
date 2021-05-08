@@ -1,0 +1,316 @@
+﻿<!doctype html>
+<html lang="zxx">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/assets/css/bootstrap.min.css">
+    <!-- Boxican Css -->
+    <link rel="stylesheet" href="../static/assets/css/boxicons.min.css">
+    <!-- Meanmenu CSS -->
+    <link rel="stylesheet" href="../static/assets/css/meanmenu.min.css">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="../static/assets/css/nice-select.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="../static/assets/css/animate.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="../static/assets/css/owl.carousel.min.css">
+    <!-- Owl Theme CSS -->
+    <link rel="stylesheet" href="../static/assets/css/owl.theme.default.min.css">
+    <!-- Magnific CSS -->
+    <link rel="stylesheet" href="../static/assets/css/magnific-popup.min.css">
+    <!-- Jquery Datetimepicker CSS -->
+    <link rel="stylesheet" href="../static/assets/css/jquery.datetimepicker.min.css" />
+    <!-- Styleshet CSS -->
+    <link rel="stylesheet" href="../static/assets/css/style1.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="../static/assets/css/responsive.css">
+    <!-- Favican -->
+    <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
+    <link rel="stylesheet" href="../static/assets/css/stylesheet.css">
+    <link rel="stylesheet" href="../static/assets/css/vaccine-timeline.css">
+
+    <!--        <title>FSquare: COVID-19 rumours impacts on VIC's elders</title>-->
+
+    <style>
+        #block_container
+        {
+            text-align:center;
+        }
+        #bloc1, #bloc2
+        {
+            display:inline;
+        }
+
+
+        /* Popup container - can be anything you want */
+        .popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* The actual popup */
+        .popup .popuptext {
+            font-size: 16px;
+            visibility: hidden;
+            width: 500px;
+            max-height: 180px;
+            overflow: scroll;
+            background-color: #555;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -130px;
+        }
+
+        /* Popup arrow */
+        .popup .popuptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        /* Toggle this class - hide and show the popup */
+        .popup .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+        }
+
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1 ;}
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    {% include 'nav.html' %}
+
+    {% block navi %}
+    {% endblock %}
+</header>
+<!-- End Header Area -->
+
+<!-- Instragram Area -->
+<div id="instragram" class="gallery-area instragram-gallery pb-70">
+    <div class="container">
+        <br></br>
+        <div class="section-title-three">
+            <h3>Discover the latest COVID-19 data visualisations!</h3>
+        </div>
+        <br></br>
+        <div class="row1" id="Container">
+            <div class="1" style="margin-left: auto;margin-right: auto;">
+
+                <div class="popup" onclick="myFunction()" style="font-size: 20px;color:#207EF7;text-decoration-line:underline">What does this graph mean?
+                    <span class="popuptext" id="myPopup">
+                        The plot blow shows the daily change cases for test, recovered, confirmed and deaths in Victoria. If you click the “confirmed” choice in the selection menu, you can see that the number of confirmed cases in Victoria has been controlled to a relatively low level compared to the early stage of Covid-19, which shows that the Covid-19 can be controlled with stringent precaution measure. Feel free to click other choices if you needed.  </span>
+                </div>
+                <script>
+                    // When the user clicks on <div>, open the popup
+                    function myFunction() {
+                        var popup = document.getElementById("myPopup");
+                        popup.classList.toggle("show");
+                    }
+                </script>
+                <div class="flourish-embed flourish-chart" data-src="visualisation/5965016"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+        <div  id="block_container">
+
+
+
+
+
+
+        </div>
+        <br></br>
+
+
+        <div class="row" id="Container3">
+            <div class="leftthing" id="bloc1" style="width: 55%">
+                <div class="popup" onclick="myFunction2()" style="font-size: 20px;color:#207EF7;text-decoration-line:underline">What does this graph mean?
+                    <span class="popuptext" id="myPopup2">
+                           From this graph, you can easily get the total confirmed cases of Covid-19 for your city. Please feel free to choose the city name and see the condition of Covid-19 in your city.      </span>
+                </div>
+                <script>
+                    // When the user clicks on <div>, open the popup
+                    function myFunction2() {
+                        var popup = document.getElementById("myPopup2");
+                        popup.classList.toggle("show");
+                    }
+                </script>
+                <div class="single-gallery" >
+                    <div class="infogram-embed" data-id="_/CnyUQNg9Ty63mx6vvOU3" data-type="interactive" data-title="Victoria LGAs - total cases"></div><script>!function(e,i,n,s){var t="InfogramEmbeds",d=e.getElementsByTagName("script")[0];if(window[t]&&window[t].initialized)window[t].process&&window[t].process();else if(!e.getElementById(n)){var o=e.createElement("script");o.async=1,o.id=n,o.src="https://e.infogram.com/js/dist/embed-loader-min.js",d.parentNode.insertBefore(o,d)}}(document,0,"infogram-async");</script>
+                </div>
+            </div>
+            <div class="rightthing"  id="bloc2" style="width: 45%;">
+
+
+                <div class="single-gallery" style="margin-top: 70px;margin-left: 8px;" >
+                    <div class="popup" onclick="myFunction1()" style="font-size: 20px;color:#207EF7;text-decoration-line:underline">What does this graph mean?
+                        <span class="popuptext" id="myPopup1" style="margin-left: 8px;">
+                            The pie chart below shows that the total confirmed cases for Covid-19 aged 60 -80 is less than 25% whereas most of the confirmed cases are aged from 20 to 50. This can illustrate that the confirmed cases for senior actually occupy a small portion. Also, the Australian government has provided vaccine to all the Australians, which will help us to achieve community immunization. You can easily get the percentage and number of confirmed cases by clicking the area of the donut chart.
+                    </span>
+                    </div>
+
+                    <div class="flourish-embed flourish-chart" data-src="visualisation/5897412" ><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+                    <script>
+                        // When the user clicks on <div>, open the popup
+                        function myFunction1() {
+                            var popup = document.getElementById("myPopup1");
+                            popup.classList.toggle("show");
+                        }
+                    </script>
+
+                </div>
+            </div>
+
+            <div class="leftthing" id="bloc3" style="width: 60%">
+                <div class="popup" onclick="myFunction3()" style="font-size: 20px;color:#207EF7;text-decoration-line:underline">What does this graph mean?
+                    <span class="popuptext" id="myPopup3" style="margin-left: 8px;">
+                          The graph below provides the number of daily and cumulative vaccination in Victoria. You can easily get the number of daily and cumulative vaccination by clicking the points in the chart. Feel free to check plot if you would like to know the progress of the vaccination.
+                             </span>
+                </div>
+                <script>
+                    // When the user clicks on <div>, open the popup
+                    function myFunction3() {
+                        var popup = document.getElementById("myPopup3");
+                        popup.classList.toggle("show");
+                    }
+                </script>
+                <div class="single-gallery" >
+                    <!--                    <img src="../static/assets/img/v.jpg" alt="Image">-->
+                    <div class="flourish-embed flourish-chart" data-src="visualisation/6035148"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                </div>
+            </div>
+            <div class="rightthing"  id="bloc4" style="width: 40%">
+
+                <div class="single-gallery" style="margin-top: 70px;margin-left: 8px;" >
+                    <div class="popup" onclick="myFunction4()" style="font-size: 20px;color:#207EF7;text-decoration-line:underline">What does below graph mean?
+                        <span class="popuptext" id="myPopup4">
+                           The Australian government decided to provide free vaccine to every person in Australia. The following plot shows the progress of vaccination in each state. The number of Victorian who have already got vaccine reaches to 516,869, which rank the second place among all the states. This illustrates that the Victorian government makes great effort to help every person in Victoria to get vaccine as soon as possible.
+                              </span>
+                    </div>
+                    <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/6011432" ><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+                    <script>
+                        // When the user clicks on <div>, open the popup
+                        function myFunction4() {
+                            var popup = document.getElementById("myPopup4");
+                            popup.classList.toggle("show");
+                        }
+                    </script>
+
+                </div>
+            </div>
+
+<!--            <div class="col-lg-4 col-sm-6 mix neurologist hematology">-->
+<!--                <div class="single-gallery">-->
+<!--                    <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/6011432"><script src="https://public.flourish.studio/resources/embed.js"></script></div>-->
+<!--                    <div class="caption">-->
+<!--                        <div class="d-table">-->
+<!--                            <div class="d-table-cell">-->
+<!--                                <a href="#">-->
+<!--                                    <i class='bx bxl-instagram'></i>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="col-lg-4 col-sm-6 mix cardiologist neurologist">-->
+<!--                <div class="single-gallery">-->
+<!--&lt;!&ndash;                    <img src="../static/assets/img/instragram/instragram-4.jpg" alt="Image">&ndash;&gt;-->
+<!--                    <div class="flourish-embed flourish-chart" data-src="visualisation/6035148"><script src="https://public.flourish.studio/resources/embed.js"></script></div>-->
+<!--                     <div class="caption">-->
+<!--                        <div class="d-table">-->
+<!--                            <div class="d-table-cell">-->
+<!--                                <a href="#">-->
+<!--                                    <i class='bx bxl-instagram'></i>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+        </div>
+    </div>
+</div>
+<!-- End Instragram Area -->
+
+{% include 'footer.html' %}
+
+{% block foot %}
+{% endblock %}
+<!-- Go Top -->
+<div class="go-top">
+    <i class='bx bxs-upvote'></i>
+</div>
+<!-- End Go Top -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../static/assets/js/jquery.min.js"></script>
+<script src="../static/assets/js/popper.min.js"></script>
+<script src="../static/assets/js/bootstrap.min.js"></script>
+<!-- Magnific -->
+<script src="../static/assets/js/jquery.magnific-popup.min.js"></script>
+<!-- Meanmenu JS -->
+<script src="../static/assets/js/meanmenu.min.js"></script>
+<!-- Nice Select JS -->
+<script src="../static/assets/js/jquery.nice-select.min.js"></script>
+<!-- Owl Carousel JS -->
+<script src="../static/assets/js/owl.carousel.min.js"></script>
+<!-- Jquery Mixitup JS -->
+<script src="../static/assets/js/jquery.mixitup.min.js"></script>
+<!-- Jquery Datetimepicker JS -->
+<script src="../static/assets/js/jquery.datetimepicker.full.min.js"></script>
+<!-- Form Validator JS -->
+<script src="../static/assets/js/form-validator.min.js"></script>
+<!-- Contact JS -->
+<script src="../static/assets/js/contact-form-script.js"></script>
+<!-- Ajaxchimp JS -->
+<script src="../static/assets/js/jquery.ajaxchimp.min.js"></script>
+<!-- Custom JS -->
+<script src="../static/assets/js/custom.js"></script>
+<script src="../static/assets/js/script-ppt.js"></script>
+
+</body>
+</html>

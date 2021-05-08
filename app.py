@@ -374,10 +374,10 @@ def fictiondetails():
     return render_template('fiction-details.html', content_type='application/json')
 
 
-#test page
-@app.route('/timeline')
-def timeline():
-    return render_template('timeline.html', content_type='application/json')
+#visualisation page
+@app.route('/visualisation')
+def visualisation():
+    return render_template('visualisation.html', content_type='application/json')
 
 #test page
 # @app.route('/26')
