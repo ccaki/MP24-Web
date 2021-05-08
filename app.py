@@ -430,7 +430,7 @@ def html_search(keyword,res):
         link = "/"+keyword
         item = {"name":name,"link":link}
         res.append(item)
-    print(res)
+    #print(res)
     return res
 
 
