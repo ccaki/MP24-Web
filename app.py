@@ -1,5 +1,6 @@
 from flask import Flask, render_template,current_app
 from flask import request
+#from dictionaries import Dict
 
 import pymysql
 from dbConnection import Database
@@ -486,7 +487,7 @@ def find_synonym(keyword):
     return keyword
 
 #check if a keyword in sentence is meaningful
-meaningless = ['what','where','when','how','the','and','who','a','an']
+meaningless = ['what','where','when','how','the','and','who','a','an','but','however']
 def is_meaningful(keyword):
     if keyword in meaningless:
         return False
@@ -529,6 +530,14 @@ def search():
                 if is_meaningful(keyword):
                     #get results
                     res = search_algorithm(res, keyword)
+
+            #remove duplicate
+            res1 = []
+            for i in res:
+                if i not in res1:
+                    res1.append(i)
+            res = res1
+
             #check if no search result is found
             if (len(res)>=1):
                 return render_template('search.html',result = res)
