@@ -437,12 +437,11 @@ def html_search(keyword,res):
 
 
 #integrated search algorithm
-def search_algorithm(keyword):
+def search_algorithm(res, keyword):
     #format of res: a list of dic, key=title, value=href
     """
     e.g. [{"vaccine","/vaccine"},"vaccine_article","/articlelink"]
     """
-    res = []
 
     #search algorithm
     res = html_search(keyword,res)
@@ -486,30 +485,62 @@ def find_synonym(keyword):
         keyword = synonym_dic[keyword]
     return keyword
 
+#check if a keyword in sentence is meaningful
+meaningless = ['what','where','when','how','the','and','who','a','an']
+def is_meaningful(keyword):
+    if keyword in meaningless:
+        return False
+    #include punctuation and single letters
+    elif len(keyword)<3:
+        return False
+    else:
+        return True
+
 @app.route('/search/', methods = ['POST', 'GET'])
 def search():
     if request.method == 'GET':
-        return render_template('error-404.html',form_data = form_data)
+        return render_template('error-404.html')
 
+    res = []
     if request.method == 'POST':
         form_data = request.form
         input = form_data['keyword']
 
         #make the input case insensitive
-        keyword = input.lower()
+        input = input.lower()
 
-        #keyword grouping
-        keyword = find_synonym(keyword)
+        #find keyword in input
+        if (' ' in input):
+            keywords = input.split(' ')
+            for keyword in keywords:
+                #keyword grouping
+                keyword = find_synonym(keyword)
 
-        #get results
-        res = search_algorithm(keyword)
-        #print(res)
+                #only search if the keyword is meaningful
+                if is_meaningful(keyword):
+                    #get results
+                    res = search_algorithm(res, keyword)
+            #check if no search result is found
+            if (len(res)>=1):
+                return render_template('search.html',result = res)
+            else:
+                return render_template('noSearchResult.html')
 
-        #check if no search result is found
-        if (len(res)>=1):
-            return render_template('search.html',result = res)
+
         else:
-            return render_template('noSearchResult.html')
+            keyword = input
+            #keyword grouping
+            keyword = find_synonym(keyword)
+
+            #get results
+            res = search_algorithm(res, keyword)
+            #print(res)
+
+            #check if no search result is found
+            if (len(res)>=1):
+                return render_template('search.html',result = res)
+            else:
+                return render_template('noSearchResult.html')
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
