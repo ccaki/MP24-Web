@@ -496,10 +496,19 @@ def is_meaningful(keyword):
     else:
         return True
 
+@app.errorhandler(404)
+def page_not_found(e):
+    # your processing here
+    return render_template('error-404.html')
+
+@app.route('/notfound', methods = ['POST', 'GET'])
+def notfound():
+    return render_template('error-404.html')
+
 @app.route('/search/', methods = ['POST', 'GET'])
 def search():
     if request.method == 'GET':
-        return render_template('error-404.html')
+        return notfound()
 
     res = []
     if request.method == 'POST':
@@ -542,12 +551,12 @@ def search():
             else:
                 return render_template('noSearchResult.html')
 
-@app.route('/login', methods=['POST', 'GET'])
-def login():
-    error = None
-    if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-            error = 'Error Message Text'
-        else:
-            return redirect(url_for('home'))
-    return render_template('index.html', error=error)
+# @app.route('/login', methods=['POST', 'GET'])
+# def login():
+#     error = None
+#     if request.method == 'POST':
+#         if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+#             error = 'Error Message Text'
+#         else:
+#             return redirect(url_for('home'))
+#     return render_template('index.html', error=error)
