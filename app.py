@@ -347,6 +347,12 @@ def vaccine():
 def vaccine_map():
     return render_template('vaccine-map.html', content_type='application/json')
 
+#rumor page
+@app.route('/rumor')
+def rumor():
+    return render_template('rumor.html', content_type='application/json')
+
+
 #vaccine timeline page
 @app.route('/vaccine_timeline')
 def vaccine_timeline():
