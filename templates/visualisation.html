@@ -60,7 +60,7 @@
         .popup .popuptext {
             font-size: 16px;
             visibility: hidden;
-            width: 500px;
+            width: 400px;
             max-height: 180px;
             overflow: scroll;
             background-color: #555;
@@ -160,7 +160,118 @@
 
 
         <div class="row" id="Container3">
-            <div class="leftthing" id="bloc1" style="width: 55%">
+
+<!--            <div class="rightthing"  id="bloc2" style="width: 45%;">-->
+
+
+<!--                <div class="single-gallery" style="margin-top: 70px;margin-left: 8px;" >-->
+<!--                    <div class="popup" onclick="myFunction1()" style="font-size: 20px;color:#207EF7;text-decoration-line:underline">What does this graph mean?-->
+<!--                        <span class="popuptext" id="myPopup1" style="margin-left: 8px;">-->
+<!--                            The pie chart below shows that the total confirmed cases for Covid-19 aged 60 -80 is less than 25% whereas most of the confirmed cases are aged from 20 to 50. This can illustrate that the confirmed cases for senior actually occupy a small portion. Also, the Australian government has provided vaccine to all the Australians, which will help us to achieve community immunization. You can easily get the percentage and number of confirmed cases by clicking the area of the donut chart.-->
+<!--                    </span>-->
+<!--                    </div>-->
+
+<!--                    <div class="flourish-embed flourish-chart" data-src="visualisation/5897412" ><script src="https://public.flourish.studio/resources/embed.js"></script></div>-->
+
+<!--                    <script>-->
+<!--                        // When the user clicks on <div>, open the popup-->
+<!--                        function myFunction1() {-->
+<!--                            var popup = document.getElementById("myPopup1");-->
+<!--                            popup.classList.toggle("show");-->
+<!--                        }-->
+<!--                    </script>-->
+
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="leftthing" id="bloc3" style="width: 60%">-->
+<!--                -->
+<!--                <div class="single-gallery" >-->
+<!--                    &lt;!&ndash;                    <img src="../static/assets/img/v.jpg" alt="Image">&ndash;&gt;-->
+<!--                    <div class="flourish-embed flourish-chart" data-src="visualisation/6035148"><script src="https://public.flourish.studio/resources/embed.js"></script></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="rightthing"  id="bloc4" style="width: 40%">-->
+
+<!--                <div class="single-gallery" style="margin-top: 70px;margin-left: 8px;" >-->
+<!--                    <div class="popup" onclick="myFunction4()" style="font-size: 20px;color:#207EF7;text-decoration-line:underline">What does below graph mean?-->
+<!--                        <span class="popuptext" id="myPopup4">-->
+<!--                           The Australian government decided to provide free vaccine to every person in Australia. The following plot shows the progress of vaccination in each state. The number of Victorian who have already got vaccine reaches to 516,869, which rank the second place among all the states. This illustrates that the Victorian government makes great effort to help every person in Victoria to get vaccine as soon as possible.-->
+<!--                              </span>-->
+<!--                    </div>-->
+<!--                    <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/6011432" ><script src="https://public.flourish.studio/resources/embed.js"></script></div>-->
+
+<!--                    <script>-->
+<!--                        // When the user clicks on <div>, open the popup-->
+<!--                        function myFunction4() {-->
+<!--                            var popup = document.getElementById("myPopup4");-->
+<!--                            popup.classList.toggle("show");-->
+<!--                        }-->
+<!--                    </script>-->
+
+<!--                </div>-->
+<!--            </div>-->
+
+            <div class="col-lg-4 col-sm-6 mix neurologist hematology">
+                <div class="popup" onclick="myFunction4()" style="font-size: 20px;color:#207EF7;text-decoration-line:underline">What does below graph mean?
+                    <span class="popuptext" id="myPopup4">
+                           The Australian government decided to provide free vaccine to every person in Australia. The following plot shows the progress of vaccination in each state. The number of Victorian who have already got vaccine reaches to 516,869, which rank the second place among all the states. This illustrates that the Victorian government makes great effort to help every person in Victoria to get vaccine as soon as possible.
+                              </span>
+                </div>
+                <script>
+                    // When the user clicks on <div>, open the popup
+                    function myFunction4() {
+                        var popup = document.getElementById("myPopup4");
+                        popup.classList.toggle("show");
+                    }
+                </script>
+                <div class="single-gallery">
+                    <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/6011432"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 mix cardiologist neurologist">
+                <div class="popup" onclick="myFunction3()" style="font-size: 20px;color:#207EF7;text-decoration-line:underline">What does this graph mean?
+                    <span class="popuptext" id="myPopup3" style="margin-left: 8px;">
+                          The graph below provides the number of daily and cumulative vaccination in Victoria. You can easily get the number of daily and cumulative vaccination by clicking the points in the chart. Feel free to check plot if you would like to know the progress of the vaccination.
+                             </span>
+                </div>
+                <script>
+                    // When the user clicks on <div>, open the popup
+                    function myFunction3() {
+                        var popup = document.getElementById("myPopup3");
+                        popup.classList.toggle("show");
+                    }
+                </script>
+                <div class="single-gallery">
+<!--                    <img src="../static/assets/img/instragram/instragram-4.jpg" alt="Image">-->
+                    <div class="flourish-embed flourish-chart" data-src="visualisation/6035148"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mix cardiologist neurologist">
+                <div class="popup" onclick="myFunction1()" style="font-size: 20px;color:#207EF7;text-decoration-line:underline">What does this graph mean?
+                    <span class="popuptext" id="myPopup1" style="margin-left: 1px;">
+                            The donut chart below shows that the total confirmed cases for Covid-19 aged 60 -80 is less than 25% whereas most of the confirmed cases are aged from 20 to 50, which means seniors actually occupy a small portion.  You can get the percentage and number of confirmed cases by hovering the area of the donut chart.
+                    </span>
+                </div>
+                                    <script>
+                                        // When the user clicks on <div>, open the popup
+                                        function myFunction1() {
+                                            var popup = document.getElementById("myPopup1");
+                                            popup.classList.toggle("show");
+                                        }
+                                    </script>
+
+
+                <div class="single-gallery">
+                    <!--                    <img src="../static/assets/img/instragram/instragram-4.jpg" alt="Image">-->
+                    <div class="flourish-embed flourish-chart" data-src="visualisation/5897412" ><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+                </div>
+            </div>
+            <div class="leftthing" id="bloc1" style="width: 100%">
                 <div class="popup" onclick="myFunction2()" style="font-size: 20px;color:#207EF7;text-decoration-line:underline">What does this graph mean?
                     <span class="popuptext" id="myPopup2">
                         The plot below shows the expected number of vaccine and real number of vaccine varied by different weeks. Clearly, the supply of Covid-19 vaccine is sufficient. You will get vaccination soon as the vaccination rollout phase continue.
@@ -179,98 +290,6 @@
                     <div class="flourish-embed flourish-chart" data-src="visualisation/6034850"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
                 </div>
             </div>
-            <div class="rightthing"  id="bloc2" style="width: 45%;">
-
-
-                <div class="single-gallery" style="margin-top: 70px;margin-left: 8px;" >
-                    <div class="popup" onclick="myFunction1()" style="font-size: 20px;color:#207EF7;text-decoration-line:underline">What does this graph mean?
-                        <span class="popuptext" id="myPopup1" style="margin-left: 8px;">
-                            The pie chart below shows that the total confirmed cases for Covid-19 aged 60 -80 is less than 25% whereas most of the confirmed cases are aged from 20 to 50. This can illustrate that the confirmed cases for senior actually occupy a small portion. Also, the Australian government has provided vaccine to all the Australians, which will help us to achieve community immunization. You can easily get the percentage and number of confirmed cases by clicking the area of the donut chart.
-                    </span>
-                    </div>
-
-                    <div class="flourish-embed flourish-chart" data-src="visualisation/5897412" ><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-
-                    <script>
-                        // When the user clicks on <div>, open the popup
-                        function myFunction1() {
-                            var popup = document.getElementById("myPopup1");
-                            popup.classList.toggle("show");
-                        }
-                    </script>
-
-                </div>
-            </div>
-
-            <div class="leftthing" id="bloc3" style="width: 60%">
-                <div class="popup" onclick="myFunction3()" style="font-size: 20px;color:#207EF7;text-decoration-line:underline">What does this graph mean?
-                    <span class="popuptext" id="myPopup3" style="margin-left: 8px;">
-                          The graph below provides the number of daily and cumulative vaccination in Victoria. You can easily get the number of daily and cumulative vaccination by clicking the points in the chart. Feel free to check plot if you would like to know the progress of the vaccination.
-                             </span>
-                </div>
-                <script>
-                    // When the user clicks on <div>, open the popup
-                    function myFunction3() {
-                        var popup = document.getElementById("myPopup3");
-                        popup.classList.toggle("show");
-                    }
-                </script>
-                <div class="single-gallery" >
-                    <!--                    <img src="../static/assets/img/v.jpg" alt="Image">-->
-                    <div class="flourish-embed flourish-chart" data-src="visualisation/6035148"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-                </div>
-            </div>
-            <div class="rightthing"  id="bloc4" style="width: 40%">
-
-                <div class="single-gallery" style="margin-top: 70px;margin-left: 8px;" >
-                    <div class="popup" onclick="myFunction4()" style="font-size: 20px;color:#207EF7;text-decoration-line:underline">What does below graph mean?
-                        <span class="popuptext" id="myPopup4">
-                           The Australian government decided to provide free vaccine to every person in Australia. The following plot shows the progress of vaccination in each state. The number of Victorian who have already got vaccine reaches to 516,869, which rank the second place among all the states. This illustrates that the Victorian government makes great effort to help every person in Victoria to get vaccine as soon as possible.
-                              </span>
-                    </div>
-                    <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/6011432" ><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-
-                    <script>
-                        // When the user clicks on <div>, open the popup
-                        function myFunction4() {
-                            var popup = document.getElementById("myPopup4");
-                            popup.classList.toggle("show");
-                        }
-                    </script>
-
-                </div>
-            </div>
-
-<!--            <div class="col-lg-4 col-sm-6 mix neurologist hematology">-->
-<!--                <div class="single-gallery">-->
-<!--                    <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/6011432"><script src="https://public.flourish.studio/resources/embed.js"></script></div>-->
-<!--                    <div class="caption">-->
-<!--                        <div class="d-table">-->
-<!--                            <div class="d-table-cell">-->
-<!--                                <a href="#">-->
-<!--                                    <i class='bx bxl-instagram'></i>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--            <div class="col-lg-4 col-sm-6 mix cardiologist neurologist">-->
-<!--                <div class="single-gallery">-->
-<!--&lt;!&ndash;                    <img src="../static/assets/img/instragram/instragram-4.jpg" alt="Image">&ndash;&gt;-->
-<!--                    <div class="flourish-embed flourish-chart" data-src="visualisation/6035148"><script src="https://public.flourish.studio/resources/embed.js"></script></div>-->
-<!--                     <div class="caption">-->
-<!--                        <div class="d-table">-->
-<!--                            <div class="d-table-cell">-->
-<!--                                <a href="#">-->
-<!--                                    <i class='bx bxl-instagram'></i>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
 
 
         </div>
