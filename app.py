@@ -370,15 +370,15 @@ def vaccine_blog():
 def test():
     return render_template('testing.html', content_type='application/json')
 
+#test page
+@app.route('/test1')
+def test1():
+    return render_template('index-2.html', content_type='application/json')
+
 #fact and fiction page
 @app.route('/fiction')
 def fiction():
     return render_template('factandfiction.html', content_type='application/json')
-
-#fact and fiction detail page
-@app.route('/fictiondetails')
-def fictiondetails():
-    return render_template('fiction-details.html', content_type='application/json')
 
 
 #visualisation page

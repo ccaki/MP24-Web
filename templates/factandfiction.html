@@ -30,10 +30,14 @@
     <!-- Favican -->
     <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
 
-    <title>FSquare: COVID-19 rumours impacts on VIC's elders</title>
-</head>
+    <title>Factoids: COVID-19 rumours impacts on Victorian seniors</title>
 
-<body>
+</head>
+<style>
+    .page-banner-area.bg-2 {
+        background-image: url("../static/assets/img/v.jpg");
+    }
+</style>
 
 {% include 'nav.html' %}
 
@@ -41,211 +45,293 @@
 {% endblock %}
 
 
-
 <!-- Page Banner Area -->
-<div class="page-banner-area bg-2">
+<div class="page-banner-area bg-4">
     <div class="d-table">
         <div class="d-table-cell">
             <div class="container">
                 <div class="page-content">
-                    <h2>Anti Fictions</h2>
+                    <h2>How to distinguish fictions</h2>
                     <ul>
-                        <li style="font-size:22px;text-decoration: underline"><a href="/rumor">Squash Rumors</a></li>
-                        <li style="font-size:22px;text-decoration: underline"><a href="/fiction">Anti Fictions</a></li>
+                        <li style="font-size:22px" ><a href="/rumor">Squash Rumors</a></li>
+                        <li style="font-size:22px"><a href="/fiction">Anti Fictions</a></li>
                     </ul>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- End Page Banner Area -->
 
-
-<!-- Blog Area -->
-
-<style>
-
-    .daddy{
-        min-height: 1200px;
-        margin-top: 5%;
-        /*margin-left: 10%;*/
-        /*padding-left: 2%;*/
-    }
-    .mother{
-        width:100%;
-        height:100%;
-        padding-left: 10%;
-    }
-    .brother1{
-        width:35%;
-        height:300px;
-        background-color: #E1F3FF;
-        margin-top: 2%;
-        /*margin-left: 2%;*/
-        float:left;
-        opacity: 1;
-        -webkit-transition: 1s;
-        border-radius: 10px;
-        filter:Alpha(opacity=100);
-    }
-    .brother1 h3{
-        position: relative;
-        padding-top:10%;
-        margin-left: 10%;
-    }
-
-    .brother1 h3 a{
-        line-height: 1.1;
-        color: #292323;
-    }
-    .view-more {
-        background-color: transparent;
-        display: inline-block;
-        border: 1px solid #207EF7;
-        border-radius: 30px;
-        color: #555555;
-        margin-left: 10%;
-        margin-top: 3%;
-        padding: 15px 30px;
-        transition: 0.5s;
-    }
-
-
-    .brother2 p{
-        font-size: 25px;
-        margin-top: 15px;
-        margin-left: 3%;
-    }
-
-    .brother2{
-        width:50%;
-        height:300px;
-        float:left;
-        opacity: 0;
-        margin-top: 2%;
-        margin-left: 5%;
-        -webkit-transition: 3s;
-        filter:Alpha(opacity=0);
-    }
-
-    .brother2 p{
-        font-size: 20px;
-        word-wrap: normal;
-        overflow: auto;
-    }
-
-
-    .brother1:hover {
-        /*background-color: #207EF7;*/
-        background-color: #FFFFFF;
-        /*border: 1px solid #207EF7;*/
-        border-radius: 30px;
-        color: #ffffff;
-        -webkit-box-shadow: 0px 0px 20px #d4d4d4;
-        box-shadow: 0px 0px 20px #d4d4d4;
-    }
-
-    .brother1:hover+.brother2{
-        opacity: 1;
-        filter:Alpha(opacity=100);
-        background-color: #E1F3FF;
-        /*border: 1px solid #207EF7;*/
-        border-radius: 30px;
-        /*color: #ffffff;*/
-        -webkit-box-shadow: 0px 0px 20px #d4d4d4;
-        box-shadow: 0px 0px 20px #d4d4d4;
-    }
-
-    .view-more:hover{
-        background-color: #E1F3FF;
-    }
-
-</style>
-<div class="daddy">
-    <div class="mother" >
-
-        <div class="brother1">
-            <h3><a href="#">Misleading information: Targeted misinformation</a></h3>
-            <div class="view-more">
-                <a href="/fictiondetails">
-                    How to check it
-                </a>
-            </div>
-
-        </div>
-
-        <div class="brother2">
-            <p>
-                News that is misleading, which is produced to deceive and do harm which can help them achieve the intended purposes.	For example:
-            </p>
-            <p>
-                1.5G WiFi networks could be responsible for the rapid spread of the new coronavirus.
-            </p>
-            <p>
-                2.One or some of the Asian countries has produced the Covid-19 (increase the race conflict)
-            </p>
-        </div>
-
-    </div>
-    <div class="mother" >
-
-        <!--    <div class="brother2">-->
-        <!--        <p>News that contains some grains of truth that are not fully verified, which are used to support a certain position or view. For example:</p>-->
-        <!--        <p>1. Achieve herd immunity by “natural” infections. </p>-->
-        <!--        <p>-->
-        <!--            2. Masks were not recommended for the general public in the early stage of Covid-19 pandemic-->
-        <!--        </p>-->
-        <!--    </div>-->
-
-        <div class="brother1">
-            <h3>Misleading information: Sloppy reporting   </h3>
-            <div class="view-more">
-                <a href="/fictiondetails">
-                    How to check it
-                </a>
-            </div>
-        </div>
-
-        <div class="brother2">
-            <p>News that contains some grains of truth that are not fully verified, which are used to support a certain position or view. For example:</p>
-            <p>1. Achieve herd immunity by “natural” infections. </p>
-            <p>
-                2. Masks were not recommended for the general public in the early stage of Covid-19 pandemic
-            </p>
-        </div>
-
+<script src="../static/assets/js/jquery-3.4.1.min.js"></script>
+<body>
+<div style="text-align: center; margin-top: 10px; margin-bottom: 15px">
+    <h1>Common misleading information type</h1>
+</div>
+<div class="anti-fiction-btns" style="font-size: 20px; margin-bottom: 10px">
+    <input type="button" name="" value="Targeted Misinformation" class="current">
+    <input type="button" name="" value="Sloppy reporting">
+    <input type="button" name="" value="Fake and misleading news">
+</div>
+<div class="anti-fiction-cons">
+    <div class="anti-fiction-con">
+        <p>
+            <b style="font-size: 50px">News</b> that is misleading, which is produced to deceive and do harm which can help them achieve the intended purposes.
+        </p>
+<!--        <p style="text-align: left">-->
+<!--            1.5G WiFi networks could be responsible for the rapid spread of the new coronavirus.-->
+<!--        </p>-->
+<!--        <p style="text-align: left">-->
+<!--            2.One or some of the Asian countries has produced the Covid-19 (increase the race conflict)-->
+<!--        </p>-->
     </div>
 
-    <div class="mother" >
 
-        <div class="brother1">
-            <h3>Misleading information: Misleading news    </h3>
-            <div class="view-more">
-                <a href="/fictiondetails">
-                    How to check it
-                </a>
-            </div>
-
-        </div>
-
-        <div class="brother2">
-            <p>Misleading news that’s not based on facts, but supports an on-going narrative – news where there is no established baseline for truth, often where ideologies or opinions clash and unconscious biases come into play. For example:</p>
-            <p>1. Injecting bleach or highly concentrated rubbing alcohol can help combat the virus</p>
-            <p>
-                2. The children are virtually immune to Covid-19.
-            </p>
-            <p>3. Covid-19 will disappear like a miracle in summer.</p>
-        </div>
-
+    <div>
+        <p><b style="font-size: 50px">News</b> that contains some grains of truth that are not fully verified, which are used to support a certain position or view.</p>
+<!--        <p style="text-align: left">1. Achieve herd immunity by “natural” infections. </p>-->
+<!--        <p style="text-align: left">-->
+<!--            2. Masks were not recommended for the general public in the early stage of Covid-19 pandemic-->
+<!--        </p>-->
+    </div>
+    <div>
+        <p><b style="font-size: 50px">Misleading news</b> that’s not based on facts, but supports an on-going narrative – news where there is no established baseline for truth, often where ideologies or opinions clash and unconscious biases come into play.</p>
+<!--        <p style="text-align: left">1. Injecting bleach or highly concentrated rubbing alcohol can help combat the virus</p>-->
+<!--        <p style="text-align: left">-->
+<!--            2. The children are virtually immune to Covid-19.-->
+<!--        </p >-->
+<!--        <p style="text-align: left">3. Covid-19 will disappear like a miracle in summer.</p>-->
     </div>
 </div>
 
 
-<!-- End Blog Area -->
+<style type="text/css">
+
+    .anti-fiction-btns{
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .anti-fiction-btns input{
+        width:330px;
+        height:100px;
+        background-color: #E1F3FF;
+        border:0;
+    }
+    .anti-fiction-btns input:hover{
+        background-color: #007bff;
+        transition: 1s;
+    }
+
+    .anti-fiction-btns .current{
+        background-color: #007bff;
+    }
+    .anti-fiction-cons{
+        min-height: 145px;
+    }
+
+    .anti-fiction-cons div{
+        width:85%;
+        height:auto;
+        background-color: #E1F3FF;
+        /*line-height: 120px;*/
+        text-align: center;
+        font-size:40px;
+        display:none; /*隐藏*/
+        margin-top:10px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .anti-fiction-con{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .anti-fiction-cons .anti-fiction-con{
+        display:block;
+    }
+
+</style>
+
+<script type="text/javascript">
+    $(function(){
+        //获取元素
+        var $btn = $('.anti-fiction-btns input');
+        var $div = $('.anti-fiction-cons div');
+
+        $btn.click(function(){
+            //this是原生的this ，指的是当前所点击的对象，$(this)是jQuery对象
+            //addClass是驼峰式,.siblings()表示所选元素之外的剩余同级元素
+            //当前点击的按钮加上current类选择器的样式，然后对剩余的同级元素进行移除current样式的操作
+            $(this).addClass('current').siblings().removeClass('current');
+            //用索引值index()来实现点击哪个选项就呈现相应的内容 $(this).index()
+            $div.eq($(this).index()).addClass('anti-fiction-con').siblings().removeClass('anti-fiction-con');
+        })
+    })
+</script>
+
+<div class="dedicated-area ptb-100">
+    <div class="container">
+        <div class="section-title-one">
+            <h2>Misleading information samples</h2>
+        </div>
+
+        <div class="dedicated-slider owl-carousel owl-theme">
+            <div class="dedicated-card" style="min-height: 450px;">
+<!--                <img src="../static/assets/img/dedicated/dedicated-1.jpg" alt="Image">-->
+                <div class="d-card-text">
+                    <h3>#1: The vaccine will give me COVID-19.</h3>
+                    <p><a href="https://health.clevelandclinic.org/8-common-covid-19-vaccine-myths-explained/">see more on Cleveland Clinic</a></p>
+
+                    <p>Vaccines prime your immune system to recognize and fight off a disease, but they don’t actually cause an infection.
+
+                        You might have some fatigue, muscle aches, a headache or a fever after you get the vaccine. That’s normal with any vaccine – it’s a sign that your immune system is responding.</p>
+                </div>
+            </div>
+
+            <div class="dedicated-card" style="min-height: 450px;">
+<!--                <img src="../static/assets/img/dedicated/dedicated-2.jpg" alt="Image">-->
+                <div class="d-card-text">
+                    <h3>#2: The vaccines are not safe for people with allergies.</h3>
+                    <p><a href="https://medbroadcast.com/healthfeature/gethealthfeature/10-common-covid-19-vaccine-rumours">see more on MediResource Inc.</a></p>
+
+                    <p>
+
+                        If you have a history of severe allergic reactions to any component of the COVID-19 vaccine, you should not receive it. Talk to your health care professional if you think you may be allergic to one or more of the vaccine ingredients.</p>
+                </div>
+            </div>
+
+            <div class="dedicated-card" style="min-height: 450px;">
+<!--                <img src="../static/assets/img/dedicated/dedicated-3.jpg" alt="Image">-->
+                <div class="d-card-text">
+                    <h3>#3: We don’t know what’s in these vaccines.</h3>
+                    <p><a href="https://health.clevelandclinic.org/8-common-covid-19-vaccine-myths-explained/">see more on Cleveland Clinic</a></p>
+
+                    <p>
+                        Both Pfizer and Moderna have published the ingredient lists for their vaccines. In addition to the star ingredient, the COVID-19 mRNA for the spike protein, both vaccines contain lipids (fats) that help deliver the mRNA into your cells and a few other common ingredients that help maintain the pH and stability of the vaccine. Despite theories circulated on social media, they do not contain microchips or any form of tracking device.
+                    </p>
+                </div>
+            </div>
+
+            <div class="dedicated-card" style="min-height: 450px;">
+<!--                <img src="../static/assets/img/dedicated/dedicated-4.jpg" alt="Image">-->
+                <div class="d-card-text">
+                    <h3>#4: The vaccine was developed to monitor people.</h3>
+                    <p><a href="https://medbroadcast.com/healthfeature/gethealthfeature/10-common-covid-19-vaccine-rumours">see more on MediResource Inc.</a></p>
+
+                    <p>The COVID-19 vaccine was developed to prevent people from getting COVID-19. There is no evidence that the vaccine has microchips in it that would track you or your personal information.</p>
+                </div>
+            </div>
+
+
+            <div class="dedicated-card" style="min-height: 450px;">
+<!--                <img src="../static/assets/img/dedicated/dedicated-3.jpg" alt="Image">-->
+                <div class="d-card-text">
+                    <h3>#5: The mRNA vaccine will alter my DNA.</h3>
+                    <p><a href="https://medbroadcast.com/healthfeature/gethealthfeature/10-common-covid-19-vaccine-rumours">see more on MediResource Inc.</a></p>
+
+                    <p>
+                        The Pfizer-BioNTech and Moderna COVID-19 vaccines contain mRNA, which are genetic instructions on how to make proteins. After getting the vaccine, your cells use the mRNA to make the coronavirus spike protein, then break down and destroy the mRNA after it's been used. The mRNA from the COVID-19 vaccine never enters the nucleus of the cell, which is where our DNA is stored. This means that the mRNA does not affect or interact with our DNA at all.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="dedicated-card" style="min-height: 450px;">
+<!--                <img src="../static/assets/img/dedicated/dedicated-4.jpg" alt="Image">-->
+                <div class="d-card-text">
+                    <h3>#6: The vaccine will cause infertility.</h3>
+                    <p><a href="https://medbroadcast.com/healthfeature/gethealthfeature/10-common-covid-19-vaccine-rumours">see more on MediResource Inc.</a></p>
+
+                    <p>Because the COVID-19 vaccines do not contain the live virus (remember, it’s an mRNA vaccine), they are not thought to cause increased risk of infertility, first or second trimester loss, still birth or congenital anomalies. Additionally, there is no evidence to suggest that the vaccine is a risk to a breastfeeding baby.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="frequently-area ptb-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="frequently-text">
+                    <div class="section-title-two">
+                        <h2>How to distinguish real news and fake news for Covid-19?</h2>
+                    </div>
+                    <div class="faq-contant">
+                        <div class="row align-items-center">
+                            <ul class="accordion">
+                                <li>
+                                    <h3 class="title">1. Consider the source</h3>
+                                    <div class="accordion-content">
+                                        <p style="font-size:18px">Check the reliability of the source. Some of the source may reference “Harvard University” or ”Japanese doctors”. Check on the official site if the expression is repeated there. If not, the story is probably a rumor.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="title">2. Check the logo</h3>
+                                    <div class="accordion-content">
+                                        <p style="font-size:18px">Check if the articles or news use the same logo as the official one.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="title">3. Bad English Expression</h3>
+                                    <div class="accordion-content">
+                                        <p style="font-size:18px">Credible journalist or organization are less likely to make spelling, grammar mistakes or write entirely using capital letters. If the above things happen, you should cast serious doubt on the reliability of the news.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="title">4. Mimic the official site</h3>
+                                    <div class="accordion-content">
+                                        <p style="font-size:18px">Some fake accounts mimic the official site. For example, they may have a twitter account called @ABCNewsTonight which may try to mimic the official @ABCNews account. By doing so, they produce some news to deceive and do harm which can help them achieve the intended purposes.</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <h3 class="title">5. Mimic the official site</h3>
+                                    <div class="accordion-content">
+                                        <p style="font-size:18px">If a message push you to share with your friends or families. Please be care of. That’s may be start of the viral transmission.</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <h3 class="title">6. Mimic the official site</h3>
+                                    <div class="accordion-content">
+                                        <p style="font-size:18px">If you have any doubt about the reliability of the news, please use the useful fact-checking website such as <a style="font-size: 25px; color: #005cbf" href="https://apnews.com/hub/ap-fact-check">APFactCheck</a> and <a style="font-size: 25px; color: #005cbf" href="https://fullfact.org/">Full Fact</a> to check the reliability of the news
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="frequently-img">
+                    <div class="main-img">
+                        <img src="../static/assets/img/faq.jpg" alt="Image">
+                    </div>
+                    <div class="shape-1">
+                        <img src="../static/assets/img/shapes/shape-14.png" alt="Shape">
+                    </div>
+                    <div class="shape-2">
+                        <img src="../static/assets/img/shapes/shape-15.png" alt="Shape">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 {% include 'footer.html' %}
+
 {% block foot %}
 {% endblock %}
-
 <!-- Go Top -->
 <div class="go-top">
     <i class='bx bxs-upvote'></i>
@@ -277,5 +363,7 @@
 <script src="../static/assets/js/jquery.ajaxchimp.min.js"></script>
 <!-- Custom JS -->
 <script src="../static/assets/js/custom.js"></script>
+<script src="../static/assets/js/script-ppt.js"></script>
+
 </body>
 </html>
