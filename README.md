@@ -3,11 +3,11 @@
 
 
 ## **Website's public-access internet address:**
-(to be applied)
+https://www.factoids.tk/
 
 
 ## **Our team:**
-![alt text](https://i.ibb.co/17mJfLn/2021-03-23-3-21-22.png)
+![alt text](https://i.ibb.co/37PRK3n/logo.png)
 
 
 ## **How to run the project locally:**
@@ -43,3 +43,5 @@ For any changes:
 
 
 ## **Copyright and licensing information**
+Copyright @2021 Factoids. All rights reserved Factoids
+https://www.factoids.tk/
