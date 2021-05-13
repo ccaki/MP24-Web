@@ -30,60 +30,293 @@
     <!-- Favican -->
     <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
 
-    <title>How to distinguish fictions</title>
+    <title>Factoids: COVID-19 rumours impacts on Victorian seniors</title>
+
 </head>
 <style>
-    a {
-        color:white;
-    }
-    a:hover {
-        color: #207EF7;
+    .page-banner-area.bg-2 {
+        background-image: url("../static/assets/img/v.jpg");
     }
 </style>
 
-<body>
 {% include 'nav.html' %}
 
 {% block navi %}
 {% endblock %}
-<!--<h1>Area 1</h1>-->
-<!--<div class="gcse-search">-->
-<!--    <div style="border: 1px solid blue;">-->
-<!--        Area 1 (for example a sidebar)-->
-<!--        <div class="gcse-searchbox"></div>-->
-<!--    </div>-->
 
-<!--    <div style="border: 1px solid red;">-->
-<!--        Area 2 (for example main area of the page)-->
-<!--        <div class="gcse-searchresults"></div>-->
-<!--    </div>-->
-<!--</div>-->
 
-<!--<script async src="https://cse.google.com/cse.js?cx=000888210889775888983:pqb3ch1ewhg"></script>-->
+<!-- Page Banner Area -->
+<div class="page-banner-area bg-4">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-content">
+                    <h2>How to distinguish fictions</h2>
+                    <ul>
+                        <li style="font-size:22px" ><a href="/fact">Squash Rumors</a></li>
+                        <li style="font-size:22px"><a href="/fiction">Anti Fictions</a></li>
+                    </ul>
 
-<!--<h1>Area 3</h1>-->
-<!--<div class="gcse-search" enableAutoComplete="true"></div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h1>Area 4 </h1>
-<form method="get" action="http://www.google.com/search">
+<script src="../static/assets/js/jquery-3.4.1.min.js"></script>
+<body>
+<div style="text-align: center; margin-top: 10px; margin-bottom: 15px">
+    <h1>Common misleading information</h1>
+</div>
+<div class="anti-fiction-btns" style="font-size: 20px; margin-bottom: 10px">
+    <input type="button" name="" value="Targeted Misinformation" class="current">
+    <input type="button" name="" value="Sloppy reporting">
+    <input type="button" name="" value="Fake and misleading news">
+</div>
+<div class="anti-fiction-cons">
+    <div class="anti-fiction-con">
+        <p>
+            <b style="font-size: 50px">News</b> that is misleading, which is produced to deceive and do harm which can help them achieve the intended purposes.	For example:
+        </p>
+        <p style="text-align: left">
+            1.5G WiFi networks could be responsible for the rapid spread of the new coronavirus.
+        </p>
+        <p style="text-align: left">
+            2.One or some of the Asian countries has produced the Covid-19 (increase the race conflict)
+        </p>
+    </div>
 
-    <input type="text"   name="q" size="31"
-           maxlength="255" value="" />
-    <input type="submit" value="Google Search" /><br>
-<!--    <input type="radio"  name="sitesearch" value="" />-->
-<!--    Internet Search-->
-<!--    <input type="radio"  name="sitesearch"-->
-<!--           value="foxavideo.com" checked />Internal Search<br />-->
 
-</form>
+    <div>
+        <p><b style="font-size: 50px">News</b> that contains some grains of truth that are not fully verified, which are used to support a certain position or view. For example:</p>
+        <p style="text-align: left">1. Achieve herd immunity by “natural” infections. </p>
+        <p style="text-align: left">
+            2. Masks were not recommended for the general public in the early stage of Covid-19 pandemic
+        </p>
+    </div>
+    <div>
+        <p><b style="font-size: 50px">Misleading news</b> that’s not based on facts, but supports an on-going narrative – news where there is no established baseline for truth, often where ideologies or opinions clash and unconscious biases come into play. For example:</p>
+        <p style="text-align: left">1. Injecting bleach or highly concentrated rubbing alcohol can help combat the virus</p>
+        <p style="text-align: left">
+            2. The children are virtually immune to Covid-19.
+        </p >
+        <p style="text-align: left">3. Covid-19 will disappear like a miracle in summer.</p>
+    </div>
+</div>
 
-<!-- End Services Dateils Area -->
+
+<style type="text/css">
+
+    .anti-fiction-btns{
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .anti-fiction-btns input{
+        width:330px;
+        height:100px;
+        background-color: #E1F3FF;
+        border:0;
+    }
+    .anti-fiction-btns input:hover{
+        background-color: #007bff;
+        transition: 1s;
+    }
+
+    .anti-fiction-btns .current{
+        background-color: #007bff;
+    }
+    .anti-fiction-cons{
+        min-height: 360px;
+    }
+
+    .anti-fiction-cons div{
+        width:85%;
+        height:auto;
+        background-color: #E1F3FF;
+        /*line-height: 120px;*/
+        text-align: center;
+        font-size:40px;
+        display:none; /*隐藏*/
+        margin-top:10px;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    .anti-fiction-con{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .anti-fiction-cons .anti-fiction-con{
+        display:block;
+    }
+
+</style>
+
+<script type="text/javascript">
+    $(function(){
+        //获取元素
+        var $btn = $('.anti-fiction-btns input');
+        var $div = $('.anti-fiction-cons div');
+
+        $btn.click(function(){
+            //this是原生的this ，指的是当前所点击的对象，$(this)是jQuery对象
+            //addClass是驼峰式,.siblings()表示所选元素之外的剩余同级元素
+            //当前点击的按钮加上current类选择器的样式，然后对剩余的同级元素进行移除current样式的操作
+            $(this).addClass('current').siblings().removeClass('current');
+            //用索引值index()来实现点击哪个选项就呈现相应的内容 $(this).index()
+            $div.eq($(this).index()).addClass('anti-fiction-con').siblings().removeClass('anti-fiction-con');
+        })
+    })
+</script>
+
+
+
+
+
+<div class="frequently-area ptb-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="frequently-text">
+                    <div class="section-title-two">
+                        <h2>How to distinguish real news and fake news for Covid-19?</h2>
+                    </div>
+                    <div class="faq-contant">
+                        <div class="row align-items-center">
+                            <ul class="accordion">
+                                <li>
+                                    <h3 class="title">1. Consider the source</h3>
+                                    <div class="accordion-content">
+                                        <p style="font-size:18px">Check the reliability of the source. Some of the source may reference “Harvard University” or ”Japanese doctors”. Check on the official site if the expression is repeated there. If not, the story is probably a rumor.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="title">2. Check the logo</h3>
+                                    <div class="accordion-content">
+                                        <p style="font-size:18px">Check if the articles or news use the same logo as the official one.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="title">3. Bad English Expression</h3>
+                                    <div class="accordion-content">
+                                        <p style="font-size:18px">Credible journalist or organization are less likely to make spelling, grammar mistakes or write entirely using capital letters. If the above things happen, you should cast serious doubt on the reliability of the news.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="title">4. Mimic the official site</h3>
+                                    <div class="accordion-content">
+                                        <p style="font-size:18px">Some fake accounts mimic the official site. For example, they may have a twitter account called @ABCNewsTonight which may try to mimic the official @ABCNews account. By doing so, they produce some news to deceive and do harm which can help them achieve the intended purposes.</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <h3 class="title">5. Mimic the official site</h3>
+                                    <div class="accordion-content">
+                                        <p style="font-size:18px">If a message push you to share with your friends or families. Please be care of. That’s may be start of the viral transmission.</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <h3 class="title">6. Mimic the official site</h3>
+                                    <div class="accordion-content">
+                                        <p style="font-size:18px">If you have any doubt about the reliability of the news, please use the useful fact-checking website such as <a style="font-size: 25px; color: #005cbf" href="https://apnews.com/hub/ap-fact-check">APFactCheck</a> and <a style="font-size: 25px; color: #005cbf" href="https://fullfact.org/">Full Fact</a> to check the reliability of the news
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="frequently-img">
+                    <div class="main-img">
+                        <img src="../static/assets/img/faq.jpg" alt="Image">
+                    </div>
+                    <div class="shape-1">
+                        <img src="../static/assets/img/shapes/shape-14.png" alt="Shape">
+                    </div>
+                    <div class="shape-2">
+                        <img src="../static/assets/img/shapes/shape-15.png" alt="Shape">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="dedicated-area ptb-100">
+    <div class="container">
+        <div class="section-title-one">
+            <h2>Our dedicated service to make your pets healthy</h2>
+        </div>
+
+        <div class="dedicated-slider owl-carousel owl-theme">
+            <div class="dedicated-card">
+                <img src="../static/assets/img/dedicated/dedicated-1.jpg" alt="Image">
+                <div class="d-card-text">
+                    <h3>Pet treatment</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                    <div class="d-card-btn">
+                        <a href="#" class="default-btn two">
+                            Read more
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dedicated-card">
+                <img src="../static/assets/img/dedicated/dedicated-2.jpg" alt="Image">
+                <div class="d-card-text">
+                    <h3>Animal breeding</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                    <div class="d-card-btn">
+                        <a href="#" class="default-btn two">
+                            Read more
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dedicated-card">
+                <img src="../static/assets/img/dedicated/dedicated-3.jpg" alt="Image">
+                <div class="d-card-text">
+                    <h3>Livestock vaccine</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                    <div class="d-card-btn">
+                        <a href="#" class="default-btn two">
+                            Read more
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dedicated-card">
+                <img src="../static/assets/img/dedicated/dedicated-4.jpg" alt="Image">
+                <div class="d-card-text">
+                    <h3>Medical counselling</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                    <div class="d-card-btn">
+                        <a href="#" class="default-btn two">
+                            Read more
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 {% include 'footer.html' %}
 
 {% block foot %}
 {% endblock %}
-
 <!-- Go Top -->
 <div class="go-top">
     <i class='bx bxs-upvote'></i>
@@ -115,5 +348,7 @@
 <script src="../static/assets/js/jquery.ajaxchimp.min.js"></script>
 <!-- Custom JS -->
 <script src="../static/assets/js/custom.js"></script>
+<script src="../static/assets/js/script-ppt.js"></script>
+
 </body>
 </html>
