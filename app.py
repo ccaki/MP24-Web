@@ -27,9 +27,9 @@ def home1():
 
 
 #about-us page
-@app.route('/about')
-def about():
-    return render_template('about1.html')
+# @app.route('/about')
+# def about():
+#     return render_template('about1.html')
 
 #precaution page
 @app.route('/precaution')
