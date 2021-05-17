@@ -514,11 +514,11 @@ def notfound():
 
 @app.route('/search/', methods = ['POST', 'GET'])
 def search():
-#     if request.method == 'GET':
-#         return notfound()
+    if request.method == 'GET':
+        return notfound()
 
     res = []
-    if request.method == 'POST' or request.method == 'GET':
+    if request.method == 'POST':
         form_data = request.form
         input = form_data['keyword']
 
