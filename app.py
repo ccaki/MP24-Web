@@ -58,22 +58,28 @@ def return_blog_detail(id,category,res):
     #print(sql)
     bigger = db_query(sql)
 
-    #if this is the only blog of this kind
+    #if this is the last blog of this kind
+#     print(len(bigger))
     if(len(bigger)==1):
+        #if this is the only blog
         sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"'"
         res = db_query(sql)
-        res = res[0]
+        if len(res)==1:
+            sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"'"
+            res = db_query(sql)
+            res = res[0]
 
-        if (res['videoUrl'])!=None:
-            return ('blog-details-with-video-only.html',res)
-        else:
-            return ('blog-details-only.html',res)
+            if (res['videoUrl'])!=None:
+                return ('blog-details-with-video-only.html',res)
+            else:
+                return ('blog-details-only.html',res)
+
 
     #if this is the last blog of this kind
     if(len(bigger)<2):
         sql = "SELECT * FROM fsquare.articles WHERE category = '"+category+"'"
         res = db_query(sql)
-        res = res[0]
+        res = res[-1]
 
         if (res['videoUrl'])!=None:
             return ('blog-details-with-video-last.html',res)
