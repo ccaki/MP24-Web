@@ -2,10 +2,10 @@ import pymysql
 
 class Database:
     def __init__(self):
-        host = "rm-p0w7nkhtqjok3w1zl9o.mysql.australia.rds.aliyuncs.com"
-        user = "chenchen"
-        password = "Ccsqlteam1,"
-        db = "fsquare"
+        host = ""
+        user = ""
+        password = ""
+        db = ""
         port = 3306
 
         self.con = pymysql.connect(host=host, user=user, password=password, db=db,
